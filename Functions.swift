@@ -23,11 +23,16 @@ func processControllersCheckBox(buttonArray: [NSButton!], stringArray: [String])
 }
 
 //Generate a string with a heading from an array
-func generateSubheadingString(header: String, stringList: [String]) -> String {
+func generateSubheadingString(header: String, stringList: [String], joiner: String) -> String {
 	var resultingString = ""
+	var theHeader = ""
+	
+	if header != "" {
+		theHeader = header + " "
+	}
 	
 	if !stringList.isEmpty {
-		resultingString = "\(header) " + ", ".join(stringList)
+		resultingString = "\(theHeader)" + stringList.joinWithSeparator(joiner)
 	}
 	return resultingString
 }
@@ -38,17 +43,23 @@ func processNormAbnormLists(heading: String, normalIn:[String], abnormalIn:[Stri
 	var verbiageList = ""
 	var normList = ""
 	var abnormList = ""
-	if (!normalIn.isEmpty) || (!abnormalIn.isEmpty){
-		if !normalIn.isEmpty {
-			normList = ", ".join(normalIn)
-		}
-		if !abnormalIn.isEmpty {
-			abnormList = ", ".join(abnormalIn) + "  "
-		}
-		verbiageList = "\(heading): " + abnormList + normList + "\n"
+	if (!normalIn.isEmpty) && (!abnormalIn.isEmpty) {
+		let abnormalInAdjusted = makeFirstCharacterInStringArrayUppercase(abnormalIn)
+		normList = normalIn.joinWithSeparator(", ")
+		abnormList = abnormalInAdjusted.joinWithSeparator(", ") + ", "
+	} else if (!normalIn.isEmpty) && (abnormalIn.isEmpty) {
+		let normalInAdjusted = makeFirstCharacterInStringArrayUppercase(normalIn)
+		normList = normalInAdjusted.joinWithSeparator(", ")
+	} else if (normalIn.isEmpty) && (!abnormalIn.isEmpty) {
+		let abnormalInAdjusted = makeFirstCharacterInStringArrayUppercase(abnormalIn)
+		abnormList = abnormalInAdjusted.joinWithSeparator(", ") + ", "
 	}
 	
-		return verbiageList
+	if normList != "" || abnormList != "" {
+	verbiageList = "\(heading): " + abnormList + normList + "\n"
+	}
+	
+	return verbiageList
 }
 
 
@@ -56,6 +67,10 @@ func processAllControlTypes(controllerArray: [AnyObject], stringArray: [String])
 	var returnValueList = [String]()
 	for var i = 0; i<controllerArray.count; i++ {
 		switch controllerArray[i] {
+		case is NSPopUpButton:
+			if (controllerArray[i].indexOfSelectedItem() != 0) {
+				returnValueList.append(stringArray[i])
+			}
 		case is NSButton:
 			if (controllerArray[i].state == NSOnState) {
 				returnValueList.append(stringArray[i])
@@ -68,14 +83,27 @@ func processAllControlTypes(controllerArray: [AnyObject], stringArray: [String])
 			if (controllerArray[i].stringValue != "") {
 				returnValueList.append(stringArray[i])
 			}
-		case is NSPopUpButton:
-			if (controllerArray[i].titleOfSelectedItem != nil) {
-				returnValueList.append(stringArray[i])
-			}
+		
 		default:
 			returnValueList.append("")
 		}
 	}
 	
 	return returnValueList
+}
+
+func makeFirstCharacterInStringArrayUppercase(theArray: [String])->[String] {
+	var changedArray = theArray
+	var firstItem = theArray[0]
+	firstItem.replaceRange(firstItem.startIndex...firstItem.startIndex, with: String(firstItem[firstItem.startIndex]).capitalizedString)
+	changedArray[0] = firstItem	
+	return changedArray
+}
+
+func makeEdemaQualifyingString(edemaQualifyingArray: [String]) -> String {
+	var returnString = ""
+	if !edemaQualifyingArray.isEmpty {
+		returnString = ", " + edemaQualifyingArray.joinWithSeparator(", ")
+	}
+	return returnString
 }
