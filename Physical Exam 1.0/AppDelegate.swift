@@ -127,7 +127,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var chestOtherTextView: NSTextField!
     
     //Ext Section Controls
-    @IBOutlet weak var extNCCEView: NSButton!
+    @IBOutlet weak var extNCyanView: NSButton!
+	@IBOutlet weak var extNClubView: NSButton!
+	@IBOutlet weak var extNEdemaView: NSButton!
     @IBOutlet weak var extNPulsesView: NSButton!
     @IBOutlet weak var extNCRView: NSButton!
 	@IBOutlet weak var extAEdema1QuantView: NSPopUpButton!
@@ -611,7 +613,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @IBAction func takeExtNorm(sender: AnyObject) {
-        extNCCEView.state = NSOnState
+        extNCyanView.state = NSOnState
+		extNClubView.state = NSOnState
+		extNEdemaView.state = NSOnState
         extNPulsesView.state = NSOnState
         extNCRView.state = NSOnState
     }
@@ -900,7 +904,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	}
 	
 	@IBAction func takeClearTabThree(sender: AnyObject) {
-		extNCCEView.state = NSOffState
+		extNCyanView.state = NSOffState
+		extNClubView.state = NSOffState
+		extNEdemaView.state = NSOffState
 		extNPulsesView.state = NSOffState
 		extNCRView.state = NSOffState
 		extAEdema1QuantView.removeAllItems()
@@ -2137,8 +2143,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		//Process normal EXT controllers
 		var extVerbiageResults = ""
 		var extResultsList = [String]()
-		let extNormalVarList = [extNCCEView, extNPulsesView, extNCRView]
-		let extNormalVerbiageList = ["no cyanosis, no clubbing, no edema","normal pulses","normal capillary refill"]
+		let extNormalVarList = [extNCyanView, extNClubView, extNEdemaView, extNPulsesView, extNCRView]
+		let extNormalVerbiageList = ["no cyanosis", "no clubbing", "no edema","normal pulses","normal capillary refill"]
 		var extNormVerbiageList = processAllControlTypes(extNormalVarList, stringArray: extNormalVerbiageList)
 		if !extNormVerbiageList.isEmpty {
 			extNormVerbiageList = makeFirstCharacterInStringArrayUppercase(extNormVerbiageList)

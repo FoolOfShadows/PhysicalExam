@@ -293,8 +293,10 @@
                 <outlet property="extASpiderRComboView" destination="RnB-Ld-g8l" id="FRC-iV-n7k"/>
                 <outlet property="extAVericoseLComboView" destination="k63-0G-JUM" id="GUp-dj-0BJ"/>
                 <outlet property="extAVericoseRComboView" destination="eaM-rf-MrT" id="xWJ-xn-SIQ"/>
-                <outlet property="extNCCEView" destination="6MU-xN-xTj" id="zhZ-sE-Xy8"/>
                 <outlet property="extNCRView" destination="O9P-ke-nuV" id="2Z4-cd-7AT"/>
+                <outlet property="extNClubView" destination="1M1-Qf-vzR" id="bLb-Iz-IqB"/>
+                <outlet property="extNCyanView" destination="6MU-xN-xTj" id="AsS-qI-m6y"/>
+                <outlet property="extNEdemaView" destination="MGe-2E-u84" id="lq5-FI-L2H"/>
                 <outlet property="extNPulsesView" destination="M4X-A6-meR" id="OJK-G0-rmK"/>
                 <outlet property="extOtherTextView" destination="cBN-Vx-4jQ" id="50Q-Nj-tkX"/>
                 <outlet property="genAArouseView" destination="LIh-rC-Pvc" id="FHY-ir-OUd"/>
@@ -1190,7 +1192,7 @@
                         <font key="font" metaFont="system"/>
                         <tabViewItems>
                             <tabViewItem label="General-Psych-HE-ENT-Neck" identifier="1" id="yRl-X4-9zg">
-                                <view key="view" id="sC9-Vt-hez">
+                                <view key="view" ambiguous="YES" id="sC9-Vt-hez">
                                     <rect key="frame" x="10" y="33" width="390" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
@@ -2811,19 +2813,35 @@
                             </tabViewItem>
                             <tabViewItem label="Extremities" identifier="" id="r6f-8g-NZi">
                                 <view key="view" id="NFQ-gc-yaJ">
-                                    <rect key="frame" x="10" y="33" width="332" height="0.0"/>
+                                    <rect key="frame" x="10" y="33" width="824" height="528"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6MU-xN-xTj">
-                                            <rect key="frame" x="43" y="-36" width="50" height="18"/>
+                                            <rect key="frame" x="43" y="492" width="53" height="18"/>
                                             <animations/>
-                                            <buttonCell key="cell" type="check" title="CCE" bezelStyle="regularSquare" imagePosition="left" inset="2" id="RtY-dG-kJ4">
+                                            <buttonCell key="cell" type="check" title="Cyan" bezelStyle="regularSquare" imagePosition="left" inset="2" id="RtY-dG-kJ4">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                        </button>
+                                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1M1-Qf-vzR">
+                                            <rect key="frame" x="100" y="492" width="50" height="18"/>
+                                            <animations/>
+                                            <buttonCell key="cell" type="check" title="Club" bezelStyle="regularSquare" imagePosition="left" inset="2" id="JDy-iA-F9D">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                        </button>
+                                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MGe-2E-u84">
+                                            <rect key="frame" x="154" y="492" width="64" height="18"/>
+                                            <animations/>
+                                            <buttonCell key="cell" type="check" title="Edema" bezelStyle="regularSquare" imagePosition="left" inset="2" id="UMp-2M-70m">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
                                         </button>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fdJ-QX-Dbt">
-                                            <rect key="frame" x="17" y="-38" width="20" height="23"/>
+                                            <rect key="frame" x="17" y="490" width="20" height="23"/>
                                             <animations/>
                                             <buttonCell key="cell" type="smallSquare" title="N:" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="w5G-SU-ZEH">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -2834,7 +2852,7 @@
                                             </connections>
                                         </button>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="neX-Zj-BfR">
-                                            <rect key="frame" x="43" y="-92" width="51" height="18"/>
+                                            <rect key="frame" x="43" y="436" width="51" height="18"/>
                                             <animations/>
                                             <buttonCell key="cell" type="check" title="Brny" bezelStyle="regularSquare" imagePosition="left" inset="2" id="WZQ-GC-kvv">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -2842,7 +2860,7 @@
                                             </buttonCell>
                                         </button>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XaR-f3-kmj">
-                                            <rect key="frame" x="253" y="-92" width="43" height="18"/>
+                                            <rect key="frame" x="253" y="436" width="43" height="18"/>
                                             <animations/>
                                             <buttonCell key="cell" type="check" title="Cel" bezelStyle="regularSquare" imagePosition="left" inset="2" id="lVV-kS-8R9">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -2850,7 +2868,7 @@
                                             </buttonCell>
                                         </button>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CPJ-ev-CwD">
-                                            <rect key="frame" x="167" y="-92" width="82" height="18"/>
+                                            <rect key="frame" x="167" y="436" width="82" height="18"/>
                                             <animations/>
                                             <buttonCell key="cell" type="check" title="Venus Ins" bezelStyle="regularSquare" imagePosition="left" inset="2" id="jo8-9V-VTG">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -2858,31 +2876,15 @@
                                             </buttonCell>
                                         </button>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rW8-Uf-3pD">
-                                            <rect key="frame" x="98" y="-92" width="64" height="18"/>
+                                            <rect key="frame" x="98" y="436" width="64" height="18"/>
                                             <animations/>
                                             <buttonCell key="cell" type="check" title="Lymph" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Izf-h4-cCq">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
                                         </button>
-                                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O9P-ke-nuV">
-                                            <rect key="frame" x="167" y="-36" width="42" height="18"/>
-                                            <animations/>
-                                            <buttonCell key="cell" type="check" title="CR" bezelStyle="regularSquare" imagePosition="left" inset="2" id="4ye-JL-0Rb">
-                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                <font key="font" metaFont="system"/>
-                                            </buttonCell>
-                                        </button>
-                                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M4X-A6-meR">
-                                            <rect key="frame" x="98" y="-36" width="63" height="18"/>
-                                            <animations/>
-                                            <buttonCell key="cell" type="check" title="Pulses" bezelStyle="regularSquare" imagePosition="left" inset="2" id="aXh-2n-4kC">
-                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                <font key="font" metaFont="system"/>
-                                            </buttonCell>
-                                        </button>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iuJ-NI-loM">
-                                            <rect key="frame" x="19" y="-62" width="17" height="17"/>
+                                            <rect key="frame" x="19" y="466" width="17" height="17"/>
                                             <animations/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="A:" id="9Qw-eY-rRW">
                                                 <font key="font" metaFont="system"/>
@@ -2891,7 +2893,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hxo-oy-b09">
-                                            <rect key="frame" x="191" y="-362" width="49" height="22"/>
+                                            <rect key="frame" x="191" y="166" width="49" height="22"/>
                                             <animations/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Pulses" id="lnf-f7-sd1">
                                                 <font key="font" metaFont="system"/>
@@ -2900,7 +2902,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ImV-27-JOS">
-                                            <rect key="frame" x="112" y="-363" width="22" height="22"/>
+                                            <rect key="frame" x="112" y="165" width="22" height="22"/>
                                             <animations/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="L" id="27a-y7-rCX">
                                                 <font key="font" metaFont="system"/>
@@ -2909,7 +2911,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RGE-qr-JVF">
-                                            <rect key="frame" x="296" y="-363" width="22" height="22"/>
+                                            <rect key="frame" x="296" y="165" width="22" height="22"/>
                                             <animations/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="R" id="pdw-KI-ntZ">
                                                 <font key="font" metaFont="system"/>
@@ -2918,7 +2920,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7GQ-7T-i07">
-                                            <rect key="frame" x="99" y="-62" width="47" height="17"/>
+                                            <rect key="frame" x="99" y="466" width="47" height="17"/>
                                             <animations/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Edema" id="YNB-Ar-Rac">
                                                 <font key="font" metaFont="system"/>
@@ -2927,7 +2929,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="22z-Gu-1zn">
-                                            <rect key="frame" x="150" y="-68" width="53" height="26"/>
+                                            <rect key="frame" x="150" y="460" width="53" height="26"/>
                                             <animations/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="d6I-2r-hF2">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -2951,7 +2953,7 @@
                                             </popUpButtonCell>
                                         </popUpButton>
                                         <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a3Q-Za-xNQ">
-                                            <rect key="frame" x="101" y="-392" width="103" height="26"/>
+                                            <rect key="frame" x="101" y="136" width="103" height="26"/>
                                             <animations/>
                                             <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="o8d-Fj-YOK">
                                                 <font key="font" metaFont="system"/>
@@ -2960,7 +2962,7 @@
                                             </comboBoxCell>
                                         </comboBox>
                                         <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4D7-XZ-7Na">
-                                            <rect key="frame" x="43" y="-392" width="53" height="26"/>
+                                            <rect key="frame" x="43" y="136" width="53" height="26"/>
                                             <animations/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="ejA-dY-EEM">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -2984,7 +2986,7 @@
                                             </popUpButtonCell>
                                         </popUpButton>
                                         <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LAe-kk-BQD">
-                                            <rect key="frame" x="289" y="-392" width="103" height="26"/>
+                                            <rect key="frame" x="289" y="136" width="103" height="26"/>
                                             <animations/>
                                             <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="Ynf-jd-P2x">
                                                 <font key="font" metaFont="system"/>
@@ -2993,7 +2995,7 @@
                                             </comboBoxCell>
                                         </comboBox>
                                         <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bbb-Jt-Lww">
-                                            <rect key="frame" x="231" y="-392" width="53" height="26"/>
+                                            <rect key="frame" x="231" y="136" width="53" height="26"/>
                                             <animations/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="kUj-0w-DQq" id="LDT-DW-d5k">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -3017,7 +3019,7 @@
                                             </popUpButtonCell>
                                         </popUpButton>
                                         <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vaZ-Dq-3Tk">
-                                            <rect key="frame" x="101" y="-420" width="103" height="26"/>
+                                            <rect key="frame" x="101" y="108" width="103" height="26"/>
                                             <animations/>
                                             <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="juj-Fb-Je0">
                                                 <font key="font" metaFont="system"/>
@@ -3026,7 +3028,7 @@
                                             </comboBoxCell>
                                         </comboBox>
                                         <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u7D-qs-DqS">
-                                            <rect key="frame" x="43" y="-420" width="53" height="26"/>
+                                            <rect key="frame" x="43" y="108" width="53" height="26"/>
                                             <animations/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="HrF-6q-Pak" id="6xL-X4-MPp">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -3050,7 +3052,7 @@
                                             </popUpButtonCell>
                                         </popUpButton>
                                         <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3bs-Ii-sfb">
-                                            <rect key="frame" x="289" y="-420" width="103" height="26"/>
+                                            <rect key="frame" x="289" y="108" width="103" height="26"/>
                                             <animations/>
                                             <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="eTY-DD-x40">
                                                 <font key="font" metaFont="system"/>
@@ -3059,7 +3061,7 @@
                                             </comboBoxCell>
                                         </comboBox>
                                         <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wBH-hf-LJo">
-                                            <rect key="frame" x="231" y="-420" width="53" height="26"/>
+                                            <rect key="frame" x="231" y="108" width="53" height="26"/>
                                             <animations/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="UEz-cf-kgC" id="bDp-es-kUV">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -3083,7 +3085,7 @@
                                             </popUpButtonCell>
                                         </popUpButton>
                                         <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0V4-4c-Qm3">
-                                            <rect key="frame" x="101" y="-447" width="103" height="26"/>
+                                            <rect key="frame" x="101" y="81" width="103" height="26"/>
                                             <animations/>
                                             <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="iLM-Hn-21d">
                                                 <font key="font" metaFont="system"/>
@@ -3092,7 +3094,7 @@
                                             </comboBoxCell>
                                         </comboBox>
                                         <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C4i-g3-9y4">
-                                            <rect key="frame" x="43" y="-447" width="53" height="26"/>
+                                            <rect key="frame" x="43" y="81" width="53" height="26"/>
                                             <animations/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="ftP-rT-D1I" id="R4g-xb-ppc">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -3116,7 +3118,7 @@
                                             </popUpButtonCell>
                                         </popUpButton>
                                         <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4FJ-hK-m5F">
-                                            <rect key="frame" x="289" y="-447" width="103" height="26"/>
+                                            <rect key="frame" x="289" y="81" width="103" height="26"/>
                                             <animations/>
                                             <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="hpK-m8-Ba3">
                                                 <font key="font" metaFont="system"/>
@@ -3125,7 +3127,7 @@
                                             </comboBoxCell>
                                         </comboBox>
                                         <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Ca-b9-aSf">
-                                            <rect key="frame" x="231" y="-447" width="53" height="26"/>
+                                            <rect key="frame" x="231" y="81" width="53" height="26"/>
                                             <animations/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Ucz-Os-77v" id="9KH-LE-Tr7">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -3149,7 +3151,7 @@
                                             </popUpButtonCell>
                                         </popUpButton>
                                         <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7D6-QF-fSs">
-                                            <rect key="frame" x="101" y="-475" width="103" height="26"/>
+                                            <rect key="frame" x="101" y="53" width="103" height="26"/>
                                             <animations/>
                                             <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="4Hb-Cl-a7C">
                                                 <font key="font" metaFont="system"/>
@@ -3158,7 +3160,7 @@
                                             </comboBoxCell>
                                         </comboBox>
                                         <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wqe-DT-w4U">
-                                            <rect key="frame" x="43" y="-475" width="53" height="26"/>
+                                            <rect key="frame" x="43" y="53" width="53" height="26"/>
                                             <animations/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="qIC-54-uqZ" id="BG8-0V-0QF">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -3182,7 +3184,7 @@
                                             </popUpButtonCell>
                                         </popUpButton>
                                         <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="77D-SH-5oJ">
-                                            <rect key="frame" x="289" y="-475" width="103" height="26"/>
+                                            <rect key="frame" x="289" y="53" width="103" height="26"/>
                                             <animations/>
                                             <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="cRP-Sk-4cP">
                                                 <font key="font" metaFont="system"/>
@@ -3191,7 +3193,7 @@
                                             </comboBoxCell>
                                         </comboBox>
                                         <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cAb-mz-ZJr">
-                                            <rect key="frame" x="231" y="-475" width="53" height="26"/>
+                                            <rect key="frame" x="231" y="53" width="53" height="26"/>
                                             <animations/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="RVn-xE-75f" id="OIV-9R-vBy">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -3215,7 +3217,7 @@
                                             </popUpButtonCell>
                                         </popUpButton>
                                         <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bhZ-aD-pJe">
-                                            <rect key="frame" x="43" y="-68" width="53" height="26"/>
+                                            <rect key="frame" x="43" y="460" width="53" height="26"/>
                                             <animations/>
                                             <popUpButtonCell key="cell" type="push" title=" " bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="WCf-gR-wii" id="l62-Wc-AEd">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -3242,7 +3244,7 @@
                                             </popUpButtonCell>
                                         </popUpButton>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vHY-WE-e7X">
-                                            <rect key="frame" x="43" y="-146" width="51" height="18"/>
+                                            <rect key="frame" x="43" y="382" width="51" height="18"/>
                                             <animations/>
                                             <buttonCell key="cell" type="check" title="Brny" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Mzp-lF-Jw3">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -3250,7 +3252,7 @@
                                             </buttonCell>
                                         </button>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QZB-Lr-rIO">
-                                            <rect key="frame" x="253" y="-146" width="43" height="18"/>
+                                            <rect key="frame" x="253" y="382" width="43" height="18"/>
                                             <animations/>
                                             <buttonCell key="cell" type="check" title="Cel" bezelStyle="regularSquare" imagePosition="left" inset="2" id="FaC-nN-eVi">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -3258,7 +3260,7 @@
                                             </buttonCell>
                                         </button>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6g9-ol-MhA">
-                                            <rect key="frame" x="167" y="-146" width="82" height="18"/>
+                                            <rect key="frame" x="167" y="382" width="82" height="18"/>
                                             <animations/>
                                             <buttonCell key="cell" type="check" title="Venus Ins" bezelStyle="regularSquare" imagePosition="left" inset="2" id="juC-Ni-tKh">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -3266,7 +3268,7 @@
                                             </buttonCell>
                                         </button>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2sX-VM-0kG">
-                                            <rect key="frame" x="98" y="-146" width="64" height="18"/>
+                                            <rect key="frame" x="98" y="382" width="64" height="18"/>
                                             <animations/>
                                             <buttonCell key="cell" type="check" title="Lymph" bezelStyle="regularSquare" imagePosition="left" inset="2" id="eCE-G8-llr">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -3274,7 +3276,7 @@
                                             </buttonCell>
                                         </button>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cng-5n-brB">
-                                            <rect key="frame" x="99" y="-116" width="47" height="17"/>
+                                            <rect key="frame" x="99" y="412" width="47" height="17"/>
                                             <animations/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Edema" id="uyo-ny-0ka">
                                                 <font key="font" metaFont="system"/>
@@ -3283,7 +3285,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PUp-d6-K0B">
-                                            <rect key="frame" x="150" y="-122" width="53" height="26"/>
+                                            <rect key="frame" x="150" y="406" width="53" height="26"/>
                                             <animations/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="FHZ-8j-2IJ" id="B0T-kp-4Ca">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -3307,7 +3309,7 @@
                                             </popUpButtonCell>
                                         </popUpButton>
                                         <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oq9-MB-u8X">
-                                            <rect key="frame" x="43" y="-122" width="53" height="26"/>
+                                            <rect key="frame" x="43" y="406" width="53" height="26"/>
                                             <animations/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="YYI-kZ-NPI">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -3334,7 +3336,7 @@
                                             </popUpButtonCell>
                                         </popUpButton>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aai-xZ-xTY">
-                                            <rect key="frame" x="43" y="-200" width="51" height="18"/>
+                                            <rect key="frame" x="43" y="328" width="51" height="18"/>
                                             <animations/>
                                             <buttonCell key="cell" type="check" title="Brny" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Jjv-aS-sKm">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -3342,7 +3344,7 @@
                                             </buttonCell>
                                         </button>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OqT-vS-6Fc">
-                                            <rect key="frame" x="253" y="-200" width="43" height="18"/>
+                                            <rect key="frame" x="253" y="328" width="43" height="18"/>
                                             <animations/>
                                             <buttonCell key="cell" type="check" title="Cel" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Yf2-mD-iCl">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -3350,7 +3352,7 @@
                                             </buttonCell>
                                         </button>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NuF-FJ-ckV">
-                                            <rect key="frame" x="167" y="-200" width="82" height="18"/>
+                                            <rect key="frame" x="167" y="328" width="82" height="18"/>
                                             <animations/>
                                             <buttonCell key="cell" type="check" title="Venus Ins" bezelStyle="regularSquare" imagePosition="left" inset="2" id="jOz-gi-AhM">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -3358,7 +3360,7 @@
                                             </buttonCell>
                                         </button>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aHO-bP-lc3">
-                                            <rect key="frame" x="98" y="-200" width="64" height="18"/>
+                                            <rect key="frame" x="98" y="328" width="64" height="18"/>
                                             <animations/>
                                             <buttonCell key="cell" type="check" title="Lymph" bezelStyle="regularSquare" imagePosition="left" inset="2" id="v2f-eK-E8Z">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -3366,7 +3368,7 @@
                                             </buttonCell>
                                         </button>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nah-iU-i7V">
-                                            <rect key="frame" x="99" y="-170" width="47" height="17"/>
+                                            <rect key="frame" x="99" y="358" width="47" height="17"/>
                                             <animations/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Edema" id="Dqj-h2-3Tl">
                                                 <font key="font" metaFont="system"/>
@@ -3375,7 +3377,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yCO-p1-vUc">
-                                            <rect key="frame" x="150" y="-176" width="53" height="26"/>
+                                            <rect key="frame" x="150" y="352" width="53" height="26"/>
                                             <animations/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Pth-0F-AAe" id="Za2-nA-IHQ">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -3399,7 +3401,7 @@
                                             </popUpButtonCell>
                                         </popUpButton>
                                         <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x09-M9-yFT">
-                                            <rect key="frame" x="43" y="-176" width="53" height="26"/>
+                                            <rect key="frame" x="43" y="352" width="53" height="26"/>
                                             <animations/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="zrs-vv-n7L" id="zQI-aT-4wd">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -3426,7 +3428,7 @@
                                             </popUpButtonCell>
                                         </popUpButton>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yVl-G9-OTM">
-                                            <rect key="frame" x="43" y="-254" width="51" height="18"/>
+                                            <rect key="frame" x="43" y="274" width="51" height="18"/>
                                             <animations/>
                                             <buttonCell key="cell" type="check" title="Brny" bezelStyle="regularSquare" imagePosition="left" inset="2" id="ggJ-d8-Yis">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -3434,7 +3436,7 @@
                                             </buttonCell>
                                         </button>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FTS-0V-0an">
-                                            <rect key="frame" x="253" y="-254" width="43" height="18"/>
+                                            <rect key="frame" x="253" y="274" width="43" height="18"/>
                                             <animations/>
                                             <buttonCell key="cell" type="check" title="Cel" bezelStyle="regularSquare" imagePosition="left" inset="2" id="zzJ-5x-v9D">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -3442,7 +3444,7 @@
                                             </buttonCell>
                                         </button>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sml-AY-qyP">
-                                            <rect key="frame" x="167" y="-254" width="82" height="18"/>
+                                            <rect key="frame" x="167" y="274" width="82" height="18"/>
                                             <animations/>
                                             <buttonCell key="cell" type="check" title="Venus Ins" bezelStyle="regularSquare" imagePosition="left" inset="2" id="mVz-PM-3Be">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -3450,7 +3452,7 @@
                                             </buttonCell>
                                         </button>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IiX-T2-kTB">
-                                            <rect key="frame" x="98" y="-254" width="64" height="18"/>
+                                            <rect key="frame" x="98" y="274" width="64" height="18"/>
                                             <animations/>
                                             <buttonCell key="cell" type="check" title="Lymph" bezelStyle="regularSquare" imagePosition="left" inset="2" id="yvE-21-zI4">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -3458,7 +3460,7 @@
                                             </buttonCell>
                                         </button>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oJc-ff-QjQ">
-                                            <rect key="frame" x="99" y="-224" width="47" height="17"/>
+                                            <rect key="frame" x="99" y="304" width="47" height="17"/>
                                             <animations/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Edema" id="F9C-sk-xij">
                                                 <font key="font" metaFont="system"/>
@@ -3467,7 +3469,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u99-aV-3TR">
-                                            <rect key="frame" x="150" y="-230" width="53" height="26"/>
+                                            <rect key="frame" x="150" y="298" width="53" height="26"/>
                                             <animations/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="ti4-Gk-T1w" id="d1h-hG-sMD">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -3491,7 +3493,7 @@
                                             </popUpButtonCell>
                                         </popUpButton>
                                         <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tlg-Lj-THn">
-                                            <rect key="frame" x="43" y="-230" width="53" height="26"/>
+                                            <rect key="frame" x="43" y="298" width="53" height="26"/>
                                             <animations/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="r5d-NP-cDM" id="Kot-fP-LVK">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -3518,7 +3520,7 @@
                                             </popUpButtonCell>
                                         </popUpButton>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rRx-c7-qVC">
-                                            <rect key="frame" x="43" y="-308" width="51" height="18"/>
+                                            <rect key="frame" x="43" y="220" width="51" height="18"/>
                                             <animations/>
                                             <buttonCell key="cell" type="check" title="Brny" bezelStyle="regularSquare" imagePosition="left" inset="2" id="BTD-wR-Slj">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -3526,7 +3528,7 @@
                                             </buttonCell>
                                         </button>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HFN-9X-FtB">
-                                            <rect key="frame" x="253" y="-308" width="43" height="18"/>
+                                            <rect key="frame" x="253" y="220" width="43" height="18"/>
                                             <animations/>
                                             <buttonCell key="cell" type="check" title="Cel" bezelStyle="regularSquare" imagePosition="left" inset="2" id="mEx-t1-5Ob">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -3534,7 +3536,7 @@
                                             </buttonCell>
                                         </button>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4OM-5f-Ynk">
-                                            <rect key="frame" x="167" y="-308" width="82" height="18"/>
+                                            <rect key="frame" x="167" y="220" width="82" height="18"/>
                                             <animations/>
                                             <buttonCell key="cell" type="check" title="Venus Ins" bezelStyle="regularSquare" imagePosition="left" inset="2" id="bGs-3d-6Wo">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -3542,7 +3544,7 @@
                                             </buttonCell>
                                         </button>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c4j-MS-JHu">
-                                            <rect key="frame" x="98" y="-308" width="64" height="18"/>
+                                            <rect key="frame" x="98" y="220" width="64" height="18"/>
                                             <animations/>
                                             <buttonCell key="cell" type="check" title="Lymph" bezelStyle="regularSquare" imagePosition="left" inset="2" id="tPR-KG-pWf">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -3550,7 +3552,7 @@
                                             </buttonCell>
                                         </button>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mul-KR-Or1">
-                                            <rect key="frame" x="99" y="-278" width="47" height="17"/>
+                                            <rect key="frame" x="99" y="250" width="47" height="17"/>
                                             <animations/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Edema" id="oQR-GC-oHp">
                                                 <font key="font" metaFont="system"/>
@@ -3559,7 +3561,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hmv-TH-0AM">
-                                            <rect key="frame" x="150" y="-284" width="53" height="26"/>
+                                            <rect key="frame" x="150" y="244" width="53" height="26"/>
                                             <animations/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="s6e-4R-rTb">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -3583,7 +3585,7 @@
                                             </popUpButtonCell>
                                         </popUpButton>
                                         <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xm7-0K-GKk">
-                                            <rect key="frame" x="206" y="-68" width="53" height="26"/>
+                                            <rect key="frame" x="206" y="460" width="53" height="26"/>
                                             <animations/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="z0W-mY-n38">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -3607,7 +3609,7 @@
                                             </popUpButtonCell>
                                         </popUpButton>
                                         <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iJq-uB-3wN">
-                                            <rect key="frame" x="206" y="-122" width="53" height="26"/>
+                                            <rect key="frame" x="206" y="406" width="53" height="26"/>
                                             <animations/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="99b-d0-8tN" id="pfy-kz-KNC">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -3631,7 +3633,7 @@
                                             </popUpButtonCell>
                                         </popUpButton>
                                         <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yt7-vK-6fH">
-                                            <rect key="frame" x="206" y="-176" width="53" height="26"/>
+                                            <rect key="frame" x="206" y="352" width="53" height="26"/>
                                             <animations/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="1Ee-2F-hda" id="Gry-Cu-1nv">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -3655,7 +3657,7 @@
                                             </popUpButtonCell>
                                         </popUpButton>
                                         <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l25-DS-OCJ">
-                                            <rect key="frame" x="206" y="-230" width="53" height="26"/>
+                                            <rect key="frame" x="206" y="298" width="53" height="26"/>
                                             <animations/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="las-J6-p3n" id="sZ4-Sh-2RX">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -3679,7 +3681,7 @@
                                             </popUpButtonCell>
                                         </popUpButton>
                                         <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kar-Kn-hmq">
-                                            <rect key="frame" x="206" y="-284" width="53" height="26"/>
+                                            <rect key="frame" x="206" y="244" width="53" height="26"/>
                                             <animations/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="8tb-2Y-CNH">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -3703,7 +3705,7 @@
                                             </popUpButtonCell>
                                         </popUpButton>
                                         <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gln-Se-hKj">
-                                            <rect key="frame" x="43" y="-284" width="53" height="26"/>
+                                            <rect key="frame" x="43" y="244" width="53" height="26"/>
                                             <animations/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="0SQ-uH-LwE" id="Ld9-Oe-H9y">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -3730,7 +3732,7 @@
                                             </popUpButtonCell>
                                         </popUpButton>
                                         <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BEO-Ef-bb5">
-                                            <rect key="frame" x="101" y="-503" width="103" height="26"/>
+                                            <rect key="frame" x="101" y="25" width="103" height="26"/>
                                             <animations/>
                                             <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="kYT-YC-QFM">
                                                 <font key="font" metaFont="system"/>
@@ -3739,7 +3741,7 @@
                                             </comboBoxCell>
                                         </comboBox>
                                         <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uEf-kg-a02">
-                                            <rect key="frame" x="43" y="-503" width="53" height="26"/>
+                                            <rect key="frame" x="43" y="25" width="53" height="26"/>
                                             <animations/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="kOr-LA-QuJ" id="3zL-gg-riW">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -3763,7 +3765,7 @@
                                             </popUpButtonCell>
                                         </popUpButton>
                                         <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wyc-AZ-HNI">
-                                            <rect key="frame" x="289" y="-503" width="103" height="26"/>
+                                            <rect key="frame" x="289" y="25" width="103" height="26"/>
                                             <animations/>
                                             <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="maw-AM-jse">
                                                 <font key="font" metaFont="system"/>
@@ -3772,7 +3774,7 @@
                                             </comboBoxCell>
                                         </comboBox>
                                         <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gze-mw-GuJ">
-                                            <rect key="frame" x="231" y="-503" width="53" height="26"/>
+                                            <rect key="frame" x="231" y="25" width="53" height="26"/>
                                             <animations/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="rrM-ts-dbf" id="gi9-9W-zuK">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -3796,7 +3798,7 @@
                                             </popUpButtonCell>
                                         </popUpButton>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DrM-RW-QzJ">
-                                            <rect key="frame" x="714" y="-518" width="99" height="32"/>
+                                            <rect key="frame" x="714" y="10" width="99" height="32"/>
                                             <animations/>
                                             <buttonCell key="cell" type="push" title="Clear Tab" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="N1A-aq-wYb">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -3807,7 +3809,7 @@
                                             </connections>
                                         </button>
                                         <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="faE-Ix-eC2">
-                                            <rect key="frame" x="264" y="-68" width="103" height="26"/>
+                                            <rect key="frame" x="264" y="460" width="103" height="26"/>
                                             <animations/>
                                             <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="PPv-5y-zJ4">
                                                 <font key="font" metaFont="system"/>
@@ -3816,7 +3818,7 @@
                                             </comboBoxCell>
                                         </comboBox>
                                         <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ut4-hD-qmW">
-                                            <rect key="frame" x="264" y="-122" width="103" height="26"/>
+                                            <rect key="frame" x="264" y="406" width="103" height="26"/>
                                             <animations/>
                                             <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="Xya-xb-ggV">
                                                 <font key="font" metaFont="system"/>
@@ -3825,7 +3827,7 @@
                                             </comboBoxCell>
                                         </comboBox>
                                         <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ucq-gB-egS">
-                                            <rect key="frame" x="264" y="-176" width="103" height="26"/>
+                                            <rect key="frame" x="264" y="352" width="103" height="26"/>
                                             <animations/>
                                             <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="Mjp-Jv-hgL">
                                                 <font key="font" metaFont="system"/>
@@ -3834,7 +3836,7 @@
                                             </comboBoxCell>
                                         </comboBox>
                                         <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uDf-CD-pVf">
-                                            <rect key="frame" x="264" y="-230" width="103" height="26"/>
+                                            <rect key="frame" x="264" y="298" width="103" height="26"/>
                                             <animations/>
                                             <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="7HJ-jz-SSY">
                                                 <font key="font" metaFont="system"/>
@@ -3843,7 +3845,7 @@
                                             </comboBoxCell>
                                         </comboBox>
                                         <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Pd-80-jW9">
-                                            <rect key="frame" x="264" y="-284" width="103" height="26"/>
+                                            <rect key="frame" x="264" y="244" width="103" height="26"/>
                                             <animations/>
                                             <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="Gfc-VS-IDn">
                                                 <font key="font" metaFont="system"/>
@@ -3852,7 +3854,7 @@
                                             </comboBoxCell>
                                         </comboBox>
                                         <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cBN-Vx-4jQ">
-                                            <rect key="frame" x="482" y="-454" width="180" height="22"/>
+                                            <rect key="frame" x="482" y="74" width="180" height="22"/>
                                             <animations/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="t9i-MT-SQm">
                                                 <font key="font" metaFont="system"/>
@@ -3861,7 +3863,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3ch-o1-1G2">
-                                            <rect key="frame" x="433" y="-451" width="43" height="17"/>
+                                            <rect key="frame" x="433" y="77" width="43" height="17"/>
                                             <animations/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Other:" id="Emt-HM-LVW">
                                                 <font key="font" metaFont="system"/>
@@ -3870,7 +3872,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lmz-7r-KZu">
-                                            <rect key="frame" x="604" y="-397" width="28" height="37"/>
+                                            <rect key="frame" x="604" y="131" width="28" height="37"/>
                                             <animations/>
                                             <buttonCell key="cell" type="check" title="4" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" inset="2" id="OH3-rg-bqr">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -3878,7 +3880,7 @@
                                             </buttonCell>
                                         </button>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xmJ-Pf-jNN">
-                                            <rect key="frame" x="540" y="-426" width="28" height="37"/>
+                                            <rect key="frame" x="540" y="102" width="28" height="37"/>
                                             <animations/>
                                             <buttonCell key="cell" type="check" title="2" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" inset="2" id="fNr-ty-yQv">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -3886,7 +3888,7 @@
                                             </buttonCell>
                                         </button>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tfi-A9-Sod">
-                                            <rect key="frame" x="572" y="-426" width="28" height="37"/>
+                                            <rect key="frame" x="572" y="102" width="28" height="37"/>
                                             <animations/>
                                             <buttonCell key="cell" type="check" title="3" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" inset="2" id="BOb-wC-ZLl">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -3894,7 +3896,7 @@
                                             </buttonCell>
                                         </button>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bDd-w9-kca">
-                                            <rect key="frame" x="540" y="-397" width="28" height="37"/>
+                                            <rect key="frame" x="540" y="131" width="28" height="37"/>
                                             <animations/>
                                             <buttonCell key="cell" type="check" title="2" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" inset="2" id="5bJ-2f-YaC">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -3902,7 +3904,7 @@
                                             </buttonCell>
                                         </button>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jxb-RX-ptG">
-                                            <rect key="frame" x="572" y="-397" width="28" height="37"/>
+                                            <rect key="frame" x="572" y="131" width="28" height="37"/>
                                             <animations/>
                                             <buttonCell key="cell" type="check" title="3" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" inset="2" id="Eao-5O-L3G">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -3910,7 +3912,7 @@
                                             </buttonCell>
                                         </button>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zqg-K6-4t0">
-                                            <rect key="frame" x="636" y="-426" width="28" height="37"/>
+                                            <rect key="frame" x="636" y="102" width="28" height="37"/>
                                             <animations/>
                                             <buttonCell key="cell" type="check" title="5" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" inset="2" id="8Sp-0Q-9fg">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -3918,7 +3920,7 @@
                                             </buttonCell>
                                         </button>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Gd-l8-JGP">
-                                            <rect key="frame" x="508" y="-397" width="28" height="37"/>
+                                            <rect key="frame" x="508" y="131" width="28" height="37"/>
                                             <animations/>
                                             <buttonCell key="cell" type="check" title="1" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" inset="2" id="rSM-gK-tiB">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -3926,7 +3928,7 @@
                                             </buttonCell>
                                         </button>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sih-ib-Jjt">
-                                            <rect key="frame" x="604" y="-426" width="28" height="37"/>
+                                            <rect key="frame" x="604" y="102" width="28" height="37"/>
                                             <animations/>
                                             <buttonCell key="cell" type="check" title="4" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" inset="2" id="9an-Vv-OSP">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -3934,7 +3936,7 @@
                                             </buttonCell>
                                         </button>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k9n-FB-liB">
-                                            <rect key="frame" x="508" y="-426" width="28" height="37"/>
+                                            <rect key="frame" x="508" y="102" width="28" height="37"/>
                                             <animations/>
                                             <buttonCell key="cell" type="check" title="1" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" inset="2" id="i29-bl-6Rs">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -3942,7 +3944,7 @@
                                             </buttonCell>
                                         </button>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WTo-gW-vPI">
-                                            <rect key="frame" x="636" y="-397" width="28" height="37"/>
+                                            <rect key="frame" x="636" y="131" width="28" height="37"/>
                                             <animations/>
                                             <buttonCell key="cell" type="check" title="5" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" inset="2" id="bkn-6X-1H4">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -3950,7 +3952,7 @@
                                             </buttonCell>
                                         </button>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A1J-T6-NdH">
-                                            <rect key="frame" x="603" y="-327" width="28" height="37"/>
+                                            <rect key="frame" x="603" y="201" width="28" height="37"/>
                                             <animations/>
                                             <buttonCell key="cell" type="check" title="4" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" inset="2" id="oD0-jg-DzK">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -3958,7 +3960,7 @@
                                             </buttonCell>
                                         </button>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ILe-mT-aQy">
-                                            <rect key="frame" x="539" y="-356" width="28" height="37"/>
+                                            <rect key="frame" x="539" y="172" width="28" height="37"/>
                                             <animations/>
                                             <buttonCell key="cell" type="check" title="2" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" inset="2" id="04J-12-JKi">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -3966,7 +3968,7 @@
                                             </buttonCell>
                                         </button>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EaH-V6-rJc">
-                                            <rect key="frame" x="571" y="-356" width="28" height="37"/>
+                                            <rect key="frame" x="571" y="172" width="28" height="37"/>
                                             <animations/>
                                             <buttonCell key="cell" type="check" title="3" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" inset="2" id="O1o-q2-SO8">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -3974,7 +3976,7 @@
                                             </buttonCell>
                                         </button>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IIc-U5-S8l">
-                                            <rect key="frame" x="539" y="-327" width="28" height="37"/>
+                                            <rect key="frame" x="539" y="201" width="28" height="37"/>
                                             <animations/>
                                             <buttonCell key="cell" type="check" title="2" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" inset="2" id="qwW-eV-WZQ">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -3982,7 +3984,7 @@
                                             </buttonCell>
                                         </button>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mzJ-to-1bC">
-                                            <rect key="frame" x="571" y="-327" width="28" height="37"/>
+                                            <rect key="frame" x="571" y="201" width="28" height="37"/>
                                             <animations/>
                                             <buttonCell key="cell" type="check" title="3" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" inset="2" id="erN-wY-0lU">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -3990,7 +3992,7 @@
                                             </buttonCell>
                                         </button>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ozh-c6-vww">
-                                            <rect key="frame" x="419" y="-332" width="57" height="22"/>
+                                            <rect key="frame" x="419" y="196" width="57" height="22"/>
                                             <animations/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Fingers" id="sXF-90-EHx">
                                                 <font key="font" metaFont="system"/>
@@ -3999,7 +4001,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z2H-zG-Z6H">
-                                            <rect key="frame" x="539" y="-284" width="65" height="22"/>
+                                            <rect key="frame" x="539" y="244" width="65" height="22"/>
                                             <animations/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Cyanosis" id="udO-DD-Jgc">
                                                 <font key="font" metaFont="system"/>
@@ -4008,7 +4010,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sHD-bB-WeK">
-                                            <rect key="frame" x="635" y="-356" width="28" height="37"/>
+                                            <rect key="frame" x="635" y="172" width="28" height="37"/>
                                             <animations/>
                                             <buttonCell key="cell" type="check" title="5" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" inset="2" id="Wjd-14-h23">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -4016,7 +4018,7 @@
                                             </buttonCell>
                                         </button>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JH1-dJ-hRo">
-                                            <rect key="frame" x="507" y="-327" width="28" height="37"/>
+                                            <rect key="frame" x="507" y="201" width="28" height="37"/>
                                             <animations/>
                                             <buttonCell key="cell" type="check" title="1" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" inset="2" id="OV0-J3-s6z">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -4024,7 +4026,7 @@
                                             </buttonCell>
                                         </button>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Eb-1Z-QzS">
-                                            <rect key="frame" x="603" y="-356" width="28" height="37"/>
+                                            <rect key="frame" x="603" y="172" width="28" height="37"/>
                                             <animations/>
                                             <buttonCell key="cell" type="check" title="4" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" inset="2" id="I89-tP-MRd">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -4032,7 +4034,7 @@
                                             </buttonCell>
                                         </button>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hD5-c2-42R">
-                                            <rect key="frame" x="507" y="-356" width="28" height="37"/>
+                                            <rect key="frame" x="507" y="172" width="28" height="37"/>
                                             <animations/>
                                             <buttonCell key="cell" type="check" title="1" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" inset="2" id="XFx-ul-cIQ">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -4040,7 +4042,7 @@
                                             </buttonCell>
                                         </button>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f0u-9U-6Du">
-                                            <rect key="frame" x="635" y="-327" width="28" height="37"/>
+                                            <rect key="frame" x="635" y="201" width="28" height="37"/>
                                             <animations/>
                                             <buttonCell key="cell" type="check" title="5" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" inset="2" id="vdy-3N-0Tk">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -4048,7 +4050,7 @@
                                             </buttonCell>
                                         </button>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UWH-w6-REV">
-                                            <rect key="frame" x="431" y="-402" width="44" height="22"/>
+                                            <rect key="frame" x="431" y="126" width="44" height="22"/>
                                             <animations/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Toes" id="fjD-AN-bPm">
                                                 <font key="font" metaFont="system"/>
@@ -4057,7 +4059,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dGj-Xm-Ffz">
-                                            <rect key="frame" x="483" y="-320" width="18" height="23"/>
+                                            <rect key="frame" x="483" y="208" width="18" height="23"/>
                                             <animations/>
                                             <buttonCell key="cell" type="smallSquare" title="L:" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="471-Oh-hcV">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -4068,7 +4070,7 @@
                                             </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JWE-Wr-yv0">
-                                            <rect key="frame" x="483" y="-390" width="18" height="23"/>
+                                            <rect key="frame" x="483" y="138" width="18" height="23"/>
                                             <animations/>
                                             <buttonCell key="cell" type="smallSquare" title="L:" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Pcn-uE-tG8">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -4079,7 +4081,7 @@
                                             </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QwD-UA-3XH">
-                                            <rect key="frame" x="483" y="-349" width="20" height="23"/>
+                                            <rect key="frame" x="483" y="179" width="20" height="23"/>
                                             <animations/>
                                             <buttonCell key="cell" type="smallSquare" title="R:" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="BQq-3Z-bf1">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -4090,7 +4092,7 @@
                                             </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bwi-3C-VYz">
-                                            <rect key="frame" x="483" y="-419" width="20" height="23"/>
+                                            <rect key="frame" x="483" y="109" width="20" height="23"/>
                                             <animations/>
                                             <buttonCell key="cell" type="smallSquare" title="R:" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="twk-f1-jaF">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -4101,7 +4103,7 @@
                                             </connections>
                                         </button>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Ab-ZZ-kUx">
-                                            <rect key="frame" x="455" y="-89" width="24" height="17"/>
+                                            <rect key="frame" x="455" y="439" width="24" height="17"/>
                                             <animations/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="CR" id="kib-Nu-K71">
                                                 <font key="font" metaFont="system"/>
@@ -4110,7 +4112,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="afC-Ed-3w2">
-                                            <rect key="frame" x="612" y="-95" width="103" height="26"/>
+                                            <rect key="frame" x="612" y="433" width="103" height="26"/>
                                             <animations/>
                                             <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="mkv-8X-3ON">
                                                 <font key="font" metaFont="system"/>
@@ -4119,7 +4121,7 @@
                                             </comboBoxCell>
                                         </comboBox>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X45-Dd-wPs">
-                                            <rect key="frame" x="434" y="-118" width="45" height="17"/>
+                                            <rect key="frame" x="434" y="410" width="45" height="17"/>
                                             <animations/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Spider" id="YKR-zB-QBA">
                                                 <font key="font" metaFont="system"/>
@@ -4128,7 +4130,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k0y-O1-iBA">
-                                            <rect key="frame" x="485" y="-122" width="103" height="26"/>
+                                            <rect key="frame" x="485" y="406" width="103" height="26"/>
                                             <animations/>
                                             <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="s2F-Jk-dgL">
                                                 <font key="font" metaFont="system"/>
@@ -4137,7 +4139,7 @@
                                             </comboBoxCell>
                                         </comboBox>
                                         <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RnB-Ld-g8l">
-                                            <rect key="frame" x="612" y="-123" width="103" height="26"/>
+                                            <rect key="frame" x="612" y="405" width="103" height="26"/>
                                             <animations/>
                                             <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="mwD-LV-n9D">
                                                 <font key="font" metaFont="system"/>
@@ -4146,7 +4148,7 @@
                                             </comboBoxCell>
                                         </comboBox>
                                         <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fLs-mv-J7U">
-                                            <rect key="frame" x="485" y="-151" width="103" height="26"/>
+                                            <rect key="frame" x="485" y="377" width="103" height="26"/>
                                             <animations/>
                                             <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="yah-Xj-twL">
                                                 <font key="font" metaFont="system"/>
@@ -4155,7 +4157,7 @@
                                             </comboBoxCell>
                                         </comboBox>
                                         <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l1P-y0-82k">
-                                            <rect key="frame" x="612" y="-152" width="103" height="26"/>
+                                            <rect key="frame" x="612" y="376" width="103" height="26"/>
                                             <animations/>
                                             <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="bYs-bd-vtX">
                                                 <font key="font" metaFont="system"/>
@@ -4164,7 +4166,7 @@
                                             </comboBoxCell>
                                         </comboBox>
                                         <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dML-ty-Kpk">
-                                            <rect key="frame" x="485" y="-179" width="103" height="26"/>
+                                            <rect key="frame" x="485" y="349" width="103" height="26"/>
                                             <animations/>
                                             <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="MER-IU-QMf">
                                                 <font key="font" metaFont="system"/>
@@ -4173,7 +4175,7 @@
                                             </comboBoxCell>
                                         </comboBox>
                                         <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EVi-Wm-a5g">
-                                            <rect key="frame" x="612" y="-180" width="103" height="26"/>
+                                            <rect key="frame" x="612" y="348" width="103" height="26"/>
                                             <animations/>
                                             <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="8cv-EW-qAl">
                                                 <font key="font" metaFont="system"/>
@@ -4182,7 +4184,7 @@
                                             </comboBoxCell>
                                         </comboBox>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aFu-Wg-8bI">
-                                            <rect key="frame" x="422" y="-203" width="57" height="17"/>
+                                            <rect key="frame" x="422" y="325" width="57" height="17"/>
                                             <animations/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Varicose" id="4vp-PY-G96">
                                                 <font key="font" metaFont="system"/>
@@ -4191,7 +4193,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k63-0G-JUM">
-                                            <rect key="frame" x="485" y="-207" width="103" height="26"/>
+                                            <rect key="frame" x="485" y="321" width="103" height="26"/>
                                             <animations/>
                                             <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="Hhr-Xh-cJJ">
                                                 <font key="font" metaFont="system"/>
@@ -4200,7 +4202,7 @@
                                             </comboBoxCell>
                                         </comboBox>
                                         <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FJM-YZ-xwL">
-                                            <rect key="frame" x="485" y="-235" width="103" height="26"/>
+                                            <rect key="frame" x="485" y="293" width="103" height="26"/>
                                             <animations/>
                                             <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="Rii-YB-3bH">
                                                 <font key="font" metaFont="system"/>
@@ -4209,7 +4211,7 @@
                                             </comboBoxCell>
                                         </comboBox>
                                         <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eaM-rf-MrT">
-                                            <rect key="frame" x="612" y="-208" width="103" height="26"/>
+                                            <rect key="frame" x="612" y="320" width="103" height="26"/>
                                             <animations/>
                                             <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="6OF-uO-bHG">
                                                 <font key="font" metaFont="system"/>
@@ -4218,7 +4220,7 @@
                                             </comboBoxCell>
                                         </comboBox>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PuT-Bv-S01">
-                                            <rect key="frame" x="419" y="-231" width="60" height="17"/>
+                                            <rect key="frame" x="419" y="297" width="60" height="17"/>
                                             <animations/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Clubbing" id="MrY-ss-HnM">
                                                 <font key="font" metaFont="system"/>
@@ -4227,7 +4229,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gKt-LT-gIK">
-                                            <rect key="frame" x="519" y="-62" width="22" height="22"/>
+                                            <rect key="frame" x="519" y="466" width="22" height="22"/>
                                             <animations/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="L" id="IOh-4m-igt">
                                                 <font key="font" metaFont="system"/>
@@ -4236,7 +4238,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y2f-aa-Wsa">
-                                            <rect key="frame" x="647" y="-63" width="22" height="22"/>
+                                            <rect key="frame" x="647" y="465" width="22" height="22"/>
                                             <animations/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="R" id="e3q-IB-TQh">
                                                 <font key="font" metaFont="system"/>
@@ -4245,7 +4247,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4bM-jo-2dJ">
-                                            <rect key="frame" x="485" y="-94" width="103" height="26"/>
+                                            <rect key="frame" x="485" y="434" width="103" height="26"/>
                                             <animations/>
                                             <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="c7y-SH-jGZ">
                                                 <font key="font" metaFont="system"/>
@@ -4253,6 +4255,22 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </comboBoxCell>
                                         </comboBox>
+                                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O9P-ke-nuV">
+                                            <rect key="frame" x="291" y="492" width="42" height="18"/>
+                                            <animations/>
+                                            <buttonCell key="cell" type="check" title="CR" bezelStyle="regularSquare" imagePosition="left" inset="2" id="4ye-JL-0Rb">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                        </button>
+                                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M4X-A6-meR">
+                                            <rect key="frame" x="222" y="492" width="63" height="18"/>
+                                            <animations/>
+                                            <buttonCell key="cell" type="check" title="Pulses" bezelStyle="regularSquare" imagePosition="left" inset="2" id="aXh-2n-4kC">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                        </button>
                                     </subviews>
                                     <animations/>
                                 </view>
@@ -4980,268 +4998,12 @@
                                             <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                             <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </box>
-                                        <box autoresizesSubviews="NO" fixedFrame="YES" title="MSK" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="s6H-uv-wKq">
-                                            <rect key="frame" x="6" y="60" width="392" height="226"/>
-                                            <view key="contentView" id="BDx-0w-WYu">
-                                                <rect key="frame" x="1" y="1" width="390" height="210"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <subviews>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jtg-Y6-sUF">
-                                                        <rect key="frame" x="44" y="126" width="33" height="17"/>
-                                                        <animations/>
-                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="TTP:" id="oYY-fG-3Sw">
-                                                            <font key="font" metaFont="system"/>
-                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                        </textFieldCell>
-                                                    </textField>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5gS-EZ-mH6">
-                                                        <rect key="frame" x="83" y="154" width="39" height="17"/>
-                                                        <animations/>
-                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="/5 Str" id="dAd-fq-oGK">
-                                                            <font key="font" metaFont="system"/>
-                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                        </textFieldCell>
-                                                    </textField>
-                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oA0-nq-fES">
-                                                        <rect key="frame" x="44" y="180" width="54" height="18"/>
-                                                        <animations/>
-                                                        <buttonCell key="cell" type="check" title="ROM" bezelStyle="regularSquare" imagePosition="left" inset="2" id="3Tp-cn-0n2">
-                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                            <font key="font" metaFont="system"/>
-                                                        </buttonCell>
-                                                    </button>
-                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gj8-dQ-bJ1">
-                                                        <rect key="frame" x="154" y="180" width="40" height="18"/>
-                                                        <animations/>
-                                                        <buttonCell key="cell" type="check" title="NT" bezelStyle="regularSquare" imagePosition="left" inset="2" id="MCH-fG-BMe">
-                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                            <font key="font" metaFont="system"/>
-                                                        </buttonCell>
-                                                    </button>
-                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IWe-QZ-hHI">
-                                                        <rect key="frame" x="215" y="79" width="28" height="37"/>
-                                                        <animations/>
-                                                        <buttonCell key="cell" type="check" title="4" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" inset="2" id="yQY-kb-Pxz">
-                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                            <font key="font" metaFont="system"/>
-                                                        </buttonCell>
-                                                    </button>
-                                                    <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BBA-7y-hln">
-                                                        <rect key="frame" x="212" y="148" width="104" height="26"/>
-                                                        <animations/>
-                                                        <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="20" id="5Ew-jC-cfV">
-                                                            <font key="font" metaFont="system"/>
-                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                        </comboBoxCell>
-                                                    </comboBox>
-                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="siP-Dl-Lbq">
-                                                        <rect key="frame" x="151" y="50" width="28" height="37"/>
-                                                        <animations/>
-                                                        <buttonCell key="cell" type="check" title="2" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" inset="2" id="ZE3-hX-wLM">
-                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                            <font key="font" metaFont="system"/>
-                                                        </buttonCell>
-                                                    </button>
-                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ekh-KY-PDc">
-                                                        <rect key="frame" x="183" y="50" width="28" height="37"/>
-                                                        <animations/>
-                                                        <buttonCell key="cell" type="check" title="3" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" inset="2" id="KQl-t1-fBI">
-                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                            <font key="font" metaFont="system"/>
-                                                        </buttonCell>
-                                                    </button>
-                                                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5qI-vd-nI3">
-                                                        <rect key="frame" x="46" y="152" width="31" height="22"/>
-                                                        <animations/>
-                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="bPy-T2-YTY">
-                                                            <font key="font" metaFont="system"/>
-                                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                        </textFieldCell>
-                                                    </textField>
-                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2W6-hJ-JcE">
-                                                        <rect key="frame" x="151" y="79" width="28" height="37"/>
-                                                        <animations/>
-                                                        <buttonCell key="cell" type="check" title="2" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" inset="2" id="ote-dy-7rT">
-                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                            <font key="font" metaFont="system"/>
-                                                        </buttonCell>
-                                                    </button>
-                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="juZ-34-8xQ">
-                                                        <rect key="frame" x="183" y="79" width="28" height="37"/>
-                                                        <animations/>
-                                                        <buttonCell key="cell" type="check" title="3" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" inset="2" id="agD-RO-6XT">
-                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                            <font key="font" metaFont="system"/>
-                                                        </buttonCell>
-                                                    </button>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z0X-Dy-UfN">
-                                                        <rect key="frame" x="44" y="61" width="57" height="42"/>
-                                                        <animations/>
-                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" id="WNI-xP-UiA">
-                                                            <font key="font" metaFont="system"/>
-                                                            <string key="title">Hammer
-Toes</string>
-                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                        </textFieldCell>
-                                                    </textField>
-                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gg8-pf-eVy">
-                                                        <rect key="frame" x="247" y="50" width="28" height="37"/>
-                                                        <animations/>
-                                                        <buttonCell key="cell" type="check" title="5" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" inset="2" id="yuY-lB-MZF">
-                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                            <font key="font" metaFont="system"/>
-                                                        </buttonCell>
-                                                    </button>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="58o-Ht-Tay">
-                                                        <rect key="frame" x="184" y="126" width="33" height="17"/>
-                                                        <animations/>
-                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Bun:" id="bha-gt-qRJ">
-                                                            <font key="font" metaFont="system"/>
-                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                        </textFieldCell>
-                                                    </textField>
-                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6ef-AR-mOU">
-                                                        <rect key="frame" x="119" y="79" width="28" height="37"/>
-                                                        <animations/>
-                                                        <buttonCell key="cell" type="check" title="1" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" inset="2" id="IJw-fs-aaT">
-                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                            <font key="font" metaFont="system"/>
-                                                        </buttonCell>
-                                                    </button>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1ln-PI-D11">
-                                                        <rect key="frame" x="44" y="17" width="43" height="17"/>
-                                                        <animations/>
-                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Other:" id="VhX-Wn-PtX">
-                                                            <font key="font" metaFont="system"/>
-                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                        </textFieldCell>
-                                                    </textField>
-                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Iow-eD-g74">
-                                                        <rect key="frame" x="215" y="50" width="28" height="37"/>
-                                                        <animations/>
-                                                        <buttonCell key="cell" type="check" title="4" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" inset="2" id="Yo9-ws-6pM">
-                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                            <font key="font" metaFont="system"/>
-                                                        </buttonCell>
-                                                    </button>
-                                                    <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qwa-Fi-KsW">
-                                                        <rect key="frame" x="223" y="120" width="49" height="26"/>
-                                                        <animations/>
-                                                        <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="20" id="H6H-JT-Md3">
-                                                            <font key="font" metaFont="system"/>
-                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                        </comboBoxCell>
-                                                    </comboBox>
-                                                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tea-bj-s15">
-                                                        <rect key="frame" x="93" y="14" width="259" height="22"/>
-                                                        <animations/>
-                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="8n4-Ae-4CK">
-                                                            <font key="font" metaFont="system"/>
-                                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                        </textFieldCell>
-                                                    </textField>
-                                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Yu-cB-0wa">
-                                                        <rect key="frame" x="18" y="178" width="20" height="23"/>
-                                                        <animations/>
-                                                        <buttonCell key="cell" type="smallSquare" title="N:" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="qDk-kE-dgL">
-                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                            <font key="font" metaFont="system"/>
-                                                        </buttonCell>
-                                                        <connections>
-                                                            <action selector="takeMSKNorm:" target="Voe-Tx-rLC" id="fi1-Se-Pxu"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Td-vT-XsR">
-                                                        <rect key="frame" x="119" y="50" width="28" height="37"/>
-                                                        <animations/>
-                                                        <buttonCell key="cell" type="check" title="1" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" inset="2" id="IZh-eD-KS3">
-                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                            <font key="font" metaFont="system"/>
-                                                        </buttonCell>
-                                                    </button>
-                                                    <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nUG-PG-a8a">
-                                                        <rect key="frame" x="83" y="120" width="98" height="26"/>
-                                                        <animations/>
-                                                        <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="20" id="tWN-Eh-zdJ">
-                                                            <font key="font" metaFont="system"/>
-                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                        </comboBoxCell>
-                                                    </comboBox>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M6T-qL-YA7">
-                                                        <rect key="frame" x="20" y="153" width="17" height="17"/>
-                                                        <animations/>
-                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="A:" id="8YQ-hj-fO4">
-                                                            <font key="font" metaFont="system"/>
-                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                        </textFieldCell>
-                                                    </textField>
-                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HEf-HA-LW4">
-                                                        <rect key="frame" x="102" y="180" width="48" height="18"/>
-                                                        <animations/>
-                                                        <buttonCell key="cell" type="check" title="STR" bezelStyle="regularSquare" imagePosition="left" inset="2" id="XcI-5Q-BRq">
-                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                            <font key="font" metaFont="system"/>
-                                                        </buttonCell>
-                                                    </button>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ncm-4B-y76">
-                                                        <rect key="frame" x="105" y="91" width="16" height="17"/>
-                                                        <animations/>
-                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="L:" id="Yig-Yk-OKc">
-                                                            <font key="font" metaFont="system"/>
-                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                        </textFieldCell>
-                                                    </textField>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kfh-FM-WOM">
-                                                        <rect key="frame" x="105" y="61" width="18" height="17"/>
-                                                        <animations/>
-                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="R:" id="zYj-Bk-eaJ">
-                                                            <font key="font" metaFont="system"/>
-                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                        </textFieldCell>
-                                                    </textField>
-                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qQT-1X-6Dc">
-                                                        <rect key="frame" x="247" y="79" width="28" height="37"/>
-                                                        <animations/>
-                                                        <buttonCell key="cell" type="check" title="5" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" inset="2" id="0uI-O0-Sx4">
-                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                            <font key="font" metaFont="system"/>
-                                                        </buttonCell>
-                                                    </button>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5o3-0z-Q3K">
-                                                        <rect key="frame" x="154" y="154" width="52" height="17"/>
-                                                        <animations/>
-                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="↓ ROM:" id="4JJ-dJ-9Qz">
-                                                            <font key="font" metaFont="system"/>
-                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                        </textFieldCell>
-                                                    </textField>
-                                                </subviews>
-                                                <animations/>
-                                            </view>
-                                            <animations/>
-                                            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                                            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </box>
                                     </subviews>
                                     <animations/>
                                 </view>
                             </tabViewItem>
                             <tabViewItem label="Breast" identifier="" id="NhO-wh-0gH">
-                                <view key="view" ambiguous="YES" id="1gb-DK-6Yf">
+                                <view key="view" id="1gb-DK-6Yf">
                                     <rect key="frame" x="10" y="33" width="824" height="528"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
@@ -7604,9 +7366,254 @@ Toes</string>
             <view key="contentView" id="PnZ-Zu-ZKc">
                 <rect key="frame" x="0.0" y="0.0" width="726" height="615"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jtg-Y6-sUF">
+                        <rect key="frame" x="88" y="384" width="33" height="17"/>
+                        <animations/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="TTP:" id="oYY-fG-3Sw">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5gS-EZ-mH6">
+                        <rect key="frame" x="127" y="412" width="39" height="17"/>
+                        <animations/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="/5 Str" id="dAd-fq-oGK">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oA0-nq-fES">
+                        <rect key="frame" x="88" y="438" width="54" height="18"/>
+                        <animations/>
+                        <buttonCell key="cell" type="check" title="ROM" bezelStyle="regularSquare" imagePosition="left" inset="2" id="3Tp-cn-0n2">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                    </button>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gj8-dQ-bJ1">
+                        <rect key="frame" x="198" y="438" width="40" height="18"/>
+                        <animations/>
+                        <buttonCell key="cell" type="check" title="NT" bezelStyle="regularSquare" imagePosition="left" inset="2" id="MCH-fG-BMe">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                    </button>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IWe-QZ-hHI">
+                        <rect key="frame" x="259" y="337" width="28" height="37"/>
+                        <animations/>
+                        <buttonCell key="cell" type="check" title="4" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" inset="2" id="yQY-kb-Pxz">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                    </button>
+                    <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BBA-7y-hln">
+                        <rect key="frame" x="256" y="406" width="104" height="26"/>
+                        <animations/>
+                        <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="20" id="5Ew-jC-cfV">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </comboBoxCell>
+                    </comboBox>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="siP-Dl-Lbq">
+                        <rect key="frame" x="195" y="308" width="28" height="37"/>
+                        <animations/>
+                        <buttonCell key="cell" type="check" title="2" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" inset="2" id="ZE3-hX-wLM">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                    </button>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ekh-KY-PDc">
+                        <rect key="frame" x="227" y="308" width="28" height="37"/>
+                        <animations/>
+                        <buttonCell key="cell" type="check" title="3" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" inset="2" id="KQl-t1-fBI">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                    </button>
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5qI-vd-nI3">
+                        <rect key="frame" x="90" y="410" width="31" height="22"/>
+                        <animations/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="bPy-T2-YTY">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2W6-hJ-JcE">
+                        <rect key="frame" x="195" y="337" width="28" height="37"/>
+                        <animations/>
+                        <buttonCell key="cell" type="check" title="2" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" inset="2" id="ote-dy-7rT">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                    </button>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="juZ-34-8xQ">
+                        <rect key="frame" x="227" y="337" width="28" height="37"/>
+                        <animations/>
+                        <buttonCell key="cell" type="check" title="3" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" inset="2" id="agD-RO-6XT">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                    </button>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z0X-Dy-UfN">
+                        <rect key="frame" x="88" y="319" width="57" height="42"/>
+                        <animations/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" id="WNI-xP-UiA">
+                            <font key="font" metaFont="system"/>
+                            <string key="title">Hammer
+Toes</string>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gg8-pf-eVy">
+                        <rect key="frame" x="291" y="308" width="28" height="37"/>
+                        <animations/>
+                        <buttonCell key="cell" type="check" title="5" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" inset="2" id="yuY-lB-MZF">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                    </button>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="58o-Ht-Tay">
+                        <rect key="frame" x="228" y="384" width="33" height="17"/>
+                        <animations/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Bun:" id="bha-gt-qRJ">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6ef-AR-mOU">
+                        <rect key="frame" x="163" y="337" width="28" height="37"/>
+                        <animations/>
+                        <buttonCell key="cell" type="check" title="1" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" inset="2" id="IJw-fs-aaT">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                    </button>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1ln-PI-D11">
+                        <rect key="frame" x="88" y="275" width="43" height="17"/>
+                        <animations/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Other:" id="VhX-Wn-PtX">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Iow-eD-g74">
+                        <rect key="frame" x="259" y="308" width="28" height="37"/>
+                        <animations/>
+                        <buttonCell key="cell" type="check" title="4" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" inset="2" id="Yo9-ws-6pM">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                    </button>
+                    <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qwa-Fi-KsW">
+                        <rect key="frame" x="267" y="378" width="49" height="26"/>
+                        <animations/>
+                        <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="20" id="H6H-JT-Md3">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </comboBoxCell>
+                    </comboBox>
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tea-bj-s15">
+                        <rect key="frame" x="137" y="272" width="259" height="22"/>
+                        <animations/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="8n4-Ae-4CK">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Yu-cB-0wa">
+                        <rect key="frame" x="62" y="436" width="20" height="23"/>
+                        <animations/>
+                        <buttonCell key="cell" type="smallSquare" title="N:" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="qDk-kE-dgL">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="takeMSKNorm:" target="Voe-Tx-rLC" id="fi1-Se-Pxu"/>
+                        </connections>
+                    </button>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Td-vT-XsR">
+                        <rect key="frame" x="163" y="308" width="28" height="37"/>
+                        <animations/>
+                        <buttonCell key="cell" type="check" title="1" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" inset="2" id="IZh-eD-KS3">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                    </button>
+                    <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nUG-PG-a8a">
+                        <rect key="frame" x="127" y="378" width="98" height="26"/>
+                        <animations/>
+                        <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="20" id="tWN-Eh-zdJ">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </comboBoxCell>
+                    </comboBox>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M6T-qL-YA7">
+                        <rect key="frame" x="64" y="411" width="17" height="17"/>
+                        <animations/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="A:" id="8YQ-hj-fO4">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HEf-HA-LW4">
+                        <rect key="frame" x="146" y="438" width="48" height="18"/>
+                        <animations/>
+                        <buttonCell key="cell" type="check" title="STR" bezelStyle="regularSquare" imagePosition="left" inset="2" id="XcI-5Q-BRq">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                    </button>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ncm-4B-y76">
+                        <rect key="frame" x="149" y="349" width="16" height="17"/>
+                        <animations/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="L:" id="Yig-Yk-OKc">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kfh-FM-WOM">
+                        <rect key="frame" x="149" y="319" width="18" height="17"/>
+                        <animations/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="R:" id="zYj-Bk-eaJ">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qQT-1X-6Dc">
+                        <rect key="frame" x="291" y="337" width="28" height="37"/>
+                        <animations/>
+                        <buttonCell key="cell" type="check" title="5" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" inset="2" id="0uI-O0-Sx4">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                    </button>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5o3-0z-Q3K">
+                        <rect key="frame" x="198" y="412" width="52" height="17"/>
+                        <animations/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="↓ ROM:" id="4JJ-dJ-9Qz">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                </subviews>
                 <animations/>
             </view>
-            <point key="canvasLocation" x="1454" y="404.5"/>
+            <point key="canvasLocation" x="1380" y="402.5"/>
         </window>
     </objects>
 </document>

@@ -95,8 +95,11 @@ func processAllControlTypes(controllerArray: [AnyObject], stringArray: [String])
 func makeFirstCharacterInStringArrayUppercase(theArray: [String])->[String] {
 	var changedArray = theArray
 	var firstItem = theArray[0]
+	//Added this check to avoid an error in cases where the first item in a passed array is an empty string
+	if firstItem != "" {
 	firstItem.replaceRange(firstItem.startIndex...firstItem.startIndex, with: String(firstItem[firstItem.startIndex]).capitalizedString)
-	changedArray[0] = firstItem	
+	}
+	changedArray[0] = firstItem
 	return changedArray
 }
 
