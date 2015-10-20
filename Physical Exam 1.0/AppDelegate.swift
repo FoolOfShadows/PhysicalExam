@@ -23,6 +23,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var genAObeseView: NSButton!
     @IBOutlet weak var genAThinView: NSButton!
     @IBOutlet weak var genACachView: NSButton!
+	@IBOutlet weak var genADTimeView: NSButton!
+	@IBOutlet weak var genADPlaceView: NSButton!
+	@IBOutlet weak var genADPersonView: NSButton!
     @IBOutlet weak var genAUnkemptView: NSButton!
     @IBOutlet weak var genAOtherTextView: NSTextField!
     
@@ -251,6 +254,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var mskNROMView: NSButton!
     @IBOutlet weak var mskNSTRView: NSButton!
     @IBOutlet weak var mskNNTView: NSButton!
+	@IBOutlet weak var mskNToneView: NSButton!
     @IBOutlet weak var mskAStrQuantView: NSTextField!
     @IBOutlet weak var mskAROMComboView: NSComboBox!
     @IBOutlet weak var mskATTPComboView: NSComboBox!
@@ -671,7 +675,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBAction func takeBreastNorm(sender: AnyObject) {
         breastNNomassView.state = NSOnState
         breastNNonipdcView.state = NSOnState
-		breastNNoAxLAD.state = NSOffState
+		breastNNoAxLAD.state = NSOnState
         breastNNTView.state = NSOnState
     }
     
@@ -749,6 +753,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         genAObeseView.state = NSOffState
         genAThinView.state = NSOffState
         genACachView.state = NSOffState
+		genADTimeView.state = NSOffState
+		genADPersonView.state = NSOffState
+		genADPlaceView.state = NSOffState
         genAUnkemptView.state = NSOffState
         genAOtherTextView.stringValue = ""
 		
@@ -1143,6 +1150,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		
 		mskNROMView.state = NSOffState
 		mskNSTRView.state = NSOffState
+		mskNNTView.state = NSOffState
 		mskNNTView.state = NSOffState
 		mskAStrQuantView.stringValue = ""
 		mskAROMComboView.removeAllItems()
@@ -1870,8 +1878,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	func processGeneral() ->String {
 		//Process GEN controllers
 		var genVerbiageResults = ""
-		let genVarList = [genASomnView, genAArouseView, genAObeseView, genAThinView, genACachView, genAUnkemptView, genAOtherTextView, genNAlertView, genNOrientedView, genNNADView, genNWDView]
-		let genVerbiageList = ["somnolent","arousable","obese","thin","cachectic","unkempt", "\(genAOtherTextView.stringValue)","alert","oriented x3","no acute distress","well developed, well nourished"]
+		let genVarList = [genASomnView, genAArouseView, genAObeseView, genAThinView, genACachView, genADTimeView, genADPlaceView, genADPersonView, genAUnkemptView, genAOtherTextView, genNAlertView, genNOrientedView, genNNADView, genNWDView]
+		let genVerbiageList = ["somnolent", "arousable", "obese", "thin", "cachectic", "not oriented to time", "not oriented to place", "not oriented to person", "unkempt", "\(genAOtherTextView.stringValue)", "alert", "oriented x3", "no acute distress", "well developed, well nourished"]
 		var genVerbiageProcessedList = processAllControlTypes(genVarList, stringArray: genVerbiageList)
 		if !genVerbiageProcessedList.isEmpty {
 			genVerbiageProcessedList = makeFirstCharacterInStringArrayUppercase(genVerbiageProcessedList)
@@ -2354,8 +2362,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		var mskVerbiageResults = ""
 		var mskHammerResults = ""
 		//Process basic MSK controllers
-		let mskVarList = [mskAStrQuantView, mskAROMComboView, mskATTPComboView, mskABunComboView, mskOtherTextView, mskNROMView, mskNSTRView, mskNNTView]
-		let mskVerbiageList = ["\(mskAStrQuantView.stringValue)/5 strength", "decreased range of motion: \(mskAROMComboView.stringValue)", "tender to palpation: \(mskATTPComboView.stringValue)", "bunion: \(mskABunComboView.stringValue) foot", "\(mskOtherTextView.stringValue)", "normal range of motion", "normal strength", "nontender"]
+		let mskVarList = [mskAStrQuantView, mskAROMComboView, mskATTPComboView, mskABunComboView, mskOtherTextView, mskNROMView, mskNSTRView, mskNNTView, mskNNTView]
+		let mskVerbiageList = ["\(mskAStrQuantView.stringValue)/5 strength", "decreased range of motion: \(mskAROMComboView.stringValue)", "tender to palpation: \(mskATTPComboView.stringValue)", "bunion: \(mskABunComboView.stringValue) foot", "\(mskOtherTextView.stringValue)", "normal range of motion", "normal strength", "nontender", "normal tone"]
 		var mskVerbiageProcessedList = processAllControlTypes(mskVarList, stringArray: mskVerbiageList)
 		
 		//Process Hammer Toes
@@ -2382,7 +2390,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		}
 		
 		return mskVerbiageResults
-	} //Done?
+	}
 	
 	func processSkin() ->String {
 		//Process Skin controllers
