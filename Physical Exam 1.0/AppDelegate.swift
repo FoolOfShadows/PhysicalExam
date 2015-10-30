@@ -12,6 +12,7 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var window: NSWindow!
+	@IBOutlet weak var headSpineWindow: NSWindow!
 
     //General Section Controls
     @IBOutlet weak var genNAlertView: NSButton!
@@ -100,7 +101,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     //CV Section Controls
     @IBOutlet weak var cvNRRRView: NSButton!
-    @IBOutlet weak var cvNMRGView: NSButton!
+    @IBOutlet weak var cvNMurView: NSButton!
+	@IBOutlet weak var cvNGalView: NSButton!
+	@IBOutlet weak var cvNRubView: NSButton!
     @IBOutlet weak var cvNPMIView: NSButton!
     @IBOutlet weak var cvNs1View: NSButton!
     @IBOutlet weak var cvNs2View: NSButton!
@@ -255,9 +258,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var mskNSTRView: NSButton!
     @IBOutlet weak var mskNNTView: NSButton!
 	@IBOutlet weak var mskNToneView: NSButton!
-    @IBOutlet weak var mskAStrQuantView: NSTextField!
-    @IBOutlet weak var mskAROMComboView: NSComboBox!
-    @IBOutlet weak var mskATTPComboView: NSComboBox!
+	@IBOutlet weak var mskASubsectionView: NSTextField!
     @IBOutlet weak var mskABunComboView: NSComboBox!
     @IBOutlet weak var mskAHammerL1View: NSButton!
     @IBOutlet weak var mskAHammerL2View: NSButton!
@@ -601,7 +602,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBAction func takeCVNorm(sender: AnyObject) {
         cvNRRRView.state = NSOnState
-        cvNMRGView.state = NSOnState
+        cvNMurView.state = NSOnState
+		cvNGalView.state = NSOnState
+		cvNRubView.state = NSOnState
         cvNPMIView.state = NSOnState
         cvNs1View.state = NSOnState
         cvNs2View.state = NSOnState
@@ -639,6 +642,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         mskNROMView.state = NSOnState
         mskNSTRView.state = NSOnState
         mskNNTView.state = NSOnState
+		mskNToneView.state = NSOnState
     }
     
     @IBAction func takeGINorm(sender: AnyObject) {
@@ -846,7 +850,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
 	@IBAction func takeClearTabTwo(sender: AnyObject) {
 		cvNRRRView.state = NSOffState
-		cvNMRGView.state = NSOffState
+		cvNMurView.state = NSOffState
+		cvNGalView.state = NSOffState
+		cvNRubView.state = NSOffState
 		cvNPMIView.state = NSOffState
 		cvNs1View.state = NSOffState
 		cvNs2View.state = NSOffState
@@ -1152,13 +1158,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		mskNSTRView.state = NSOffState
 		mskNNTView.state = NSOffState
 		mskNNTView.state = NSOffState
-		mskAStrQuantView.stringValue = ""
-		mskAROMComboView.removeAllItems()
-		mskAROMComboView.addItemsWithObjectValues([""])
-		mskAROMComboView.selectItemAtIndex(0)
-		mskATTPComboView.removeAllItems()
-		mskATTPComboView.addItemsWithObjectValues(["", "Neck", "Trap R", "Trap L", "Shldr R", "Shldr L", "Elbow R", "Elbow L", "Wrist R", "Wrist L", "Hand R", "Hand L", "Back", "Hip R", "Hip L", "Knee R", "Knee L", "Ankle R", "Ankle L", "Foot R", "Foot L"])
-		mskATTPComboView.selectItemAtIndex(0)
+		mskASubsectionView.stringValue = ""
 		mskABunComboView.removeAllItems()
 		mskABunComboView.addItemsWithObjectValues(cbRLBList)
 		mskABunComboView.selectItemAtIndex(0)
@@ -1710,13 +1710,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 //		mskNROMView.state = NSOnState
 //		mskNSTRView.state = NSOnState
 //		mskNNTView.state = NSOnState
-		mskAStrQuantView.stringValue = "8 or less"
-		mskAROMComboView.removeAllItems()
-		mskAROMComboView.addItemsWithObjectValues(["", "Decreased range of motion"])
-		mskAROMComboView.selectItemAtIndex(1)
-		mskATTPComboView.removeAllItems()
-		mskATTPComboView.addItemsWithObjectValues(["", "Neck", "Trap R", "Trap L", "Shldr R", "Shldr L", "Elbow R", "Elbow L", "Wrist R", "Wrist L", "Hand R", "Hand L", "Back", "Hip R", "Hip L", "Knee R", "Knee L", "Ankle R", "Ankle L", "Foot R", "Foot L"])
-		mskATTPComboView.selectItemAtIndex(1)
 		mskABunComboView.removeAllItems()
 		mskABunComboView.addItemsWithObjectValues(cbRLBList)
 		mskABunComboView.selectItemAtIndex(1)
@@ -2108,8 +2101,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	func processCV() ->String {
 		//Process CV controllers
 		var cvVerbiageResults = ""
-		let cvVarList = [cvAPMBView, cvARegView, cvAIrrView, cvATachyView, cvABradyView, cvAs3View, cvAs4View, cvASEMQuantView, cvOtherTextView, cvNRRRView, cvNMRGView, cvNPMIView, cvNs1View, cvNs2View]
-		let cvVerbiageList = ["premature beat", "regularly irregular" ,"irregularly irregular", "tachycardia","bradycardia", "S3 present","S4 present", "\(cvASEMQuantView.stringValue)/6 \(cvASEMPopView.titleOfSelectedItem!) murmur \(cvASEMComboView.stringValue)", "\(cvOtherTextView.stringValue)", "heart regular rate & rhythm","no murmur, no rubs, no gallops","normal point of maximal impulse","normal s1","normal s2"]
+		let cvVarList = [cvAPMBView, cvARegView, cvAIrrView, cvATachyView, cvABradyView, cvAs3View, cvAs4View, cvASEMQuantView, cvOtherTextView, cvNRRRView, cvNMurView, cvNGalView, cvNRubView, cvNPMIView, cvNs1View, cvNs2View]
+		let cvVerbiageList = ["premature beat", "regularly irregular" ,"irregularly irregular", "tachycardia","bradycardia", "S3 present","S4 present", "\(cvASEMQuantView.stringValue)/6 \(cvASEMPopView.titleOfSelectedItem!) murmur \(cvASEMComboView.stringValue)", "\(cvOtherTextView.stringValue)", "heart regular rate & rhythm", "no murmur", "no gallops", "no rubs", "normal point of maximal impulse","normal s1","normal s2"]
 		var cvVerbiageProcessedList = processAllControlTypes(cvVarList, stringArray: cvVerbiageList)
 		if !cvVerbiageProcessedList.isEmpty {
 			cvVerbiageProcessedList = makeFirstCharacterInStringArrayUppercase(cvVerbiageProcessedList)
@@ -2362,9 +2355,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		var mskVerbiageResults = ""
 		var mskHammerResults = ""
 		//Process basic MSK controllers
-		let mskVarList = [mskAStrQuantView, mskAROMComboView, mskATTPComboView, mskABunComboView, mskOtherTextView, mskNROMView, mskNSTRView, mskNNTView, mskNNTView]
-		let mskVerbiageList = ["\(mskAStrQuantView.stringValue)/5 strength", "decreased range of motion: \(mskAROMComboView.stringValue)", "tender to palpation: \(mskATTPComboView.stringValue)", "bunion: \(mskABunComboView.stringValue) foot", "\(mskOtherTextView.stringValue)", "normal range of motion", "normal strength", "nontender", "normal tone"]
+		let mskVarList = [mskABunComboView, mskOtherTextView, mskNROMView, mskNSTRView, mskNNTView, mskNNTView]
+		let mskVerbiageList = ["bunion: \(mskABunComboView.stringValue) foot", "\(mskOtherTextView.stringValue)", "normal range of motion", "normal strength", "nontender", "normal tone"]
 		var mskVerbiageProcessedList = processAllControlTypes(mskVarList, stringArray: mskVerbiageList)
+		if mskASubsectionView.stringValue != "" {
+		mskVerbiageProcessedList.insert(mskASubsectionView.stringValue, atIndex: 0)
+		}
 		
 		//Process Hammer Toes
 		let mskHammerToesLeft = [mskAHammerL1View, mskAHammerL2View, mskAHammerL3View, mskAHammerL4View, mskAHammerL5View]
@@ -2568,6 +2564,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		return guVerbiageResults
 	}
 	
+	//Open the MSK review windo
+	@IBAction func takeOpenMSKWindow(sender: AnyObject) {
+		MSKDelegate.HeadSpineVars.headSpineState = 1
+		headSpineWindow.makeKeyAndOrderFront(self)
+	}
     //Procces form controllers
     func proccessResults() -> String {
 

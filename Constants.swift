@@ -39,3 +39,11 @@ let cbSEMType = ["systolic", "diastolic", "systolic & diastolic"]
 let cbSEMLocation = ["", "throughout", "RUSB", "LUSB", "BUSB", "RLSB", "LLSB", "BLSB", "Apex"]
 let cbGalact = ["", "bloody", "dark", "green", "purulent", "milky", "clear"]
 let cbTenderness = ["", "diffuse", "upper", "lower", "inside", "outside", "upper inside", "upper outside", "lower inside", "lower outside", "left upper outer quadrant", "right upper outer quadrant", "left upper inner quadrant", "right upper inner quadrant", "left lower outer quadrant", "right lower outer quadrant", "left lower inner quadrant", "right lower inner quadrant"]
+
+//MSKControls Class Constants
+let theSwlLocListGen = ["", "inside", "outside", "top", "bottom", "left side", "right side"]
+let theStrengthList = ["", "0", "1", "2", "2+", "3-", "3", "3+", "4-", "4", "4+", "5-", "5"]
+let theRomList = ["", "10", "15", "20", "25", "30", "35", "40", "45", ">45"]
+let theRomDirListGen = ["", "extension", "flexion", "left rotation", "right rotation"]
+let theToneList = ["", "normal" , "atrophic", "fasciculations", "flaccid", "tense", "spastic", "ratcheting cog wheel rigidity", "ligament laxity", "subluxation"]
+let effList = ["", "effusion", "swelling"]
