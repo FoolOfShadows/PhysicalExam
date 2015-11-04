@@ -2566,7 +2566,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	
 	//Open the MSK review windo
 	@IBAction func takeOpenMSKWindow(sender: AnyObject) {
-		MSKDelegate.HeadSpineVars.headSpineState = 1
+		MSKDelegate.MSKVars.mskState = 1
 		headSpineWindow.makeKeyAndOrderFront(self)
 	}
     //Procces form controllers

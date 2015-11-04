@@ -79,23 +79,22 @@ class MSKSuperControls {
 	var subHeading = String()
 	var ttpCheck = NSButton()
 	var swlCheck = NSButton()
-	var swlLocCombo = NSComboBox()
+	var swlLocPopup = NSPopUpButton()
 	var swlLocList = [String]()
 	
-	init(subHeading: String, ttpCheck: NSButton, swlCheck: NSButton, swlLocCombo: NSComboBox, swlLocList: [String]) {
+	init(subHeading: String, ttpCheck: NSButton, swlLocPopup: NSPopUpButton, swlLocList: [String]) {
 		self.subHeading = subHeading
 		self.ttpCheck = ttpCheck
-		self.swlCheck = swlCheck
-		self.swlLocCombo = swlLocCombo
+		self.swlLocPopup = swlLocPopup
 		self.swlLocList = swlLocList
 	}
 	
 	func clearControllers() {
 		ttpCheck.state = NSOffState
 		swlCheck.state = NSOffState
-		swlLocCombo.removeAllItems()
-		swlLocCombo.addItemsWithObjectValues(swlLocList)
-		swlLocCombo.selectItemAtIndex(0)
+		swlLocPopup.removeAllItems()
+		swlLocPopup.addItemsWithTitles(swlLocList)
+		swlLocPopup.selectItemAtIndex(0)
 	}
 	
 	
@@ -105,10 +104,10 @@ class MSKAddToneControl: MSKSuperControls {
 	var tonePopup = NSPopUpButton()
 	var toneList = [String]()
 	
-	init(subHeading: String, ttpCheck: NSButton, swlCheck: NSButton, swlLocCombo: NSComboBox, swlLocList: [String], tonePopup: NSPopUpButton, toneList: [String]) {
+	init(subHeading: String, ttpCheck: NSButton, swlLocPopup: NSPopUpButton, swlLocList: [String], tonePopup: NSPopUpButton, toneList: [String]) {
 		self.tonePopup = tonePopup
 		self.toneList = toneList
-		super.init(subHeading: subHeading, ttpCheck: ttpCheck, swlCheck: swlCheck, swlLocCombo: swlLocCombo, swlLocList: swlLocList)
+		super.init(subHeading: subHeading, ttpCheck: ttpCheck, swlLocPopup: swlLocPopup, swlLocList: swlLocList)
 	}
 	
 	func clearToneControllers() {
@@ -123,15 +122,15 @@ class MSKAddToneControl: MSKSuperControls {
 class MSKAllControls: MSKAddToneControl {
 	var strPopup = NSPopUpButton()
 	var romText = NSTextField()
-	var romDirCombo = NSComboBox()
+	var romDirPopup = NSPopUpButton()
 	var romDirList = [String]()
 	
-	init(subHeading: String, ttpCheck: NSButton, swlCheck: NSButton, swlLocCombo: NSComboBox, swlLocList: [String], strPopup: NSPopUpButton, romText: NSTextField, romDirCombo: NSComboBox, romDirList: [String], tonePopup: NSPopUpButton, toneList: [String]) {
+	init(subHeading: String, ttpCheck: NSButton, swlLocPopup: NSPopUpButton, swlLocList: [String], strPopup: NSPopUpButton, romText: NSTextField, romDirPopup: NSPopUpButton, romDirList: [String], tonePopup: NSPopUpButton, toneList: [String]) {
 		self.strPopup = strPopup
 		self.romText = romText
-		self.romDirCombo = romDirCombo
+		self.romDirPopup = romDirPopup
 		self.romDirList = romDirList
-		super.init(subHeading: subHeading, ttpCheck: ttpCheck, swlCheck: swlCheck, swlLocCombo: swlLocCombo, swlLocList: swlLocList, tonePopup: tonePopup, toneList: toneList)
+		super.init(subHeading: subHeading, ttpCheck: ttpCheck, swlLocPopup: swlLocPopup, swlLocList: swlLocList, tonePopup: tonePopup, toneList: toneList)
 	}
 	
 	func clearAllControllers() {
@@ -139,10 +138,36 @@ class MSKAllControls: MSKAddToneControl {
 		strPopup.addItemsWithTitles(theStrengthList)
 		strPopup.selectItemAtIndex(0)
 		romText.stringValue = ""
-		romDirCombo.removeAllItems()
-		romDirCombo.addItemsWithObjectValues(romDirList)
-		romDirCombo.selectItemAtIndex(0)
+		romDirPopup.removeAllItems()
+		romDirPopup.addItemsWithTitles(romDirList)
+		romDirPopup.selectItemAtIndex(0)
 		super.clearToneControllers()
 	}
 	
+}
+
+class MSKHeadControls: MSKSuperControls {
+	var strPopup = NSPopUpButton()
+	var romText = NSTextField()
+	var romDirPopup = NSPopUpButton()
+	var romDirList = [String]()
+	
+	init(subHeading: String, ttpCheck: NSButton, swlLocPopup: NSPopUpButton, swlLocList: [String], strPopup: NSPopUpButton, romText: NSTextField, romDirPopup: NSPopUpButton, romDirList: [String]) {
+		self.strPopup = strPopup
+		self.romText = romText
+		self.romDirPopup = romDirPopup
+		self.romDirList = romDirList
+		super.init(subHeading: subHeading, ttpCheck: ttpCheck, swlLocPopup: swlLocPopup, swlLocList: swlLocList)
+	}
+	
+	func clearHeadControllers() {
+		strPopup.removeAllItems()
+		strPopup.addItemsWithTitles(theStrengthList)
+		strPopup.selectItemAtIndex(0)
+		romText.stringValue = ""
+		romDirPopup.removeAllItems()
+		romDirPopup.addItemsWithTitles(romDirList)
+		romDirPopup.selectItemAtIndex(0)
+		super.clearControllers()
+	}
 }

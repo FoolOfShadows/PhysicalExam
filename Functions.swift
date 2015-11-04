@@ -111,76 +111,8 @@ func makeEdemaQualifyingString(edemaQualifyingArray: [String]) -> String {
 	return returnString
 }
 
-/*func processClassData(theItems:[AnyObject]) -> [String] {
-	var finalResultsList = [String]()
-	
-	for item in theItems {
-		var itemResultsList = [String]()
-		var itemResultsString = String()
-		let theSubHeading = ""
-		var ttp = ""
-		var swl = ""
-		var swlLoc = ""
-		var str = ""
-		var rom = ""
-		//var romDir = ""
-		var tone = ""
-		
-		switch item {
-		case is MSKAllControls:
-			if (item.ttpCheck.state == NSOnState) {
-				ttp = "tender to touch"
-				itemResultsList.append(ttp)
-			}
-			
-			if (item.swlCheck.state == NSOnState) {
-				swl = "swollen"
-				itemResultsList.append(swl)
-			}
-			
-			if (item.swlLocCombo.stringValue != "") {
-				swlLoc = item.swlLocCombo.stringValue
-				itemResultsList.append(swlLoc)
-			}
-			
-			if (item.strPopup.indexOfSelectedItem != 0) {
-				str = "strength: \(item.strPopup.titleOfSelectedItem!)/5"
-				itemResultsList.append(str)
-			}
-			
-			if (item.romText.stringValue != "") && (item.romDirCombo.indexOfSelectedItem != 0) {
-				rom = "range of motion: \(item.romText.stringValue) degrees \(item.romDirCombo.stringValue)"
-				itemResultsList.append(rom)
-			}
-			
-			//		if (item.romDirCombo.indexOfSelectedItem != 0) {
-			//			romDir = item.romDirCombo.stringValue
-			//			itemResultsList.append(romDir)
-			//		}
-			
-			if (item.tonePopup.indexOfSelectedItem != 0) {
-				tone = "tone: \(item.tonePopup.titleOfSelectedItem!)"
-				itemResultsList.append(tone)
-			}
-			
-		}
-		print(itemResultsList)
-		
-		if !itemResultsList.isEmpty {
-			itemResultsString = "\(theSubHeading):  " + itemResultsList.joinWithSeparator(", ")
-			finalResultsList.append(itemResultsString)
-		}
-		
-	}
-	
-	//	if !finalResultsList.isEmpty {
-	//		finalResultsString = "MSK: " + finalResultsList.joinWithSeparator("\n")
-	//	}
-	
-	
-	return finalResultsList
-}*/
 
+//Process MSKControls Class Objects
 func processMSKControls(theControls: [AnyObject]) -> [String] {
 	var results = [String]()
 	
@@ -190,10 +122,8 @@ func processMSKControls(theControls: [AnyObject]) -> [String] {
 		var theSubHeading = ""
 		var ttp = ""
 		var swl = ""
-		//var swlLoc = ""
 		var str = ""
 		var rom = ""
-		//var romDir = ""
 		var tone = ""
 		
 		if let thisControl = control as? MSKAllControls {
@@ -203,30 +133,22 @@ func processMSKControls(theControls: [AnyObject]) -> [String] {
 				itemResultsList.append(ttp)
 			}
 			
-			if (thisControl.swlCheck.state == NSOnState) {
-				swl = "\(thisControl.swlLocCombo.stringValue) swelling"
+			if (thisControl.swlLocPopup.indexOfSelectedItem != 0) {
+				swl = "\(thisControl.swlLocPopup.titleOfSelectedItem!) swelling"
 				itemResultsList.append(swl)
 			}
 			
-//			if (thisControl.swlLocCombo.stringValue != "") {
-//				swlLoc = thisControl.swlLocCombo.stringValue
-//				itemResultsList.append(swlLoc)
-//			}
 			
 			if (thisControl.strPopup.indexOfSelectedItem != 0) {
 				str = "\(thisControl.strPopup.titleOfSelectedItem!)/5 strength"
 				itemResultsList.append(str)
 			}
 			
-			if (thisControl.romText.stringValue != "") && (thisControl.romDirCombo.indexOfSelectedItem != 0) {
-				rom = "range of motion: \(thisControl.romDirCombo.stringValue) \(thisControl.romText.stringValue) degrees"
+			if (thisControl.romText.stringValue != "") && (thisControl.romDirPopup.indexOfSelectedItem != 0) {
+				rom = "range of motion: \(thisControl.romDirPopup.titleOfSelectedItem!) \(thisControl.romText.stringValue) degrees"
 				itemResultsList.append(rom)
 			}
 			
-			//		if (item.romDirCombo.indexOfSelectedItem != 0) {
-			//			romDir = item.romDirCombo.stringValue
-			//			itemResultsList.append(romDir)
-			//		}
 			
 			if (thisControl.tonePopup.indexOfSelectedItem != 0) {
 				tone = "tone \(thisControl.tonePopup.titleOfSelectedItem!)"
@@ -244,16 +166,10 @@ func processMSKControls(theControls: [AnyObject]) -> [String] {
 				itemResultsList.append(ttp)
 			}
 			
-			if (thisControl.swlCheck.state == NSOnState) {
-				swl = "\(thisControl.swlLocCombo.stringValue) swelling"
+			if (thisControl.swlLocPopup.indexOfSelectedItem != 0) {
+				swl = "\(thisControl.swlLocPopup.titleOfSelectedItem!) swelling"
 				itemResultsList.append(swl)
 			}
-			
-			//			if (thisControl.swlLocCombo.stringValue != "") {
-			//				swlLoc = thisControl.swlLocCombo.stringValue
-			//				itemResultsList.append(swlLoc)
-			//			}
-
 			
 			if (thisControl.tonePopup.indexOfSelectedItem != 0) {
 				tone = "tone \(thisControl.tonePopup.titleOfSelectedItem!)"
@@ -264,6 +180,34 @@ func processMSKControls(theControls: [AnyObject]) -> [String] {
 				itemResultsString = "\(theSubHeading): " + itemResultsList.joinWithSeparator(", ")
 				results.append(itemResultsString)
 			}
+		} else if let thisControl = control as? MSKHeadControls {
+			theSubHeading = thisControl.subHeading
+			if (thisControl.ttpCheck.state == NSOnState) {
+				ttp = "tender"
+				itemResultsList.append(ttp)
+			}
+			
+			if (thisControl.swlLocPopup.indexOfSelectedItem != 0) {
+				swl = "\(thisControl.swlLocPopup.titleOfSelectedItem!) swelling"
+				itemResultsList.append(swl)
+			}
+			
+			
+			if (thisControl.strPopup.indexOfSelectedItem != 0) {
+				str = "\(thisControl.strPopup.titleOfSelectedItem!)/5 strength"
+				itemResultsList.append(str)
+			}
+			
+			if (thisControl.romText.stringValue != "") && (thisControl.romDirPopup.indexOfSelectedItem != 0) {
+				rom = "range of motion: \(thisControl.romDirPopup.titleOfSelectedItem!) \(thisControl.romText.stringValue) degrees"
+				itemResultsList.append(rom)
+			}
+			
+			if !itemResultsList.isEmpty {
+				itemResultsString = "\(theSubHeading): " + itemResultsList.joinWithSeparator(", ")
+				results.append(itemResultsString)
+			}
+			
 		} else if let thisControl = control as? MSKSuperControls {
 			theSubHeading = thisControl.subHeading
 			if (thisControl.ttpCheck.state == NSOnState) {
@@ -271,17 +215,11 @@ func processMSKControls(theControls: [AnyObject]) -> [String] {
 				itemResultsList.append(ttp)
 			}
 			
-			if (thisControl.swlCheck.state == NSOnState) {
-				swl = "\(thisControl.swlLocCombo.stringValue) swelling"
+			if (thisControl.swlLocPopup.indexOfSelectedItem != 0) {
+				swl = "\(thisControl.swlLocPopup.titleOfSelectedItem!) swelling"
 				itemResultsList.append(swl)
 			}
-			
-			//			if (thisControl.swlLocCombo.stringValue != "") {
-			//				swlLoc = thisControl.swlLocCombo.stringValue
-			//				itemResultsList.append(swlLoc)
-			//			}
-
-			
+						
 			if !itemResultsList.isEmpty {
 				itemResultsString = "\(theSubHeading): " + itemResultsList.joinWithSeparator(", ")
 				results.append(itemResultsString)
