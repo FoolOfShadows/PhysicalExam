@@ -522,7 +522,7 @@ class MSKDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
 	func setUpHeadSpineTab() {
 		let mskHead = MSKHeadControls(subHeading: "Head", ttpCheck: hsHeadTTPCheck, swlLocPopup: hsHeadSwlPopup, swlLocList: theSwlLocListGen, strPopup: hsHeadSTRPop, romText: hsHeadROMText, romDirPopup: hsHeadRangePopup, romDirList: theRomDirListGen)
 		mskHead.clearHeadControllers()
-		let mskNeck = MSKAllControls(subHeading: "Neck", ttpCheck: hsNeckTTPCheck, swlLocPopup: hsNeckSwlPopup, swlLocList: theSwlLocListGen, strPopup: hsNeckSTRPop, romText: hsNeckROMText, romDirPopup: hsNeckRangePopup, romDirList: theRomDirListGen, tonePopup: hsNeckTonePop, toneList: theToneList)
+		let mskNeck = MSKAllControls(subHeading: "Neck", ttpCheck: hsNeckTTPCheck, swlLocPopup: hsNeckSwlPopup, swlLocList: theSwlLocListGen, strPopup: hsNeckSTRPop, romText: hsNeckROMText, romDirPopup: hsNeckRangePopup, romDirList: neckROMDirList, tonePopup: hsNeckTonePop, toneList: theToneList)
 		mskNeck.clearAllControllers()
 		let mskParaspineL = MSKAddToneControl(subHeading: "Paraspine Left", ttpCheck: hsParaLTTPCheck, swlLocPopup: hsParaLSwlPopup, swlLocList: theSwlLocListGen, tonePopup: hsParaLTonePop, toneList: theToneList)
 		mskParaspineL.clearToneControllers()
@@ -540,9 +540,9 @@ class MSKDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
 		mskTSpineL.clearAllControllers()
 		let mskTSpineR = MSKAllControls(subHeading: "T-Spine Right", ttpCheck: hsTSpineRTTPCheck, swlLocPopup: hsTSpineRSwlPopup, swlLocList: theSwlLocListGen, strPopup: hsTSpineRSTRPop, romText: hsTSpineRROMText, romDirPopup: hsTSpineRRangePopup, romDirList: theRomDirListGen, tonePopup: hsTSpineRTonePop, toneList: theToneList)
 		mskTSpineR.clearAllControllers()
-		let mskLSpineL = MSKAllControls(subHeading: "L-Spine Left", ttpCheck: hsLSpineLTTPCheck, swlLocPopup: hsLSpineLSwlPopup, swlLocList: theSwlLocListGen, strPopup: hsLSpineLSTRPop, romText: hsLSpineLROMText, romDirPopup: hsLSpineLRangePopup, romDirList: theRomDirListGen, tonePopup: hsLSpineLTonePop, toneList: theToneList)
+		let mskLSpineL = MSKAllControls(subHeading: "L-Spine Left", ttpCheck: hsLSpineLTTPCheck, swlLocPopup: hsLSpineLSwlPopup, swlLocList: theSwlLocListGen, strPopup: hsLSpineLSTRPop, romText: hsLSpineLROMText, romDirPopup: hsLSpineLRangePopup, romDirList: lspineROMDirList, tonePopup: hsLSpineLTonePop, toneList: theToneList)
 		mskLSpineL.clearAllControllers()
-		let mskLSpineR = MSKAllControls(subHeading: "L-Spine Right", ttpCheck: hsLSpineRTTPCheck, swlLocPopup: hsLSpineRSwlPopup, swlLocList: theSwlLocListGen, strPopup: hsLSpineRSTRPop, romText: hsLSpineRROMText, romDirPopup: hsLSpineRRangePopup, romDirList: theRomDirListGen, tonePopup: hsLSpineRTonePop, toneList: theToneList)
+		let mskLSpineR = MSKAllControls(subHeading: "L-Spine Right", ttpCheck: hsLSpineRTTPCheck, swlLocPopup: hsLSpineRSwlPopup, swlLocList: theSwlLocListGen, strPopup: hsLSpineRSTRPop, romText: hsLSpineRROMText, romDirPopup: hsLSpineRRangePopup, romDirList: lspineROMDirList, tonePopup: hsLSpineRTonePop, toneList: theToneList)
 		mskLSpineR.clearAllControllers()
 		let mskPelvisL = MSKAllControls(subHeading: "Pelvis Left", ttpCheck: hsPelvisLTTPCheck, swlLocPopup: hsPelvisLSwlPopup, swlLocList: theSwlLocListGen, strPopup: hsPelvisLSTRPop, romText: hsPelvisLROMText, romDirPopup: hsPelvisLRangePopup, romDirList: theRomDirListGen, tonePopup: hsPelvisLTonePop, toneList: theToneList)
 		mskPelvisL.clearAllControllers()
@@ -559,9 +559,9 @@ class MSKDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
 	}
 	
 	func setUpShoulderArmsTab() {
-		let mskShoulderL = MSKAllControls(subHeading: "Shoulder Left", ttpCheck: saShoulderLTTPCheck, swlLocPopup: saShoulderLSwlPopup, swlLocList: theSwlLocListGen, strPopup: saShoulderLSTRPop, romText: saShoulderLROMText, romDirPopup: saShoulderLRangePopup, romDirList: theRomDirListGen, tonePopup: saShoulderLTonePop, toneList: theToneList)
+		let mskShoulderL = MSKAllControls(subHeading: "Shoulder Left", ttpCheck: saShoulderLTTPCheck, swlLocPopup: saShoulderLSwlPopup, swlLocList: theSwlLocListGen, strPopup: saShoulderLSTRPop, romText: saShoulderLROMText, romDirPopup: saShoulderLRangePopup, romDirList: shoulderROMDirList, tonePopup: saShoulderLTonePop, toneList: theToneList)
 		mskShoulderL.clearAllControllers()
-		let mskShoulderR = MSKAllControls(subHeading: "Shoulder Right", ttpCheck: saShoulderRTTPCheck, swlLocPopup: saShoulderRSwlPopup, swlLocList: theSwlLocListGen, strPopup: saShoulderRSTRPop, romText: saShoulderRROMText, romDirPopup: saShoulderRRangePopup, romDirList: theRomDirListGen, tonePopup: saShoulderRTonePop, toneList: theToneList)
+		let mskShoulderR = MSKAllControls(subHeading: "Shoulder Right", ttpCheck: saShoulderRTTPCheck, swlLocPopup: saShoulderRSwlPopup, swlLocList: theSwlLocListGen, strPopup: saShoulderRSTRPop, romText: saShoulderRROMText, romDirPopup: saShoulderRRangePopup, romDirList: shoulderROMDirList, tonePopup: saShoulderRTonePop, toneList: theToneList)
 		mskShoulderR.clearAllControllers()
 		let mskDeltoidL = MSKAllControls(subHeading: "Deltoid Left", ttpCheck: saDeltoidLTTPCheck, swlLocPopup: saDeltoidLSwlPopup, swlLocList: theSwlLocListGen, strPopup: saDeltoidLSTRPop, romText: saDeltoidLROMText, romDirPopup: saDeltoidLRangePopup, romDirList: theRomDirListGen, tonePopup: saDeltoidLTonePop, toneList: theToneList)
 		mskDeltoidL.clearAllControllers()
@@ -575,22 +575,22 @@ class MSKDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
 		mskTricepL.clearAllControllers()
 		let mskTricepR = MSKAllControls(subHeading: "Tricep Right", ttpCheck: saTricepRTTPCheck, swlLocPopup: saTricepRSwlPopup, swlLocList: theSwlLocListGen, strPopup: saTricepRSTRPop, romText: saTricepRROMText, romDirPopup: saTricepRRangePopup, romDirList: theRomDirListGen, tonePopup: saTricepRTonePop, toneList: theToneList)
 		mskTricepR.clearAllControllers()
-		let mskElbowL = MSKAllControls(subHeading: "Elbow Left", ttpCheck: saElbowLTTPCheck, swlLocPopup: saElbowLSwlPopup, swlLocList: theSwlLocListGen, strPopup: saElbowLSTRPop, romText: saElbowLROMText, romDirPopup: saElbowLRangePopup, romDirList: theRomDirListGen, tonePopup: saElbowLTonePop, toneList: theToneList)
+		let mskElbowL = MSKAllControls(subHeading: "Elbow Left", ttpCheck: saElbowLTTPCheck, swlLocPopup: saElbowLSwlPopup, swlLocList: theSwlLocListGen, strPopup: saElbowLSTRPop, romText: saElbowLROMText, romDirPopup: saElbowLRangePopup, romDirList: elbowROMDirList, tonePopup: saElbowLTonePop, toneList: theToneList)
 		mskElbowL.clearAllControllers()
-		let mskElbowR = MSKAllControls(subHeading: "Elbow Right", ttpCheck: saElbowRTTPCheck, swlLocPopup: saElbowRSwlPopup, swlLocList: theSwlLocListGen, strPopup: saElbowRSTRPop, romText: saElbowRROMText, romDirPopup: saElbowRRangePopup, romDirList: theRomDirListGen, tonePopup: saElbowRTonePop, toneList: theToneList)
+		let mskElbowR = MSKAllControls(subHeading: "Elbow Right", ttpCheck: saElbowRTTPCheck, swlLocPopup: saElbowRSwlPopup, swlLocList: theSwlLocListGen, strPopup: saElbowRSTRPop, romText: saElbowRROMText, romDirPopup: saElbowRRangePopup, romDirList: elbowROMDirList, tonePopup: saElbowRTonePop, toneList: theToneList)
 		mskElbowR.clearAllControllers()
-		let mskForearmL = MSKAllControls(subHeading: "Forearm Left", ttpCheck: saForearmLTTPCheck, swlLocPopup: saForearmLSwlPopup, swlLocList: theSwlLocListGen, strPopup: saForearmLSTRPop, romText: saForearmLROMText, romDirPopup: saForearmLRangePopup, romDirList: theRomDirListGen, tonePopup: saForearmLTonePop, toneList: theToneList)
+		let mskForearmL = MSKAllControls(subHeading: "Forearm Left", ttpCheck: saForearmLTTPCheck, swlLocPopup: saForearmLSwlPopup, swlLocList: theSwlLocListGen, strPopup: saForearmLSTRPop, romText: saForearmLROMText, romDirPopup: saForearmLRangePopup, romDirList: forearmROMDirList, tonePopup: saForearmLTonePop, toneList: theToneList)
 		mskForearmL.clearAllControllers()
-		let mskForearmR = MSKAllControls(subHeading: "Forearm Right", ttpCheck: saForearmRTTPCheck, swlLocPopup: saForearmRSwlPopup, swlLocList: theSwlLocListGen, strPopup: saForearmRSTRPop, romText: saForearmRROMText, romDirPopup: saForearmRRangePopup, romDirList: theRomDirListGen, tonePopup: saForearmRTonePop, toneList: theToneList)
+		let mskForearmR = MSKAllControls(subHeading: "Forearm Right", ttpCheck: saForearmRTTPCheck, swlLocPopup: saForearmRSwlPopup, swlLocList: theSwlLocListGen, strPopup: saForearmRSTRPop, romText: saForearmRROMText, romDirPopup: saForearmRRangePopup, romDirList: forearmROMDirList, tonePopup: saForearmRTonePop, toneList: theToneList)
 		mskForearmR.clearAllControllers()
 		
 		mskControllers += [mskShoulderL, mskShoulderR, mskDeltoidL, mskDeltoidR, mskBicepL, mskBicepR, mskTricepL, mskTricepR, mskElbowL, mskElbowR, mskForearmL, mskForearmR]
 	}
 	
 	func setUpHandsTab() {
-		let mskWristL = MSKAllControls(subHeading: "Wrist Left", ttpCheck: hndWristLTTPCheck, swlLocPopup: hndWristLSwlPopup, swlLocList: theSwlLocListGen, strPopup: hndWristLSTRPop, romText: hndWristLROMText, romDirPopup: hndWristLRangePopup, romDirList: theRomDirListGen, tonePopup: hndWristLTonePop, toneList: theToneList)
+		let mskWristL = MSKAllControls(subHeading: "Wrist Left", ttpCheck: hndWristLTTPCheck, swlLocPopup: hndWristLSwlPopup, swlLocList: theSwlLocListGen, strPopup: hndWristLSTRPop, romText: hndWristLROMText, romDirPopup: hndWristLRangePopup, romDirList: wristROMDirList, tonePopup: hndWristLTonePop, toneList: theToneList)
 		mskWristL.clearAllControllers()
-		let mskWristR = MSKAllControls(subHeading: "Wrist Right", ttpCheck: hndWristRTTPCheck, swlLocPopup: hndWristRSwlPopup, swlLocList: theSwlLocListGen, strPopup: hndWristRSTRPop, romText: hndWristRROMText, romDirPopup: hndWristRRangePopup, romDirList: theRomDirListGen, tonePopup: hndWristRTonePop, toneList: theToneList)
+		let mskWristR = MSKAllControls(subHeading: "Wrist Right", ttpCheck: hndWristRTTPCheck, swlLocPopup: hndWristRSwlPopup, swlLocList: theSwlLocListGen, strPopup: hndWristRSTRPop, romText: hndWristRROMText, romDirPopup: hndWristRRangePopup, romDirList: wristROMDirList, tonePopup: hndWristRTonePop, toneList: theToneList)
 		mskWristR.clearAllControllers()
 		let mskHandL = MSKAllControls(subHeading: "Hand Left", ttpCheck: hndHandLTTPCheck, swlLocPopup: hndHandLSwlPopup, swlLocList: theSwlLocListGen, strPopup: hndHandLSTRPop, romText: hndHandLROMText, romDirPopup: hndHandLRangePopup, romDirList: theRomDirListGen, tonePopup: hndHandLTonePop, toneList: theToneList)
 		mskHandL.clearAllControllers()
@@ -621,9 +621,9 @@ class MSKDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
 	}
 	
 	func setUpHipsLegsTab() {
-		let mskHipL = MSKAllControls(subHeading: "Hip Left", ttpCheck: hlHipLTTPCheck, swlLocPopup: hlHipLSwlPopup, swlLocList: theSwlLocListGen, strPopup: hlHipLSTRPop, romText: hlHipLROMText, romDirPopup: hlHipLRangePopup, romDirList: theRomDirListGen, tonePopup: hlHipLTonePop, toneList: theToneList)
+		let mskHipL = MSKAllControls(subHeading: "Hip Left", ttpCheck: hlHipLTTPCheck, swlLocPopup: hlHipLSwlPopup, swlLocList: theSwlLocListGen, strPopup: hlHipLSTRPop, romText: hlHipLROMText, romDirPopup: hlHipLRangePopup, romDirList: hipROMDirList, tonePopup: hlHipLTonePop, toneList: theToneList)
 		mskHipL.clearAllControllers()
-		let mskHipR = MSKAllControls(subHeading: "Hip Right", ttpCheck: hlHipRTTPCheck, swlLocPopup: hlHipRSwlPopup, swlLocList: theSwlLocListGen, strPopup: hlHipRSTRPop, romText: hlHipRROMText, romDirPopup: hlHipRRangePopup, romDirList: theRomDirListGen, tonePopup: hlHipRTonePop, toneList: theToneList)
+		let mskHipR = MSKAllControls(subHeading: "Hip Right", ttpCheck: hlHipRTTPCheck, swlLocPopup: hlHipRSwlPopup, swlLocList: theSwlLocListGen, strPopup: hlHipRSTRPop, romText: hlHipRROMText, romDirPopup: hlHipRRangePopup, romDirList: hipROMDirList, tonePopup: hlHipRTonePop, toneList: theToneList)
 		mskHipR.clearAllControllers()
 		let mskGlutL = MSKAllControls(subHeading: "Glut Left", ttpCheck: hlGlutLTTPCheck, swlLocPopup: hlGlutLSwlPopup, swlLocList: theSwlLocListGen, strPopup: hlGlutLSTRPop, romText: hlGlutLROMText, romDirPopup: hlGlutLRangePopup, romDirList: theRomDirListGen, tonePopup: hlGlutLTonePop, toneList: theToneList)
 		mskGlutL.clearAllControllers()
@@ -641,9 +641,9 @@ class MSKDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
 		mskHamstringL.clearAllControllers()
 		let mskHamstringR = MSKAllControls(subHeading: "Hamstring Right", ttpCheck: hlHamstringRTTPCheck, swlLocPopup: hlHamstringRSwlPopup, swlLocList: theSwlLocListGen, strPopup: hlHamstringRSTRPop, romText: hlHamstringRROMText, romDirPopup: hlHamstringRRangePopup, romDirList: theRomDirListGen, tonePopup: hlHamstringRTonePop, toneList: theToneList)
 		mskHamstringR.clearAllControllers()
-		let mskKneeL = MSKAllControls(subHeading: "Knee Left", ttpCheck: hlKneeLTTPCheck, swlLocPopup: hlKneeLSwlPopup, swlLocList: theSwlLocListGen, strPopup: hlKneeLSTRPop, romText: hlKneeLROMText, romDirPopup: hlKneeLRangePopup, romDirList: theRomDirListGen, tonePopup: hlKneeLTonePop, toneList: theToneList)
+		let mskKneeL = MSKAllControls(subHeading: "Knee Left", ttpCheck: hlKneeLTTPCheck, swlLocPopup: hlKneeLSwlPopup, swlLocList: theSwlLocListGen, strPopup: hlKneeLSTRPop, romText: hlKneeLROMText, romDirPopup: hlKneeLRangePopup, romDirList: kneeROMDirList, tonePopup: hlKneeLTonePop, toneList: theToneList)
 		mskKneeL.clearAllControllers()
-		let mskKneeR = MSKAllControls(subHeading: "Knee Right", ttpCheck: hlKneeRTTPCheck, swlLocPopup: hlKneeRSwlPopup, swlLocList: theSwlLocListGen, strPopup: hlKneeRSTRPop, romText: hlKneeRROMText, romDirPopup: hlKneeRRangePopup, romDirList: theRomDirListGen, tonePopup: hlKneeRTonePop, toneList: theToneList)
+		let mskKneeR = MSKAllControls(subHeading: "Knee Right", ttpCheck: hlKneeRTTPCheck, swlLocPopup: hlKneeRSwlPopup, swlLocList: theSwlLocListGen, strPopup: hlKneeRSTRPop, romText: hlKneeRROMText, romDirPopup: hlKneeRRangePopup, romDirList: kneeROMDirList, tonePopup: hlKneeRTonePop, toneList: theToneList)
 		mskKneeR.clearAllControllers()
 		let mskCalfL = MSKAllControls(subHeading: "Calf Left", ttpCheck: hlCalfLTTPCheck, swlLocPopup: hlCalfLSwlPopup, swlLocList: theSwlLocListGen, strPopup: hlCalfLSTRPop, romText: hlCalfLROMText, romDirPopup: hlCalfLRangePopup, romDirList: theRomDirListGen, tonePopup: hlCalfLTonePop, toneList: theToneList)
 		mskCalfL.clearAllControllers()
@@ -654,13 +654,13 @@ class MSKDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
 	}
 	
 	func setUpFeetTab() {
-		let mskAnkleL = MSKAllControls(subHeading: "Ankle Left", ttpCheck: ftAnkleLTTPCheck, swlLocPopup: ftAnkleLSwlPopup, swlLocList: theSwlLocListGen, strPopup: ftAnkleLSTRPop, romText: ftAnkleLROMText, romDirPopup: ftAnkleLRangePopup, romDirList: theRomDirListGen, tonePopup: ftAnkleLTonePop, toneList: theToneList)
+		let mskAnkleL = MSKAllControls(subHeading: "Ankle Left", ttpCheck: ftAnkleLTTPCheck, swlLocPopup: ftAnkleLSwlPopup, swlLocList: theSwlLocListGen, strPopup: ftAnkleLSTRPop, romText: ftAnkleLROMText, romDirPopup: ftAnkleLRangePopup, romDirList: ankleROMDirList, tonePopup: ftAnkleLTonePop, toneList: theToneList)
 		mskAnkleL.clearAllControllers()
-		let mskAnkleR = MSKAllControls(subHeading: "Ankle Right", ttpCheck: ftAnkleRTTPCheck, swlLocPopup: ftAnkleRSwlPopup, swlLocList: theSwlLocListGen, strPopup: ftAnkleRSTRPop, romText: ftAnkleRROMText, romDirPopup: ftAnkleRRangePopup, romDirList: theRomDirListGen, tonePopup: ftAnkleRTonePop, toneList: theToneList)
+		let mskAnkleR = MSKAllControls(subHeading: "Ankle Right", ttpCheck: ftAnkleRTTPCheck, swlLocPopup: ftAnkleRSwlPopup, swlLocList: theSwlLocListGen, strPopup: ftAnkleRSTRPop, romText: ftAnkleRROMText, romDirPopup: ftAnkleRRangePopup, romDirList: ankleROMDirList, tonePopup: ftAnkleRTonePop, toneList: theToneList)
 		mskAnkleR.clearAllControllers()
-		let mskFootL = MSKAllControls(subHeading: "Foot Left", ttpCheck: ftFootLTTPCheck, swlLocPopup: ftFootLSwlPopup, swlLocList: theSwlLocListGen, strPopup: ftFootLSTRPop, romText: ftFootLROMText, romDirPopup: ftFootLRangePopup, romDirList: theRomDirListGen, tonePopup: ftFootLTonePop, toneList: theToneList)
+		let mskFootL = MSKAllControls(subHeading: "Foot Left", ttpCheck: ftFootLTTPCheck, swlLocPopup: ftFootLSwlPopup, swlLocList: theSwlLocListGen, strPopup: ftFootLSTRPop, romText: ftFootLROMText, romDirPopup: ftFootLRangePopup, romDirList: footROMDirList, tonePopup: ftFootLTonePop, toneList: theToneList)
 		mskFootL.clearAllControllers()
-		let mskFootR = MSKAllControls(subHeading: "Foot Right", ttpCheck: ftFootRTTPCheck, swlLocPopup: ftFootRSwlPopup, swlLocList: theSwlLocListGen, strPopup: ftFootRSTRPop, romText: ftFootRROMText, romDirPopup: ftFootRRangePopup, romDirList: theRomDirListGen, tonePopup: ftFootRTonePop, toneList: theToneList)
+		let mskFootR = MSKAllControls(subHeading: "Foot Right", ttpCheck: ftFootRTTPCheck, swlLocPopup: ftFootRSwlPopup, swlLocList: theSwlLocListGen, strPopup: ftFootRSTRPop, romText: ftFootRROMText, romDirPopup: ftFootRRangePopup, romDirList: footROMDirList, tonePopup: ftFootRTonePop, toneList: theToneList)
 		mskFootR.clearAllControllers()
 		let mskHeelL = MSKSuperControls(subHeading: "Heel Left", ttpCheck: ftHeelLTTPCheck, swlLocPopup: ftHeelLSwlPopup, swlLocList: theSwlLocListGen)
 		mskHeelL.clearControllers()
