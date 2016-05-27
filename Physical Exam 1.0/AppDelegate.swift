@@ -80,6 +80,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var entAOpPndView: NSButton!
     @IBOutlet weak var entAOpRedView: NSButton!
     @IBOutlet weak var entAOpDryView: NSButton!
+	@IBOutlet weak var entAOpGlossView: NSButton!
     @IBOutlet weak var entOtherTextView: NSTextField!
     
     //Neck Section Controls
@@ -122,7 +123,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     //Chest Section Controls
     @IBOutlet weak var chestNNTView: NSButton!
     @IBOutlet weak var chestNLungsView: NSButton!
-    @IBOutlet weak var chestNWCRView: NSButton!
+    @IBOutlet weak var chestNWView: NSButton!
+	@IBOutlet weak var chestNCView: NSButton!
+	@IBOutlet weak var chestNRView: NSButton!
     @IBOutlet weak var chestNFremView: NSButton!
     @IBOutlet weak var chestNEgophView: NSButton!
 	@IBOutlet weak var chestNWOBView: NSButton!
@@ -229,6 +232,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	@IBOutlet weak var extACyanToesR3View: NSButton!
 	@IBOutlet weak var extACyanToesR4View: NSButton!
 	@IBOutlet weak var extACyanToesR5View: NSButton!
+	@IBOutlet weak var extACallusView: NSTextField!
     @IBOutlet weak var extOtherTextView: NSTextField!
     
     //Neuro Section Controls
@@ -275,6 +279,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     //GI Section Controls
     @IBOutlet weak var giNSoftView: NSButton!
     @IBOutlet weak var giNNTView: NSButton!
+	@IBOutlet weak var giNNoReboundView: NSButton!
     @IBOutlet weak var giNNDView: NSButton!
     @IBOutlet weak var giNHSMView: NSButton!
     @IBOutlet weak var giNNomassView: NSButton!
@@ -323,6 +328,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var psyAMoodDepView: NSButton!
     @IBOutlet weak var psyAMoodFlatView: NSButton!
     @IBOutlet weak var psyAMoodAnxView: NSButton!
+	@IBOutlet weak var psyAMoodFairView: NSButton!
     @IBOutlet weak var psyAAffectDepView: NSButton!
     @IBOutlet weak var psyAAffectFlatView: NSButton!
     @IBOutlet weak var psyAAffectAnxView: NSButton!
@@ -511,6 +517,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var guOtherView: NSTextField!
     
 
+	@IBOutlet weak var includeLymphCheck: NSButton!
     
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
@@ -529,6 +536,25 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	
 	
     //Set Section Controllers to "Normal" status functions
+	@IBAction func takeNormal(sender: NSButton) {
+		takeClearAll(self)
+		takeGenNormal(self)
+		takeHeadEyeNorm(self)
+		takeENTNorm(self)
+		takeNeckNorm(self)
+		takeCVNorm(self)
+		takeChestNorm(self)
+		takeExtNorm(self)
+		takeNeuroNorm(self)
+		takeMSKNorm(self)
+		takeGINorm(self)
+		takeSkinNorm(self)
+		takePsyNorm(self)
+		if includeLymphCheck.state == NSOnState {
+		takeLymphNorm(self)
+		}
+	}
+	
 	@IBAction func takeFemaleNormal(sender: AnyObject) {
 		takeClearAll(self)
 		takeGenNormal(self)
@@ -543,10 +569,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		takeGINorm(self)
 		takeSkinNorm(self)
 		takePsyNorm(self)
-		takeLymphNorm(self)
 		takeBreastNorm(self)
 		takeGynNorm(self)
 		takeDRENorm(self)
+		if includeLymphCheck.state == NSOnState {
+			takeLymphNorm(self)
+		}
 	}
 	
 	@IBAction func takeMaleNormal(sender: AnyObject) {
@@ -563,9 +591,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		takeGINorm(self)
 		takeSkinNorm(self)
 		takePsyNorm(self)
-		takeLymphNorm(self)
 		takeDRENorm(self)
 		takeGUNorm(self)
+		if includeLymphCheck.state == NSOnState {
+			takeLymphNorm(self)
+		}
 	}
 	
     @IBAction func takeGenNormal(sender: AnyObject) {
@@ -613,7 +643,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBAction func takeChestNorm(sender: AnyObject) {
         chestNNTView.state = NSOnState
         chestNLungsView.state = NSOnState
-        chestNWCRView.state = NSOnState
+        chestNWView.state = NSOnState
+		chestNCView.state = NSOnState
+		chestNRView.state = NSOnState
         chestNFremView.state = NSOnState
         chestNEgophView.state = NSOnState
 		chestNWOBView.state = NSOnState
@@ -648,6 +680,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBAction func takeGINorm(sender: AnyObject) {
         giNSoftView.state = NSOnState
         giNNTView.state = NSOnState
+		giNNoReboundView.state = NSOnState
         giNNDView.state = NSOnState
         giNHSMView.state = NSOnState
         giNNomassView.state = NSOnState
@@ -770,6 +803,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		psyAMoodDepView.state = NSOffState
 		psyAMoodFlatView.state = NSOffState
 		psyAMoodAnxView.state = NSOffState
+		psyAMoodFairView.state = NSOffState
 		psyAAffectDepView.state = NSOffState
 		psyAAffectFlatView.state = NSOffState
 		psyAAffectAnxView.state = NSOffState
@@ -829,6 +863,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         entAOpPndView.state = NSOffState
         entAOpRedView.state = NSOffState
         entAOpDryView.state = NSOffState
+		entAOpGlossView.state = NSOffState
         entOtherTextView.stringValue = ""
         
         neckNSuppleView.state = NSOffState
@@ -876,7 +911,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		
 		chestNNTView.state = NSOffState
 		chestNLungsView.state = NSOffState
-		chestNWCRView.state = NSOffState
+		chestNWView.state = NSOffState
+		chestNCView.state = NSOffState
+		chestNRView.state = NSOffState
 		chestNFremView.state = NSOffState
 		chestNEgophView.state = NSOffState
 		chestNWOBView.state = NSOffState
@@ -896,6 +933,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		
 		giNSoftView.state = NSOffState
 		giNNTView.state = NSOffState
+		giNNoReboundView.state = NSOffState
 		giNNDView.state = NSOffState
 		giNHSMView.state = NSOffState
 		giNNomassView.state = NSOffState
@@ -1115,6 +1153,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		extACyanToesR3View.state = NSOffState
 		extACyanToesR4View.state = NSOffState
 		extACyanToesR5View.state = NSOffState
+		extACallusView.stringValue = ""
 		extOtherTextView.stringValue = ""
 	}
 	
@@ -1157,7 +1196,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		mskNROMView.state = NSOffState
 		mskNSTRView.state = NSOffState
 		mskNNTView.state = NSOffState
-		mskNNTView.state = NSOffState
+		mskNToneView.state = NSOffState
 		mskASubsectionView.stringValue = ""
 		mskABunComboView.removeAllItems()
 		mskABunComboView.addItemsWithObjectValues(cbRLBList)
@@ -1890,9 +1929,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		var psyVerbiageProcessedList = processAllControlTypes(psyVarList, stringArray: psyVerbiageList)
 		//Process Mood subsection
 		var psyAbnormalMoodResults = ""
-		let psyAbnormalMoodVarList = [psyAMoodDepView, psyAMoodFlatView, psyAMoodAnxView]
-		let psyAbnormalMoodVerbiageList = ["depressed", "flat, apathetic", "anxious"]
-		var psyAbnormalMoodProcessedList = processAllControlTypes(psyAbnormalMoodVarList, stringArray: psyAbnormalMoodVerbiageList)
+		let psyAbnormalMoodVarList = [psyAMoodDepView, psyAMoodFlatView, psyAMoodAnxView, psyAMoodFairView]
+		let psyAbnormalMoodVerbiageList = ["depressed", "flat, apathetic", "anxious", "fair"]
+		let psyAbnormalMoodProcessedList = processAllControlTypes(psyAbnormalMoodVarList, stringArray: psyAbnormalMoodVerbiageList)
 		if !psyAbnormalMoodProcessedList.isEmpty {
 			//psyAbnormalMoodProcessedList = makeFirstCharacterInStringArrayUppercase(psyAbnormalMoodProcessedList)
 			psyAbnormalMoodResults = generateSubheadingString("Mood:", stringList: psyAbnormalMoodProcessedList, joiner: ", ")
@@ -1902,7 +1941,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		var psyAbnormalAffectResults = ""
 		let psyAbnormalAffectVarList = [psyAAffectDepView, psyAAffectFlatView, psyAAffectAnxView]
 		let psyAbnormalAffectVerbiageList = ["depressed", "flat", "anxious"]
-		var psyAbnormalAffectProcessedList = processAllControlTypes(psyAbnormalAffectVarList, stringArray: psyAbnormalAffectVerbiageList)
+		let psyAbnormalAffectProcessedList = processAllControlTypes(psyAbnormalAffectVarList, stringArray: psyAbnormalAffectVerbiageList)
 		if !psyAbnormalAffectProcessedList.isEmpty {
 			//psyAbnormalAffectProcessedList = makeFirstCharacterInStringArrayUppercase(psyAbnormalAffectProcessedList)
 			psyAbnormalAffectResults = generateSubheadingString("Affect:", stringList: psyAbnormalAffectProcessedList, joiner: ", ")
@@ -2055,8 +2094,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		var entThroatProcessedList = processAllControlTypes(entThroatVarList, stringArray: entThroatVerbiageList)
 		//Process OP section
 		var entROPVerbiageResults = ""
-		let entROPVarList = [entAOpStrkView, entAOpPndView, entAOpRedView, entAOpDryView]
-		let entOPVerbiageList = ["streaky", "post nasal drip", "red", "dry"]
+		let entROPVarList = [entAOpStrkView, entAOpPndView, entAOpRedView, entAOpDryView, entAOpGlossView]
+		let entOPVerbiageList = ["streaky", "post nasal drip", "red", "dry", "glossitis"]
 		var entROPProcessedList = processAllControlTypes(entROPVarList, stringArray: entOPVerbiageList)
 		if !entROPProcessedList.isEmpty {
 			entROPProcessedList = makeFirstCharacterInStringArrayUppercase(entROPProcessedList)
@@ -2114,8 +2153,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	
 	func processChest() ->String {
 		var chestVerbiageResults = ""
-		let chestVarList = [chestAWhzComboView, chestACrklComboView, chestARhComboView, chestAEgophComboView, chestOtherTextView, chestNNTView, chestNLungsView, chestNWCRView, chestNFremView, chestNEgophView, chestNWOBView]
-		let chestVerbiageList = ["wheezes \(chestAWhzComboView.stringValue)", "crackles \(chestACrklComboView.stringValue)", "rhonchi \(chestARhComboView.stringValue)", "egophany \(chestAEgophComboView.stringValue)", "\(chestOtherTextView.stringValue)", "nontender", "lungs clear", "no wheezes, no crackles, no rhonchi", "normal fremitus", "no egophany", "breathing non labored"]
+		let chestVarList = [chestAWhzComboView, chestACrklComboView, chestARhComboView, chestAEgophComboView, chestOtherTextView, chestNNTView, chestNLungsView, chestNWView, chestNCView, chestNRView, chestNFremView, chestNEgophView, chestNWOBView]
+		let chestVerbiageList = ["wheezes \(chestAWhzComboView.stringValue)", "crackles \(chestACrklComboView.stringValue)", "rhonchi \(chestARhComboView.stringValue)", "egophany \(chestAEgophComboView.stringValue)", "\(chestOtherTextView.stringValue)", "nontender", "lungs clear", "no wheezes", "no crackles", "no rhonchi", "normal fremitus", "no egophany", "breathing non labored"]
 		var chestVerbiageProcessedList = processAllControlTypes(chestVarList, stringArray: chestVerbiageList)
 		if !chestVerbiageProcessedList.isEmpty {
 			chestVerbiageProcessedList = makeFirstCharacterInStringArrayUppercase(chestVerbiageProcessedList)
@@ -2128,8 +2167,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	func processGI() ->String {
 		//Process normal GI controllers
 		var giVerbiageResults = ""
-		let giVarList = [giADistView, giABloatView, giAHMQuantView, giASpMQuantView, giATTPComboView, giAMassView, giABSComboView, giOtherTextView, giNSoftView, giNNTView, giNNDView, giNHSMView, giNNomassView, giNBSView]
-		let giVerbiageList = ["distended", "bloated", "hepatoMegaly: \(giAHMQuantView.stringValue)", "splenoMegaly: \(giASpMQuantView.stringValue)", "tender: \(giATTPComboView.stringValue)", "mass: \(giAMassView.stringValue)", "BS: \(giABSComboView.stringValue)", "\(giOtherTextView.stringValue)", "soft", "no tenderness", "non-distended", "no hepatosplenomegaly", "no masses", "normal bowel sounds"]
+		let giVarList = [giADistView, giABloatView, giAHMQuantView, giASpMQuantView, giATTPComboView, giAMassView, giABSComboView, giOtherTextView, giNSoftView, giNNTView, giNNoReboundView, giNNDView, giNHSMView, giNNomassView, giNBSView]
+		let giVerbiageList = ["distended", "bloated", "hepatoMegaly: \(giAHMQuantView.stringValue)", "splenoMegaly: \(giASpMQuantView.stringValue)", "tender: \(giATTPComboView.stringValue)", "mass: \(giAMassView.stringValue)", "BS: \(giABSComboView.stringValue)", "\(giOtherTextView.stringValue)", "soft", "no tenderness", "no rebound or guarding", "non-distended", "no hepatosplenomegaly", "no masses", "normal bowel sounds"]
 		var giVerbiageProcessedList = processAllControlTypes(giVarList, stringArray: giVerbiageList)
 		if !giVerbiageProcessedList.isEmpty {
 			giVerbiageProcessedList = makeFirstCharacterInStringArrayUppercase(giVerbiageProcessedList)
@@ -2296,6 +2335,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		}
 		
 		//Process Other
+		if extACallusView.stringValue != "" {
+			var callusString = extACallusView.stringValue
+			callusString = capitalizeWord(callusString)
+			extResultsList.append(callusString)
+		}
 		if extOtherTextView.stringValue != "" {
 			extResultsList.append("\(extOtherTextView.stringValue)")
 		}

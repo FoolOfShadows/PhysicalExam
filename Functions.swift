@@ -12,7 +12,8 @@ import Cocoa
 //based on which checkboxes a user clicked
 func processControllersCheckBox(buttonArray: [NSButton!], stringArray: [String])-> [String] {
 	var returnValueList = [String]()
-	for var i = 0; i < buttonArray.count; i++ {
+	for (i, _) in buttonArray.enumerate() {
+	//for var i = 0; i < buttonArray.count; i++ {
 		if (buttonArray[i].state == NSOnState) {
 			returnValueList.append(stringArray[i])
 		}
@@ -65,7 +66,8 @@ func processNormAbnormLists(heading: String, normalIn:[String], abnormalIn:[Stri
 
 func processAllControlTypes(controllerArray: [AnyObject], stringArray: [String])-> [String] {
 	var returnValueList = [String]()
-	for var i = 0; i<controllerArray.count; i++ {
+	for (i, _) in controllerArray.enumerate() {
+	//for var i = 0; i<controllerArray.count; i++ {
 		switch controllerArray[i] {
 		case is NSPopUpButton:
 			if (controllerArray[i].indexOfSelectedItem() != 0) {
@@ -92,12 +94,19 @@ func processAllControlTypes(controllerArray: [AnyObject], stringArray: [String])
 	return returnValueList
 }
 
+func capitalizeWord(wordToCapitalize: String) -> String {
+	var theWord = wordToCapitalize
+	theWord.replaceRange(theWord.startIndex...theWord.startIndex, with: String(theWord[theWord.startIndex]).capitalizedString)
+	return theWord
+}
+
 func makeFirstCharacterInStringArrayUppercase(theArray: [String])->[String] {
 	var changedArray = theArray
 	var firstItem = theArray[0]
 	//Added this check to avoid an error in cases where the first item in a passed array is an empty string
 	if firstItem != "" {
-	firstItem.replaceRange(firstItem.startIndex...firstItem.startIndex, with: String(firstItem[firstItem.startIndex]).capitalizedString)
+		firstItem = capitalizeWord(firstItem)
+	//firstItem.replaceRange(firstItem.startIndex...firstItem.startIndex, with: String(firstItem[firstItem.startIndex]).capitalizedString)
 	}
 	changedArray[0] = firstItem
 	return changedArray
@@ -109,6 +118,12 @@ func makeEdemaQualifyingString(edemaQualifyingArray: [String]) -> String {
 		returnString = ", " + edemaQualifyingArray.joinWithSeparator(", ")
 	}
 	return returnString
+}
+
+func clearComboboxes(combo:NSComboBox, list: [String]) {
+	combo.removeAllItems()
+	combo.addItemsWithObjectValues(list)
+	combo.selectItemAtIndex(0)
 }
 
 
