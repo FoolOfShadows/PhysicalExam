@@ -690,7 +690,7 @@ class MSKDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
 		mskControllers += [mskAnkleL, mskAnkleR, mskFootL, mskFootR, mskHeelL, mskHeelR, mskBigToeL, msk2ndToeL, msk3rdToeL, msk4thToeL, msk5thToeL, mskBigToeR, msk2ndToeR, msk3rdToeR, msk4thToeR, msk5thToeR]
 	}
 	
-	func windowDidBecomeKey(notification: NSNotification) {
+	func windowDidBecomeKey(_ notification: Notification) {
 		if MSKVars.mskState == 1 {
 			setUpHeadSpineTab()
 			setUpShoulderArmsTab()
@@ -702,7 +702,7 @@ class MSKDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
 		MSKVars.mskState = 0
 	}
 	
-	@IBAction func takeClearAllMSKTabs(sender: AnyObject) {
+	@IBAction func takeClearAllMSKTabs(_ sender: AnyObject) {
 		setUpHeadSpineTab()
 		setUpShoulderArmsTab()
 		setUpHandsTab()
@@ -710,7 +710,7 @@ class MSKDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
 		setUpFeetTab()
 	}
 	
-	@IBAction func takeProcessHeadSpine(sender: AnyObject) {
+	@IBAction func takeProcessHeadSpine(_ sender: AnyObject) {
 		if mskSubsectionOutputText.stringValue != "" {
 			MSKVars.mskResults = mskSubsectionOutputText.stringValue + ", "
 		} else {
@@ -719,7 +719,7 @@ class MSKDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
 		var resultsString = ""
 		let resultsArray = processMSKControls(mskControllers)
 		if !resultsArray.isEmpty {
-			resultsString = resultsArray.joinWithSeparator(", ")
+			resultsString = resultsArray.joined(separator: ", ")
 		}
 
 		MSKVars.mskResults += resultsString

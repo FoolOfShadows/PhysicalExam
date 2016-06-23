@@ -520,23 +520,23 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	@IBOutlet weak var includeLymphCheck: NSButton!
     
 
-    func applicationDidFinishLaunching(aNotification: NSNotification) {
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
         takeClearAll(self)
     }
 
     //Process Form
-    @IBAction func takeProcess(sender: AnyObject) {
+    @IBAction func takeProcess(_ sender: AnyObject) {
 		let finalVerbiage: String = proccessResults()
 		print(finalVerbiage)
 		//Push the final results to the system clipboard
-		let pasteBoard = NSPasteboard.generalPasteboard()
+		let pasteBoard = NSPasteboard.general()
 		pasteBoard.clearContents()
 		pasteBoard.setString(finalVerbiage, forType: NSPasteboardTypeString)
     }
 	
 	
     //Set Section Controllers to "Normal" status functions
-	@IBAction func takeNormal(sender: NSButton) {
+	@IBAction func takeNormal(_ sender: NSButton) {
 		takeClearAll(self)
 		takeGenNormal(self)
 		takeHeadEyeNorm(self)
@@ -555,7 +555,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		}
 	}
 	
-	@IBAction func takeFemaleNormal(sender: AnyObject) {
+	@IBAction func takeFemaleNormal(_ sender: AnyObject) {
 		takeClearAll(self)
 		takeGenNormal(self)
 		takeHeadEyeNorm(self)
@@ -577,7 +577,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		}
 	}
 	
-	@IBAction func takeMaleNormal(sender: AnyObject) {
+	@IBAction func takeMaleNormal(_ sender: AnyObject) {
 		takeClearAll(self)
 		takeGenNormal(self)
 		takeHeadEyeNorm(self)
@@ -598,14 +598,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		}
 	}
 	
-    @IBAction func takeGenNormal(sender: AnyObject) {
+    @IBAction func takeGenNormal(_ sender: AnyObject) {
         genNAlertView.state = NSOnState
         genNOrientedView.state = NSOnState
         genNNADView.state = NSOnState
         genNWDView.state = NSOnState
     }
 
-    @IBAction func takeHeadEyeNorm(sender: AnyObject) {
+    @IBAction func takeHeadEyeNorm(_ sender: AnyObject) {
         heNNCATView.state = NSOnState
         heNPERRLAView.state = NSOnState
         heNEOMIView.state = NSOnState
@@ -613,7 +613,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         heNConjclrView.state = NSOnState
     }
 
-    @IBAction func takeENTNorm(sender: AnyObject) {
+    @IBAction func takeENTNorm(_ sender: AnyObject) {
         entNEACsView.state = NSOnState
         entTMsView.state = NSOnState
         entNOPclrView.state = NSOnState
@@ -621,7 +621,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         entNNarView.state = NSOnState
     }
     
-    @IBAction func takeNeckNorm(sender: AnyObject) {
+    @IBAction func takeNeckNorm(_ sender: AnyObject) {
         neckNSuppleView.state = NSOnState
         neckNLADView.state = NSOnState
         neckNBruitsView.state = NSOnState
@@ -630,7 +630,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         neckNThyView.state = NSOnState
     }
     
-    @IBAction func takeCVNorm(sender: AnyObject) {
+    @IBAction func takeCVNorm(_ sender: AnyObject) {
         cvNRRRView.state = NSOnState
         cvNMurView.state = NSOnState
 		cvNGalView.state = NSOnState
@@ -640,7 +640,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         cvNs2View.state = NSOnState
     }
     
-    @IBAction func takeChestNorm(sender: AnyObject) {
+    @IBAction func takeChestNorm(_ sender: AnyObject) {
         chestNNTView.state = NSOnState
         chestNLungsView.state = NSOnState
         chestNWView.state = NSOnState
@@ -651,7 +651,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		chestNWOBView.state = NSOnState
     }
     
-    @IBAction func takeExtNorm(sender: AnyObject) {
+    @IBAction func takeExtNorm(_ sender: AnyObject) {
         extNCyanView.state = NSOnState
 		extNClubView.state = NSOnState
 		extNEdemaView.state = NSOnState
@@ -659,7 +659,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         extNCRView.state = NSOnState
     }
     
-    @IBAction func takeNeuroNorm(sender: AnyObject) {
+    @IBAction func takeNeuroNorm(_ sender: AnyObject) {
         neuroNCNsView.state = NSOnState
         neuroNDTRsView.state = NSOnState
         neuroNSensView.state = NSOnState
@@ -670,14 +670,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         neuroNMonofilView.state = NSOnState
     }
     
-    @IBAction func takeMSKNorm(sender: AnyObject) {
+    @IBAction func takeMSKNorm(_ sender: AnyObject) {
         mskNROMView.state = NSOnState
         mskNSTRView.state = NSOnState
         mskNNTView.state = NSOnState
 		mskNToneView.state = NSOnState
     }
     
-    @IBAction func takeGINorm(sender: AnyObject) {
+    @IBAction func takeGINorm(_ sender: AnyObject) {
         giNSoftView.state = NSOnState
         giNNTView.state = NSOnState
 		giNNoReboundView.state = NSOnState
@@ -687,7 +687,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         giNBSView.state = NSOnState
     }
     
-    @IBAction func takeSkinNorm(sender: AnyObject) {
+    @IBAction func takeSkinNorm(_ sender: AnyObject) {
         skinNWrmView.state = NSOnState
         skinNDryView.state = NSOnState
         skinNNorashView.state = NSOnState
@@ -695,28 +695,28 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         skinNTurgView.state = NSOnState
     }
     
-    @IBAction func takePsyNorm(sender: AnyObject) {
+    @IBAction func takePsyNorm(_ sender: AnyObject) {
         psyNMoodView.state = NSOnState
         psyNAffectView.state = NSOnState
         psyNJudgeView.state = NSOnState
         psyNInsightView.state = NSOnState
     }
     
-    @IBAction func takeLymphNorm(sender: AnyObject) {
+    @IBAction func takeLymphNorm(_ sender: AnyObject) {
         lymphNCervicalView.state = NSOnState
         lymphNAxillaryView.state = NSOnState
         lymphNInguinalView.state = NSOnState
         lymphNSupraClavView.state = NSOnState
     }
     
-    @IBAction func takeBreastNorm(sender: AnyObject) {
+    @IBAction func takeBreastNorm(_ sender: AnyObject) {
         breastNNomassView.state = NSOnState
         breastNNonipdcView.state = NSOnState
 		breastNNoAxLAD.state = NSOnState
         breastNNTView.state = NSOnState
     }
     
-    @IBAction func takeGynNorm(sender: AnyObject) {
+    @IBAction func takeGynNorm(_ sender: AnyObject) {
         gynNExtgenView.state = NSOnState
         gynNUtView.state = NSOnState
         gynNCvxView.state = NSOnState
@@ -724,21 +724,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         gynNAdnxView.state = NSOnState
     }
     
-    @IBAction func takeDRENorm(sender: AnyObject) {
+    @IBAction func takeDRENorm(_ sender: AnyObject) {
         dreNToneView.state = NSOnState
         dreNNoMassView.state = NSOnState
         dreNNoRhoidsView.state = NSOnState
         dreNHemeView.state = NSOnState
     }
     
-    @IBAction func takeGUNorm(sender: AnyObject) {
+    @IBAction func takeGUNorm(_ sender: AnyObject) {
         guNCircView.state = NSOnState
         guNTestesView.state = NSOnState
         guNNoherniaView.state = NSOnState
         guNProsView.state = NSOnState
     }
     
-	@IBAction func takeLFingersCyanAll(sender: AnyObject) {
+	@IBAction func takeLFingersCyanAll(_ sender: AnyObject) {
 		extACyanFingersL1View.state = NSOnState
 		extACyanFingersL2View.state = NSOnState
 		extACyanFingersL3View.state = NSOnState
@@ -746,7 +746,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		extACyanFingersL5View.state = NSOnState
 	}
     
-	@IBAction func takeRFingersCyanAll(sender: AnyObject) {
+	@IBAction func takeRFingersCyanAll(_ sender: AnyObject) {
 		extACyanFingersR1View.state = NSOnState
 		extACyanFingersR2View.state = NSOnState
 		extACyanFingersR3View.state = NSOnState
@@ -754,7 +754,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		extACyanFingersR5View.state = NSOnState
 	}
 	
-	@IBAction func takeLToesCyanAll(sender: AnyObject) {
+	@IBAction func takeLToesCyanAll(_ sender: AnyObject) {
 		extACyanToesL1View.state = NSOnState
 		extACyanToesL2View.state = NSOnState
 		extACyanToesL3View.state = NSOnState
@@ -762,7 +762,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		extACyanToesL5View.state = NSOnState
 	}
 	
-	@IBAction func takeRToesCyanAll(sender: AnyObject) {
+	@IBAction func takeRToesCyanAll(_ sender: AnyObject) {
 		extACyanToesR1View.state = NSOnState
 		extACyanToesR2View.state = NSOnState
 		extACyanToesR3View.state = NSOnState
@@ -771,7 +771,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	}
 	
     //Clear All & Tab Functions
-    @IBAction func takeClearAll(sender: AnyObject) {
+    @IBAction func takeClearAll(_ sender: AnyObject) {
         takeClearTabOne(self)
         takeClearTabTwo(self)
         takeClearTabThree(self)
@@ -780,7 +780,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		takeClearTabSix(self)
     }
     
-    @IBAction func takeClearTabOne(sender: AnyObject) {
+    @IBAction func takeClearTabOne(_ sender: AnyObject) {
         genNAlertView.state = NSOffState
         genNOrientedView.state = NSOffState
         genNNADView.state = NSOffState
@@ -808,11 +808,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		psyAAffectFlatView.state = NSOffState
 		psyAAffectAnxView.state = NSOffState
 		psyAPsyMtrComboView.removeAllItems()
-		psyAPsyMtrComboView.addItemsWithObjectValues(cbPsyMtr)
-		psyAPsyMtrComboView.selectItemAtIndex(0)
+		psyAPsyMtrComboView.addItems(withObjectValues: cbPsyMtr)
+		psyAPsyMtrComboView.selectItem(at: 0)
 		psyAJudgeComboView.removeAllItems()
-		psyAJudgeComboView.addItemsWithObjectValues(cbJdg)
-		psyAJudgeComboView.selectItemAtIndex(0)
+		psyAJudgeComboView.addItems(withObjectValues: cbJdg)
+		psyAJudgeComboView.selectItem(at: 0)
 		psyOtherTextView.stringValue = ""
 		
         heNNCATView.state = NSOffState
@@ -883,7 +883,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         neckOtherTextView.stringValue = ""
     }
     
-	@IBAction func takeClearTabTwo(sender: AnyObject) {
+	@IBAction func takeClearTabTwo(_ sender: AnyObject) {
 		cvNRRRView.state = NSOffState
 		cvNMurView.state = NSOffState
 		cvNGalView.state = NSOffState
@@ -899,14 +899,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		cvAs3View.state = NSOffState
 		cvAs4View.state = NSOffState
 		cvASEMQuantView.removeAllItems()
-		cvASEMQuantView.addItemsWithObjectValues(cbSEMQuant)
-		cvASEMQuantView.selectItemAtIndex(0)
+		cvASEMQuantView.addItems(withObjectValues: cbSEMQuant)
+		cvASEMQuantView.selectItem(at: 0)
 		cvASEMPopView.removeAllItems()
-		cvASEMPopView.addItemsWithTitles(cbSEMType)
-		cvASEMPopView.selectItemAtIndex(0)
+		cvASEMPopView.addItems(withTitles: cbSEMType)
+		cvASEMPopView.selectItem(at: 0)
 		cvASEMComboView.removeAllItems()
-		cvASEMComboView.addItemsWithObjectValues(cbSEMLocation)
-		cvASEMComboView.selectItemAtIndex(0)
+		cvASEMComboView.addItems(withObjectValues: cbSEMLocation)
+		cvASEMComboView.selectItem(at: 0)
 		cvOtherTextView.stringValue = ""
 		
 		chestNNTView.state = NSOffState
@@ -918,17 +918,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		chestNEgophView.state = NSOffState
 		chestNWOBView.state = NSOffState
 		chestAWhzComboView.removeAllItems()
-		chestAWhzComboView.addItemsWithObjectValues(cbRULLULList)
-		chestAWhzComboView.selectItemAtIndex(0)
+		chestAWhzComboView.addItems(withObjectValues: cbRULLULList)
+		chestAWhzComboView.selectItem(at: 0)
 		chestACrklComboView.removeAllItems()
-		chestACrklComboView.addItemsWithObjectValues(cbRULLULList)
-		chestACrklComboView.selectItemAtIndex(0)
+		chestACrklComboView.addItems(withObjectValues: cbRULLULList)
+		chestACrklComboView.selectItem(at: 0)
 		chestARhComboView.removeAllItems()
-		chestARhComboView.addItemsWithObjectValues(cbRULLULList)
-		chestARhComboView.selectItemAtIndex(0)
+		chestARhComboView.addItems(withObjectValues: cbRULLULList)
+		chestARhComboView.selectItem(at: 0)
 		chestAEgophComboView.removeAllItems()
-		chestAEgophComboView.addItemsWithObjectValues(cbRULLULList)
-		chestAEgophComboView.selectItemAtIndex(0)
+		chestAEgophComboView.addItems(withObjectValues: cbRULLULList)
+		chestAEgophComboView.selectItem(at: 0)
 		chestOtherTextView.stringValue = ""
 		
 		giNSoftView.state = NSOffState
@@ -943,196 +943,196 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		giAHMQuantView.stringValue = ""
 		giASpMQuantView.stringValue = ""
 		giATTPComboView.removeAllItems()
-		giATTPComboView.addItemsWithObjectValues(cbTTPMass)
-		giATTPComboView.selectItemAtIndex(0)
+		giATTPComboView.addItems(withObjectValues: cbTTPMass)
+		giATTPComboView.selectItem(at: 0)
 		giAMassView.removeAllItems()
-		giAMassView.addItemsWithObjectValues(cbTTPMass)
-		giAMassView.selectItemAtIndex(0)
+		giAMassView.addItems(withObjectValues: cbTTPMass)
+		giAMassView.selectItem(at: 0)
 		giABSComboView.removeAllItems()
-		giABSComboView.addItemsWithObjectValues(cbBS)
-		giABSComboView.selectItemAtIndex(0)
+		giABSComboView.addItems(withObjectValues: cbBS)
+		giABSComboView.selectItem(at: 0)
 		giOtherTextView.stringValue = ""
 	}
 	
-	@IBAction func takeClearTabThree(sender: AnyObject) {
+	@IBAction func takeClearTabThree(_ sender: AnyObject) {
 		extNCyanView.state = NSOffState
 		extNClubView.state = NSOffState
 		extNEdemaView.state = NSOffState
 		extNPulsesView.state = NSOffState
 		extNCRView.state = NSOffState
 		extAEdema1QuantView.removeAllItems()
-		extAEdema1QuantView.addItemsWithTitles(puEdemaQuant)
-		extAEdema1QuantView.selectItemAtIndex(0)
+		extAEdema1QuantView.addItems(withTitles: puEdemaQuant)
+		extAEdema1QuantView.selectItem(at: 0)
 		extAEdema1SideView.removeAllItems()
-		extAEdema1SideView.addItemsWithTitles(puSide)
-		extAEdema1SideView.selectItemAtIndex(0)
+		extAEdema1SideView.addItems(withTitles: puSide)
+		extAEdema1SideView.selectItem(at: 0)
 		extAEdema1TypeView.removeAllItems()
-		extAEdema1TypeView.addItemsWithTitles(cbPitting)
-		extAEdema1TypeView.selectItemAtIndex(0)
+		extAEdema1TypeView.addItems(withTitles: cbPitting)
+		extAEdema1TypeView.selectItem(at: 0)
 		extAEdema1LocationView.removeAllItems()
-		extAEdema1LocationView.addItemsWithObjectValues(cbEdema)
-		extAEdema1LocationView.selectItemAtIndex(0)
+		extAEdema1LocationView.addItems(withObjectValues: cbEdema)
+		extAEdema1LocationView.selectItem(at: 0)
 		extAEdema1BrnyView.state = NSOffState
 		extAEdema1LymphView.state = NSOffState
 		extAEdema1VenusView.state = NSOffState
 		extAEdema1CelView.state = NSOffState
 		extAEdema2QuantView.removeAllItems()
-		extAEdema2QuantView.addItemsWithTitles(puEdemaQuant)
-		extAEdema2QuantView.selectItemAtIndex(0)
+		extAEdema2QuantView.addItems(withTitles: puEdemaQuant)
+		extAEdema2QuantView.selectItem(at: 0)
 		extAEdema2SideView.removeAllItems()
-		extAEdema2SideView.addItemsWithTitles(puSide)
-		extAEdema2SideView.selectItemAtIndex(0)
+		extAEdema2SideView.addItems(withTitles: puSide)
+		extAEdema2SideView.selectItem(at: 0)
 		extAEdema2TypeView.removeAllItems()
-		extAEdema2TypeView.addItemsWithTitles(cbPitting)
-		extAEdema2TypeView.selectItemAtIndex(0)
+		extAEdema2TypeView.addItems(withTitles: cbPitting)
+		extAEdema2TypeView.selectItem(at: 0)
 		extAEdema2LocationView.removeAllItems()
-		extAEdema2LocationView.addItemsWithObjectValues(cbEdema)
-		extAEdema2LocationView.selectItemAtIndex(0)
+		extAEdema2LocationView.addItems(withObjectValues: cbEdema)
+		extAEdema2LocationView.selectItem(at: 0)
 		extAEdema2BrnyView.state = NSOffState
 		extAEdema2LymphView.state = NSOffState
 		extAEdema2VenusView.state = NSOffState
 		extAEdema2CelView.state = NSOffState
 		extAEdema3QuantView.removeAllItems()
-		extAEdema3QuantView.addItemsWithTitles(puEdemaQuant)
-		extAEdema3QuantView.selectItemAtIndex(0)
+		extAEdema3QuantView.addItems(withTitles: puEdemaQuant)
+		extAEdema3QuantView.selectItem(at: 0)
 		extAEdema3SideView.removeAllItems()
-		extAEdema3SideView.addItemsWithTitles(puSide)
-		extAEdema3SideView.selectItemAtIndex(0)
+		extAEdema3SideView.addItems(withTitles: puSide)
+		extAEdema3SideView.selectItem(at: 0)
 		extAEdema3TypeView.removeAllItems()
-		extAEdema3TypeView.addItemsWithTitles(cbPitting)
-		extAEdema3TypeView.selectItemAtIndex(0)
+		extAEdema3TypeView.addItems(withTitles: cbPitting)
+		extAEdema3TypeView.selectItem(at: 0)
 		extAEdema3LocationView.removeAllItems()
-		extAEdema3LocationView.addItemsWithObjectValues(cbEdema)
-		extAEdema3LocationView.selectItemAtIndex(0)
+		extAEdema3LocationView.addItems(withObjectValues: cbEdema)
+		extAEdema3LocationView.selectItem(at: 0)
 		extAEdema3BrnyView.state = NSOffState
 		extAEdema3LymphView.state = NSOffState
 		extAEdema3VenusView.state = NSOffState
 		extAEdema3CelView.state = NSOffState
 		extAEdema4QuantView.removeAllItems()
-		extAEdema4QuantView.addItemsWithTitles(puEdemaQuant)
-		extAEdema4QuantView.selectItemAtIndex(0)
+		extAEdema4QuantView.addItems(withTitles: puEdemaQuant)
+		extAEdema4QuantView.selectItem(at: 0)
 		extAEdema4SideView.removeAllItems()
-		extAEdema4SideView.addItemsWithTitles(puSide)
-		extAEdema4SideView.selectItemAtIndex(0)
+		extAEdema4SideView.addItems(withTitles: puSide)
+		extAEdema4SideView.selectItem(at: 0)
 		extAEdema4TypeView.removeAllItems()
-		extAEdema4TypeView.addItemsWithTitles(cbPitting)
-		extAEdema4TypeView.selectItemAtIndex(0)
+		extAEdema4TypeView.addItems(withTitles: cbPitting)
+		extAEdema4TypeView.selectItem(at: 0)
 		extAEdema4LocationView.removeAllItems()
-		extAEdema4LocationView.addItemsWithObjectValues(cbEdema)
-		extAEdema4LocationView.selectItemAtIndex(0)
+		extAEdema4LocationView.addItems(withObjectValues: cbEdema)
+		extAEdema4LocationView.selectItem(at: 0)
 		extAEdema4BrnyView.state = NSOffState
 		extAEdema4LymphView.state = NSOffState
 		extAEdema4VenusView.state = NSOffState
 		extAEdema4CelView.state = NSOffState
 		extAEdema5QuantView.removeAllItems()
-		extAEdema5QuantView.addItemsWithTitles(puEdemaQuant)
-		extAEdema5QuantView.selectItemAtIndex(0)
+		extAEdema5QuantView.addItems(withTitles: puEdemaQuant)
+		extAEdema5QuantView.selectItem(at: 0)
 		extAEdema5SideView.removeAllItems()
-		extAEdema5SideView.addItemsWithTitles(puSide)
-		extAEdema5SideView.selectItemAtIndex(0)
+		extAEdema5SideView.addItems(withTitles: puSide)
+		extAEdema5SideView.selectItem(at: 0)
 		extAEdema5TypeView.removeAllItems()
-		extAEdema5TypeView.addItemsWithTitles(cbPitting)
-		extAEdema5TypeView.selectItemAtIndex(0)
+		extAEdema5TypeView.addItems(withTitles: cbPitting)
+		extAEdema5TypeView.selectItem(at: 0)
 		extAEdema5LocationView.removeAllItems()
-		extAEdema5LocationView.addItemsWithObjectValues(cbEdema)
-		extAEdema5LocationView.selectItemAtIndex(0)
+		extAEdema5LocationView.addItems(withObjectValues: cbEdema)
+		extAEdema5LocationView.selectItem(at: 0)
 		extAEdema5BrnyView.state = NSOffState
 		extAEdema5LymphView.state = NSOffState
 		extAEdema5VenusView.state = NSOffState
 		extAEdema5CelView.state = NSOffState
 		extAPulses1LQuantView.removeAllItems()
-		extAPulses1LQuantView.addItemsWithTitles(cbPulses)
-		extAPulses1LQuantView.selectItemAtIndex(0)
+		extAPulses1LQuantView.addItems(withTitles: cbPulses)
+		extAPulses1LQuantView.selectItem(at: 0)
 		extAPulses1LLocationView.removeAllItems()
-		extAPulses1LLocationView.addItemsWithObjectValues(cbPulsesSet1)
-		extAPulses1LLocationView.selectItemAtIndex(0)
+		extAPulses1LLocationView.addItems(withObjectValues: cbPulsesSet1)
+		extAPulses1LLocationView.selectItem(at: 0)
 		extAPulses1RQuantView.removeAllItems()
-		extAPulses1RQuantView.addItemsWithTitles(cbPulses)
-		extAPulses1RQuantView.selectItemAtIndex(0)
+		extAPulses1RQuantView.addItems(withTitles: cbPulses)
+		extAPulses1RQuantView.selectItem(at: 0)
 		extAPulses1RLocationView.removeAllItems()
-		extAPulses1RLocationView.addItemsWithObjectValues(cbPulsesSet1)
-		extAPulses1RLocationView.selectItemAtIndex(0)
+		extAPulses1RLocationView.addItems(withObjectValues: cbPulsesSet1)
+		extAPulses1RLocationView.selectItem(at: 0)
 		extAPulses2LQuantView.removeAllItems()
-		extAPulses2LQuantView.addItemsWithTitles(cbPulses)
-		extAPulses2LQuantView.selectItemAtIndex(0)
+		extAPulses2LQuantView.addItems(withTitles: cbPulses)
+		extAPulses2LQuantView.selectItem(at: 0)
 		extAPulses2LLocationView.removeAllItems()
-		extAPulses2LLocationView.addItemsWithObjectValues(cbPulsesSet1)
-		extAPulses2LLocationView.selectItemAtIndex(0)
+		extAPulses2LLocationView.addItems(withObjectValues: cbPulsesSet1)
+		extAPulses2LLocationView.selectItem(at: 0)
 		extAPulses2RQuantView.removeAllItems()
-		extAPulses2RQuantView.addItemsWithTitles(cbPulses)
-		extAPulses2RQuantView.selectItemAtIndex(0)
+		extAPulses2RQuantView.addItems(withTitles: cbPulses)
+		extAPulses2RQuantView.selectItem(at: 0)
 		extAPulses2RLocationView.removeAllItems()
-		extAPulses2RLocationView.addItemsWithObjectValues(cbPulsesSet1)
-		extAPulses2RLocationView.selectItemAtIndex(0)
+		extAPulses2RLocationView.addItems(withObjectValues: cbPulsesSet1)
+		extAPulses2RLocationView.selectItem(at: 0)
 		extAPulses3LQuantView.removeAllItems()
-		extAPulses3LQuantView.addItemsWithTitles(cbPulses)
-		extAPulses3LQuantView.selectItemAtIndex(0)
+		extAPulses3LQuantView.addItems(withTitles: cbPulses)
+		extAPulses3LQuantView.selectItem(at: 0)
 		extAPulses3LLocationView.removeAllItems()
-		extAPulses3LLocationView.addItemsWithObjectValues(cbPulsesSet2)
-		extAPulses3LLocationView.selectItemAtIndex(0)
+		extAPulses3LLocationView.addItems(withObjectValues: cbPulsesSet2)
+		extAPulses3LLocationView.selectItem(at: 0)
 		extAPulses3RQuantView.removeAllItems()
-		extAPulses3RQuantView.addItemsWithTitles(cbPulses)
-		extAPulses3RQuantView.selectItemAtIndex(0)
+		extAPulses3RQuantView.addItems(withTitles: cbPulses)
+		extAPulses3RQuantView.selectItem(at: 0)
 		extAPulses3RLocationView.removeAllItems()
-		extAPulses3RLocationView.addItemsWithObjectValues(cbPulsesSet2)
-		extAPulses3RLocationView.selectItemAtIndex(0)
+		extAPulses3RLocationView.addItems(withObjectValues: cbPulsesSet2)
+		extAPulses3RLocationView.selectItem(at: 0)
 		extAPulses4LQuantView.removeAllItems()
-		extAPulses4LQuantView.addItemsWithTitles(cbPulses)
-		extAPulses4LQuantView.selectItemAtIndex(0)
+		extAPulses4LQuantView.addItems(withTitles: cbPulses)
+		extAPulses4LQuantView.selectItem(at: 0)
 		extAPulses4LLocationView.removeAllItems()
-		extAPulses4LLocationView.addItemsWithObjectValues(cbPulsesSet2)
-		extAPulses4LLocationView.selectItemAtIndex(0)
+		extAPulses4LLocationView.addItems(withObjectValues: cbPulsesSet2)
+		extAPulses4LLocationView.selectItem(at: 0)
 		extAPulses4RQuantView.removeAllItems()
-		extAPulses4RQuantView.addItemsWithTitles(cbPulses)
-		extAPulses4RQuantView.selectItemAtIndex(0)
+		extAPulses4RQuantView.addItems(withTitles: cbPulses)
+		extAPulses4RQuantView.selectItem(at: 0)
 		extAPulses4RLocationView.removeAllItems()
-		extAPulses4RLocationView.addItemsWithObjectValues(cbPulsesSet2)
-		extAPulses4RLocationView.selectItemAtIndex(0)
+		extAPulses4RLocationView.addItems(withObjectValues: cbPulsesSet2)
+		extAPulses4RLocationView.selectItem(at: 0)
 		extAPulses5LQuantView.removeAllItems()
-		extAPulses5LQuantView.addItemsWithTitles(cbPulses)
-		extAPulses5LQuantView.selectItemAtIndex(0)
+		extAPulses5LQuantView.addItems(withTitles: cbPulses)
+		extAPulses5LQuantView.selectItem(at: 0)
 		extAPulses5LLocationView.removeAllItems()
-		extAPulses5LLocationView.addItemsWithObjectValues(cbPulsesSet2)
-		extAPulses5LLocationView.selectItemAtIndex(0)
+		extAPulses5LLocationView.addItems(withObjectValues: cbPulsesSet2)
+		extAPulses5LLocationView.selectItem(at: 0)
 		extAPulses5RQuantView.removeAllItems()
-		extAPulses5RQuantView.addItemsWithTitles(cbPulses)
-		extAPulses5RQuantView.selectItemAtIndex(0)
+		extAPulses5RQuantView.addItems(withTitles: cbPulses)
+		extAPulses5RQuantView.selectItem(at: 0)
 		extAPulses5RLocationView.removeAllItems()
-		extAPulses5RLocationView.addItemsWithObjectValues(cbPulsesSet2)
-		extAPulses5RLocationView.selectItemAtIndex(0)
+		extAPulses5RLocationView.addItems(withObjectValues: cbPulsesSet2)
+		extAPulses5RLocationView.selectItem(at: 0)
 		extACRLComboView.removeAllItems()
-		extACRLComboView.addItemsWithObjectValues(cbCRQuant)
-		extACRLComboView.selectItemAtIndex(0)
+		extACRLComboView.addItems(withObjectValues: cbCRQuant)
+		extACRLComboView.selectItem(at: 0)
 		extACRRComboView.removeAllItems()
-		extACRRComboView.addItemsWithObjectValues(cbCRQuant)
-		extACRRComboView.selectItemAtIndex(0)
+		extACRRComboView.addItems(withObjectValues: cbCRQuant)
+		extACRRComboView.selectItem(at: 0)
 		extASpiderLComboView.removeAllItems()
-		extASpiderLComboView.addItemsWithObjectValues(cbSpiderVar)
-		extASpiderLComboView.selectItemAtIndex(0)
+		extASpiderLComboView.addItems(withObjectValues: cbSpiderVar)
+		extASpiderLComboView.selectItem(at: 0)
 		extASpiderRComboView.removeAllItems()
-		extASpiderRComboView.addItemsWithObjectValues(cbSpiderVar)
-		extASpiderRComboView.selectItemAtIndex(0)
+		extASpiderRComboView.addItems(withObjectValues: cbSpiderVar)
+		extASpiderRComboView.selectItem(at: 0)
 		extASpider2LComboView.removeAllItems()
-		extASpider2LComboView.addItemsWithObjectValues(cbSpiderVar)
-		extASpider2LComboView.selectItemAtIndex(0)
+		extASpider2LComboView.addItems(withObjectValues: cbSpiderVar)
+		extASpider2LComboView.selectItem(at: 0)
 		extASpider2RComboView.removeAllItems()
-		extASpider2RComboView.addItemsWithObjectValues(cbSpiderVar)
-		extASpider2RComboView.selectItemAtIndex(0)
+		extASpider2RComboView.addItems(withObjectValues: cbSpiderVar)
+		extASpider2RComboView.selectItem(at: 0)
 		extASpider3LComboView.removeAllItems()
-		extASpider3LComboView.addItemsWithObjectValues(cbSpiderVar)
-		extASpider3LComboView.selectItemAtIndex(0)
+		extASpider3LComboView.addItems(withObjectValues: cbSpiderVar)
+		extASpider3LComboView.selectItem(at: 0)
 		extASpider3RComboView.removeAllItems()
-		extASpider3RComboView.addItemsWithObjectValues(cbSpiderVar)
-		extASpider3RComboView.selectItemAtIndex(0)
+		extASpider3RComboView.addItems(withObjectValues: cbSpiderVar)
+		extASpider3RComboView.selectItem(at: 0)
 		extAVericoseLComboView.removeAllItems()
-		extAVericoseLComboView.addItemsWithObjectValues(cbSpiderVar)
-		extAVericoseLComboView.selectItemAtIndex(0)
+		extAVericoseLComboView.addItems(withObjectValues: cbSpiderVar)
+		extAVericoseLComboView.selectItem(at: 0)
 		extAVericoseRComboView.removeAllItems()
-		extAVericoseRComboView.addItemsWithObjectValues(cbSpiderVar)
-		extAVericoseRComboView.selectItemAtIndex(0)
+		extAVericoseRComboView.addItems(withObjectValues: cbSpiderVar)
+		extAVericoseRComboView.selectItem(at: 0)
 		extAClubbingComboView.removeAllItems()
-		extAClubbingComboView.addItemsWithObjectValues(cbClubbing)
-		extAClubbingComboView.selectItemAtIndex(0)
+		extAClubbingComboView.addItems(withObjectValues: cbClubbing)
+		extAClubbingComboView.selectItem(at: 0)
 		extACyanFingersL1View.state = NSOffState
 		extACyanFingersL2View.state = NSOffState
 		extACyanFingersL3View.state = NSOffState
@@ -1157,7 +1157,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		extOtherTextView.stringValue = ""
 	}
 	
-    @IBAction func takeClearTabFour(sender: AnyObject) {
+    @IBAction func takeClearTabFour(_ sender: AnyObject) {
 		neuroNCNsView.state = NSOffState
 		neuroNDTRsView.state = NSOffState
 		neuroNSensView.state = NSOffState
@@ -1171,26 +1171,26 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		neuroAADMonofilRView.state = NSOffState
 		neuroAADMonofilLView.state = NSOffState
 		neuroADcrvibComboView.removeAllItems()
-		neuroADcrvibComboView.addItemsWithObjectValues(cbLowerExtremities)
-		neuroADcrvibComboView.selectItemAtIndex(0)
+		neuroADcrvibComboView.addItems(withObjectValues: cbLowerExtremities)
+		neuroADcrvibComboView.selectItem(at: 0)
 		neuroADcrvibLComboView.removeAllItems()
-		neuroADcrvibLComboView.addItemsWithObjectValues(cbLowerExtremities)
-		neuroADcrvibLComboView.selectItemAtIndex(0)
+		neuroADcrvibLComboView.addItems(withObjectValues: cbLowerExtremities)
+		neuroADcrvibLComboView.selectItem(at: 0)
 		neuroAMonofilComboView.removeAllItems()
-		neuroAMonofilComboView.addItemsWithObjectValues(cbLowerExtremities)
-		neuroAMonofilComboView.selectItemAtIndex(0)
+		neuroAMonofilComboView.addItems(withObjectValues: cbLowerExtremities)
+		neuroAMonofilComboView.selectItem(at: 0)
 		neuroAMonofilLComboView.removeAllItems()
-		neuroAMonofilLComboView.addItemsWithObjectValues(cbLowerExtremities)
-		neuroAMonofilLComboView.selectItemAtIndex(0)
+		neuroAMonofilLComboView.addItems(withObjectValues: cbLowerExtremities)
+		neuroAMonofilLComboView.selectItem(at: 0)
 		neuroADTRComboView.removeAllItems()
-		neuroADTRComboView.addItemsWithObjectValues(cbDTR)
-		neuroADTRComboView.selectItemAtIndex(0)
+		neuroADTRComboView.addItems(withObjectValues: cbDTR)
+		neuroADTRComboView.selectItem(at: 0)
 		neuroASLRRComboView.removeAllItems()
-		neuroASLRRComboView.addItemsWithObjectValues(cbSTL)
-		neuroASLRRComboView.selectItemAtIndex(0)
+		neuroASLRRComboView.addItems(withObjectValues: cbSTL)
+		neuroASLRRComboView.selectItem(at: 0)
 		neuroASLRLComboView.removeAllItems()
-		neuroASLRLComboView.addItemsWithObjectValues(cbSTL)
-		neuroASLRLComboView.selectItemAtIndex(0)
+		neuroASLRLComboView.addItems(withObjectValues: cbSTL)
+		neuroASLRLComboView.selectItem(at: 0)
 		neuroOtherTextView.stringValue = ""
 		
 		mskNROMView.state = NSOffState
@@ -1199,8 +1199,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		mskNToneView.state = NSOffState
 		mskASubsectionView.stringValue = ""
 		mskABunComboView.removeAllItems()
-		mskABunComboView.addItemsWithObjectValues(cbRLBList)
-		mskABunComboView.selectItemAtIndex(0)
+		mskABunComboView.addItems(withObjectValues: cbRLBList)
+		mskABunComboView.selectItem(at: 0)
 		mskAHammerL1View.state = NSOffState
 		mskAHammerL2View.state = NSOffState
 		mskAHammerL3View.state = NSOffState
@@ -1246,27 +1246,27 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             lymphNInguinalView.state = NSOffState
             lymphNSupraClavView.state = NSOffState
             lymphAAxComboView.removeAllItems()
-            lymphAAxComboView.addItemsWithObjectValues(cbRLBList)
-            lymphAAxComboView.selectItemAtIndex(0)
+            lymphAAxComboView.addItems(withObjectValues: cbRLBList)
+            lymphAAxComboView.selectItem(at: 0)
             lymphAIngComboView.removeAllItems()
-            lymphAIngComboView.addItemsWithObjectValues(cbRLBList)
-            lymphAIngComboView.selectItemAtIndex(0)
+            lymphAIngComboView.addItems(withObjectValues: cbRLBList)
+            lymphAIngComboView.selectItem(at: 0)
             lymphASuClComboView.removeAllItems()
-            lymphASuClComboView.addItemsWithObjectValues(cbRLBList)
-            lymphASuClComboView.selectItemAtIndex(0)
+            lymphASuClComboView.addItems(withObjectValues: cbRLBList)
+            lymphASuClComboView.selectItem(at: 0)
             lymphASMComboView.removeAllItems()
-            lymphASMComboView.addItemsWithObjectValues(cbRLBList)
-            lymphASMComboView.selectItemAtIndex(0)
+            lymphASMComboView.addItems(withObjectValues: cbRLBList)
+            lymphASMComboView.selectItem(at: 0)
             lymphAAcComboView.removeAllItems()
-            lymphAAcComboView.addItemsWithObjectValues(cbRLBList)
-            lymphAAcComboView.selectItemAtIndex(0)
+            lymphAAcComboView.addItems(withObjectValues: cbRLBList)
+            lymphAAcComboView.selectItem(at: 0)
             lymphAPcComboView.removeAllItems()
-            lymphAPcComboView.addItemsWithObjectValues(cbRLBList)
-            lymphAPcComboView.selectItemAtIndex(0)
+            lymphAPcComboView.addItems(withObjectValues: cbRLBList)
+            lymphAPcComboView.selectItem(at: 0)
             lymphOtherTextView.stringValue = ""
     }
     
-	@IBAction func takeClearTabFive(sender: AnyObject) {
+	@IBAction func takeClearTabFive(_ sender: AnyObject) {
 		breastNNomassView.state = NSOffState
 		breastNNonipdcView.state = NSOffState
 		breastNNoAxLAD.state = NSOffState
@@ -1275,113 +1275,113 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		breastALDiffuseView.state = NSOffState
 		breastALAxLADView.state = NSOffState
 		breastAL1MView.removeAllItems()
-		breastAL1MView.addItemsWithTitles(puMassSize)
-		breastAL1MView.selectItemAtIndex(0)
+		breastAL1MView.addItems(withTitles: puMassSize)
+		breastAL1MView.selectItem(at: 0)
 		breastAL2MView.removeAllItems()
-		breastAL2MView.addItemsWithTitles(puMassSize)
-		breastAL2MView.selectItemAtIndex(0)
+		breastAL2MView.addItems(withTitles: puMassSize)
+		breastAL2MView.selectItem(at: 0)
 		breastAL3MView.removeAllItems()
-		breastAL3MView.addItemsWithTitles(puMassSize)
-		breastAL3MView.selectItemAtIndex(0)
+		breastAL3MView.addItems(withTitles: puMassSize)
+		breastAL3MView.selectItem(at: 0)
 		breastAL4MView.removeAllItems()
-		breastAL4MView.addItemsWithTitles(puMassSize)
-		breastAL4MView.selectItemAtIndex(0)
+		breastAL4MView.addItems(withTitles: puMassSize)
+		breastAL4MView.selectItem(at: 0)
 		breastAL5MView.removeAllItems()
-		breastAL5MView.addItemsWithTitles(puMassSize)
-		breastAL5MView.selectItemAtIndex(0)
+		breastAL5MView.addItems(withTitles: puMassSize)
+		breastAL5MView.selectItem(at: 0)
 		breastAL6MView.removeAllItems()
-		breastAL6MView.addItemsWithTitles(puMassSize)
-		breastAL6MView.selectItemAtIndex(0)
+		breastAL6MView.addItems(withTitles: puMassSize)
+		breastAL6MView.selectItem(at: 0)
 		breastAL7MView.removeAllItems()
-		breastAL7MView.addItemsWithTitles(puMassSize)
-		breastAL7MView.selectItemAtIndex(0)
+		breastAL7MView.addItems(withTitles: puMassSize)
+		breastAL7MView.selectItem(at: 0)
 		breastAL8MView.removeAllItems()
-		breastAL8MView.addItemsWithTitles(puMassSize)
-		breastAL8MView.selectItemAtIndex(0)
+		breastAL8MView.addItems(withTitles: puMassSize)
+		breastAL8MView.selectItem(at: 0)
 		breastAL9MView.removeAllItems()
-		breastAL9MView.addItemsWithTitles(puMassSize)
-		breastAL9MView.selectItemAtIndex(0)
+		breastAL9MView.addItems(withTitles: puMassSize)
+		breastAL9MView.selectItem(at: 0)
 		breastAL10MView.removeAllItems()
-		breastAL10MView.addItemsWithTitles(puMassSize)
-		breastAL10MView.selectItemAtIndex(0)
+		breastAL10MView.addItems(withTitles: puMassSize)
+		breastAL10MView.selectItem(at: 0)
 		breastAL11MView.removeAllItems()
-		breastAL11MView.addItemsWithTitles(puMassSize)
-		breastAL11MView.selectItemAtIndex(0)
+		breastAL11MView.addItems(withTitles: puMassSize)
+		breastAL11MView.selectItem(at: 0)
 		breastAL12MView.removeAllItems()
-		breastAL12MView.addItemsWithTitles(puMassSize)
-		breastAL12MView.selectItemAtIndex(0)
+		breastAL12MView.addItems(withTitles: puMassSize)
+		breastAL12MView.selectItem(at: 0)
 		breastAL1CView.removeAllItems()
-		breastAL1CView.addItemsWithTitles(puMassSize)
-		breastAL1CView.selectItemAtIndex(0)
+		breastAL1CView.addItems(withTitles: puMassSize)
+		breastAL1CView.selectItem(at: 0)
 		breastAL2CView.removeAllItems()
-		breastAL2CView.addItemsWithTitles(puMassSize)
-		breastAL2CView.selectItemAtIndex(0)
+		breastAL2CView.addItems(withTitles: puMassSize)
+		breastAL2CView.selectItem(at: 0)
 		breastAL3CView.removeAllItems()
-		breastAL3CView.addItemsWithTitles(puMassSize)
-		breastAL3CView.selectItemAtIndex(0)
+		breastAL3CView.addItems(withTitles: puMassSize)
+		breastAL3CView.selectItem(at: 0)
 		breastAL4CView.removeAllItems()
-		breastAL4CView.addItemsWithTitles(puMassSize)
-		breastAL4CView.selectItemAtIndex(0)
+		breastAL4CView.addItems(withTitles: puMassSize)
+		breastAL4CView.selectItem(at: 0)
 		breastAL5CView.removeAllItems()
-		breastAL5CView.addItemsWithTitles(puMassSize)
-		breastAL5CView.selectItemAtIndex(0)
+		breastAL5CView.addItems(withTitles: puMassSize)
+		breastAL5CView.selectItem(at: 0)
 		breastAL6CView.removeAllItems()
-		breastAL6CView.addItemsWithTitles(puMassSize)
-		breastAL6CView.selectItemAtIndex(0)
+		breastAL6CView.addItems(withTitles: puMassSize)
+		breastAL6CView.selectItem(at: 0)
 		breastAL7CView.removeAllItems()
-		breastAL7CView.addItemsWithTitles(puMassSize)
-		breastAL7CView.selectItemAtIndex(0)
+		breastAL7CView.addItems(withTitles: puMassSize)
+		breastAL7CView.selectItem(at: 0)
 		breastAL8CView.removeAllItems()
-		breastAL8CView.addItemsWithTitles(puMassSize)
-		breastAL8CView.selectItemAtIndex(0)
+		breastAL8CView.addItems(withTitles: puMassSize)
+		breastAL8CView.selectItem(at: 0)
 		breastAL9CView.removeAllItems()
-		breastAL9CView.addItemsWithTitles(puMassSize)
-		breastAL9CView.selectItemAtIndex(0)
+		breastAL9CView.addItems(withTitles: puMassSize)
+		breastAL9CView.selectItem(at: 0)
 		breastAL10CView.removeAllItems()
-		breastAL10CView.addItemsWithTitles(puMassSize)
-		breastAL10CView.selectItemAtIndex(0)
+		breastAL10CView.addItems(withTitles: puMassSize)
+		breastAL10CView.selectItem(at: 0)
 		breastAL11CView.removeAllItems()
-		breastAL11CView.addItemsWithTitles(puMassSize)
-		breastAL11CView.selectItemAtIndex(0)
+		breastAL11CView.addItems(withTitles: puMassSize)
+		breastAL11CView.selectItem(at: 0)
 		breastAL12CView.removeAllItems()
-		breastAL12CView.addItemsWithTitles(puMassSize)
-		breastAL12CView.selectItemAtIndex(0)
+		breastAL12CView.addItems(withTitles: puMassSize)
+		breastAL12CView.selectItem(at: 0)
 		breastAL1DView.removeAllItems()
-		breastAL1DView.addItemsWithTitles(puMassSize)
-		breastAL1DView.selectItemAtIndex(0)
+		breastAL1DView.addItems(withTitles: puMassSize)
+		breastAL1DView.selectItem(at: 0)
 		breastAL2DView.removeAllItems()
-		breastAL2DView.addItemsWithTitles(puMassSize)
-		breastAL2DView.selectItemAtIndex(0)
+		breastAL2DView.addItems(withTitles: puMassSize)
+		breastAL2DView.selectItem(at: 0)
 		breastAL3DView.removeAllItems()
-		breastAL3DView.addItemsWithTitles(puMassSize)
-		breastAL3DView.selectItemAtIndex(0)
+		breastAL3DView.addItems(withTitles: puMassSize)
+		breastAL3DView.selectItem(at: 0)
 		breastAL4DView.removeAllItems()
-		breastAL4DView.addItemsWithTitles(puMassSize)
-		breastAL4DView.selectItemAtIndex(0)
+		breastAL4DView.addItems(withTitles: puMassSize)
+		breastAL4DView.selectItem(at: 0)
 		breastAL5DView.removeAllItems()
-		breastAL5DView.addItemsWithTitles(puMassSize)
-		breastAL5DView.selectItemAtIndex(0)
+		breastAL5DView.addItems(withTitles: puMassSize)
+		breastAL5DView.selectItem(at: 0)
 		breastAL6DView.removeAllItems()
-		breastAL6DView.addItemsWithTitles(puMassSize)
-		breastAL6DView.selectItemAtIndex(0)
+		breastAL6DView.addItems(withTitles: puMassSize)
+		breastAL6DView.selectItem(at: 0)
 		breastAL7DView.removeAllItems()
-		breastAL7DView.addItemsWithTitles(puMassSize)
-		breastAL7DView.selectItemAtIndex(0)
+		breastAL7DView.addItems(withTitles: puMassSize)
+		breastAL7DView.selectItem(at: 0)
 		breastAL8DView.removeAllItems()
-		breastAL8DView.addItemsWithTitles(puMassSize)
-		breastAL8DView.selectItemAtIndex(0)
+		breastAL8DView.addItems(withTitles: puMassSize)
+		breastAL8DView.selectItem(at: 0)
 		breastAL9DView.removeAllItems()
-		breastAL9DView.addItemsWithTitles(puMassSize)
-		breastAL9DView.selectItemAtIndex(0)
+		breastAL9DView.addItems(withTitles: puMassSize)
+		breastAL9DView.selectItem(at: 0)
 		breastAL10DView.removeAllItems()
-		breastAL10DView.addItemsWithTitles(puMassSize)
-		breastAL10DView.selectItemAtIndex(0)
+		breastAL10DView.addItems(withTitles: puMassSize)
+		breastAL10DView.selectItem(at: 0)
 		breastAL11DView.removeAllItems()
-		breastAL11DView.addItemsWithTitles(puMassSize)
-		breastAL11DView.selectItemAtIndex(0)
+		breastAL11DView.addItems(withTitles: puMassSize)
+		breastAL11DView.selectItem(at: 0)
 		breastAL12DView.removeAllItems()
-		breastAL12DView.addItemsWithTitles(puMassSize)
-		breastAL12DView.selectItemAtIndex(0)
+		breastAL12DView.addItems(withTitles: puMassSize)
+		breastAL12DView.selectItem(at: 0)
 		breastAL1TView.state = NSOffState
 		breastAL2TView.state = NSOffState
 		breastAL3TView.state = NSOffState
@@ -1402,113 +1402,113 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		breastARDiffuseView.state = NSOffState
 		breastARAxLADView.state = NSOffState
 		breastAR1MView.removeAllItems()
-		breastAR1MView.addItemsWithTitles(puMassSize)
-		breastAR1MView.selectItemAtIndex(0)
+		breastAR1MView.addItems(withTitles: puMassSize)
+		breastAR1MView.selectItem(at: 0)
 		breastAR2MView.removeAllItems()
-		breastAR2MView.addItemsWithTitles(puMassSize)
-		breastAR2MView.selectItemAtIndex(0)
+		breastAR2MView.addItems(withTitles: puMassSize)
+		breastAR2MView.selectItem(at: 0)
 		breastAR3MView.removeAllItems()
-		breastAR3MView.addItemsWithTitles(puMassSize)
-		breastAR3MView.selectItemAtIndex(0)
+		breastAR3MView.addItems(withTitles: puMassSize)
+		breastAR3MView.selectItem(at: 0)
 		breastAR4MView.removeAllItems()
-		breastAR4MView.addItemsWithTitles(puMassSize)
-		breastAR4MView.selectItemAtIndex(0)
+		breastAR4MView.addItems(withTitles: puMassSize)
+		breastAR4MView.selectItem(at: 0)
 		breastAR5MView.removeAllItems()
-		breastAR5MView.addItemsWithTitles(puMassSize)
-		breastAR5MView.selectItemAtIndex(0)
+		breastAR5MView.addItems(withTitles: puMassSize)
+		breastAR5MView.selectItem(at: 0)
 		breastAR6MView.removeAllItems()
-		breastAR6MView.addItemsWithTitles(puMassSize)
-		breastAR6MView.selectItemAtIndex(0)
+		breastAR6MView.addItems(withTitles: puMassSize)
+		breastAR6MView.selectItem(at: 0)
 		breastAR7MView.removeAllItems()
-		breastAR7MView.addItemsWithTitles(puMassSize)
-		breastAR7MView.selectItemAtIndex(0)
+		breastAR7MView.addItems(withTitles: puMassSize)
+		breastAR7MView.selectItem(at: 0)
 		breastAR8MView.removeAllItems()
-		breastAR8MView.addItemsWithTitles(puMassSize)
-		breastAR8MView.selectItemAtIndex(0)
+		breastAR8MView.addItems(withTitles: puMassSize)
+		breastAR8MView.selectItem(at: 0)
 		breastAR9MView.removeAllItems()
-		breastAR9MView.addItemsWithTitles(puMassSize)
-		breastAR9MView.selectItemAtIndex(0)
+		breastAR9MView.addItems(withTitles: puMassSize)
+		breastAR9MView.selectItem(at: 0)
 		breastAR10MView.removeAllItems()
-		breastAR10MView.addItemsWithTitles(puMassSize)
-		breastAR10MView.selectItemAtIndex(0)
+		breastAR10MView.addItems(withTitles: puMassSize)
+		breastAR10MView.selectItem(at: 0)
 		breastAR11MView.removeAllItems()
-		breastAR11MView.addItemsWithTitles(puMassSize)
-		breastAR11MView.selectItemAtIndex(0)
+		breastAR11MView.addItems(withTitles: puMassSize)
+		breastAR11MView.selectItem(at: 0)
 		breastAR12MView.removeAllItems()
-		breastAR12MView.addItemsWithTitles(puMassSize)
-		breastAR12MView.selectItemAtIndex(0)
+		breastAR12MView.addItems(withTitles: puMassSize)
+		breastAR12MView.selectItem(at: 0)
 		breastAR1CView.removeAllItems()
-		breastAR1CView.addItemsWithTitles(puMassSize)
-		breastAR1CView.selectItemAtIndex(0)
+		breastAR1CView.addItems(withTitles: puMassSize)
+		breastAR1CView.selectItem(at: 0)
 		breastAR2CView.removeAllItems()
-		breastAR2CView.addItemsWithTitles(puMassSize)
-		breastAR2CView.selectItemAtIndex(0)
+		breastAR2CView.addItems(withTitles: puMassSize)
+		breastAR2CView.selectItem(at: 0)
 		breastAR3CView.removeAllItems()
-		breastAR3CView.addItemsWithTitles(puMassSize)
-		breastAR3CView.selectItemAtIndex(0)
+		breastAR3CView.addItems(withTitles: puMassSize)
+		breastAR3CView.selectItem(at: 0)
 		breastAR4CView.removeAllItems()
-		breastAR4CView.addItemsWithTitles(puMassSize)
-		breastAR4CView.selectItemAtIndex(0)
+		breastAR4CView.addItems(withTitles: puMassSize)
+		breastAR4CView.selectItem(at: 0)
 		breastAR5CView.removeAllItems()
-		breastAR5CView.addItemsWithTitles(puMassSize)
-		breastAR5CView.selectItemAtIndex(0)
+		breastAR5CView.addItems(withTitles: puMassSize)
+		breastAR5CView.selectItem(at: 0)
 		breastAR6CView.removeAllItems()
-		breastAR6CView.addItemsWithTitles(puMassSize)
-		breastAR6CView.selectItemAtIndex(0)
+		breastAR6CView.addItems(withTitles: puMassSize)
+		breastAR6CView.selectItem(at: 0)
 		breastAR7CView.removeAllItems()
-		breastAR7CView.addItemsWithTitles(puMassSize)
-		breastAR7CView.selectItemAtIndex(0)
+		breastAR7CView.addItems(withTitles: puMassSize)
+		breastAR7CView.selectItem(at: 0)
 		breastAR8CView.removeAllItems()
-		breastAR8CView.addItemsWithTitles(puMassSize)
-		breastAR8CView.selectItemAtIndex(0)
+		breastAR8CView.addItems(withTitles: puMassSize)
+		breastAR8CView.selectItem(at: 0)
 		breastAR9CView.removeAllItems()
-		breastAR9CView.addItemsWithTitles(puMassSize)
-		breastAR9CView.selectItemAtIndex(0)
+		breastAR9CView.addItems(withTitles: puMassSize)
+		breastAR9CView.selectItem(at: 0)
 		breastAR10CView.removeAllItems()
-		breastAR10CView.addItemsWithTitles(puMassSize)
-		breastAR10CView.selectItemAtIndex(0)
+		breastAR10CView.addItems(withTitles: puMassSize)
+		breastAR10CView.selectItem(at: 0)
 		breastAR11CView.removeAllItems()
-		breastAR11CView.addItemsWithTitles(puMassSize)
-		breastAR11CView.selectItemAtIndex(0)
+		breastAR11CView.addItems(withTitles: puMassSize)
+		breastAR11CView.selectItem(at: 0)
 		breastAR12CView.removeAllItems()
-		breastAR12CView.addItemsWithTitles(puMassSize)
-		breastAR12CView.selectItemAtIndex(0)
+		breastAR12CView.addItems(withTitles: puMassSize)
+		breastAR12CView.selectItem(at: 0)
 		breastAR1DView.removeAllItems()
-		breastAR1DView.addItemsWithTitles(puMassSize)
-		breastAR1DView.selectItemAtIndex(0)
+		breastAR1DView.addItems(withTitles: puMassSize)
+		breastAR1DView.selectItem(at: 0)
 		breastAR2DView.removeAllItems()
-		breastAR2DView.addItemsWithTitles(puMassSize)
-		breastAR2DView.selectItemAtIndex(0)
+		breastAR2DView.addItems(withTitles: puMassSize)
+		breastAR2DView.selectItem(at: 0)
 		breastAR3DView.removeAllItems()
-		breastAR3DView.addItemsWithTitles(puMassSize)
-		breastAR3DView.selectItemAtIndex(0)
+		breastAR3DView.addItems(withTitles: puMassSize)
+		breastAR3DView.selectItem(at: 0)
 		breastAR4DView.removeAllItems()
-		breastAR4DView.addItemsWithTitles(puMassSize)
-		breastAR4DView.selectItemAtIndex(0)
+		breastAR4DView.addItems(withTitles: puMassSize)
+		breastAR4DView.selectItem(at: 0)
 		breastAR5DView.removeAllItems()
-		breastAR5DView.addItemsWithTitles(puMassSize)
-		breastAR5DView.selectItemAtIndex(0)
+		breastAR5DView.addItems(withTitles: puMassSize)
+		breastAR5DView.selectItem(at: 0)
 		breastAR6DView.removeAllItems()
-		breastAR6DView.addItemsWithTitles(puMassSize)
-		breastAR6DView.selectItemAtIndex(0)
+		breastAR6DView.addItems(withTitles: puMassSize)
+		breastAR6DView.selectItem(at: 0)
 		breastAR7DView.removeAllItems()
-		breastAR7DView.addItemsWithTitles(puMassSize)
-		breastAR7DView.selectItemAtIndex(0)
+		breastAR7DView.addItems(withTitles: puMassSize)
+		breastAR7DView.selectItem(at: 0)
 		breastAR8DView.removeAllItems()
-		breastAR8DView.addItemsWithTitles(puMassSize)
-		breastAR8DView.selectItemAtIndex(0)
+		breastAR8DView.addItems(withTitles: puMassSize)
+		breastAR8DView.selectItem(at: 0)
 		breastAR9DView.removeAllItems()
-		breastAR9DView.addItemsWithTitles(puMassSize)
-		breastAR9DView.selectItemAtIndex(0)
+		breastAR9DView.addItems(withTitles: puMassSize)
+		breastAR9DView.selectItem(at: 0)
 		breastAR10DView.removeAllItems()
-		breastAR10DView.addItemsWithTitles(puMassSize)
-		breastAR10DView.selectItemAtIndex(0)
+		breastAR10DView.addItems(withTitles: puMassSize)
+		breastAR10DView.selectItem(at: 0)
 		breastAR11DView.removeAllItems()
-		breastAR11DView.addItemsWithTitles(puMassSize)
-		breastAR11DView.selectItemAtIndex(0)
+		breastAR11DView.addItems(withTitles: puMassSize)
+		breastAR11DView.selectItem(at: 0)
 		breastAR12DView.removeAllItems()
-		breastAR12DView.addItemsWithTitles(puMassSize)
-		breastAR12DView.selectItemAtIndex(0)
+		breastAR12DView.addItems(withTitles: puMassSize)
+		breastAR12DView.selectItem(at: 0)
 		breastAR1TView.state = NSOffState
 		breastAR2TView.state = NSOffState
 		breastAR3TView.state = NSOffState
@@ -1527,23 +1527,23 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		breastARTNView.state = NSOffState
 		
 		breastATendernessLView.removeAllItems()
-		breastATendernessLView.addItemsWithObjectValues(cbTenderness)
-		breastATendernessLView.selectItemAtIndex(0)
+		breastATendernessLView.addItems(withObjectValues: cbTenderness)
+		breastATendernessLView.selectItem(at: 0)
 		breastATendernessRView.removeAllItems()
-		breastATendernessRView.addItemsWithObjectValues(cbTenderness)
-		breastATendernessRView.selectItemAtIndex(0)
+		breastATendernessRView.addItems(withObjectValues: cbTenderness)
+		breastATendernessRView.selectItem(at: 0)
 		breastAGalactLView.removeAllItems()
-		breastAGalactLView.addItemsWithObjectValues(cbGalact)
-		breastAGalactLView.selectItemAtIndex(0)
+		breastAGalactLView.addItems(withObjectValues: cbGalact)
+		breastAGalactLView.selectItem(at: 0)
 		breastAGalactRView.removeAllItems()
-		breastAGalactRView.addItemsWithObjectValues(cbGalact)
-		breastAGalactRView.selectItemAtIndex(0)
+		breastAGalactRView.addItems(withObjectValues: cbGalact)
+		breastAGalactRView.selectItem(at: 0)
 		breastOtherTextView.stringValue = ""
 		
 		
 	}
 	
-	@IBAction func takeClearTabSix(sender: AnyObject) {
+	@IBAction func takeClearTabSix(_ sender: AnyObject) {
 		gynNExtgenView.state = NSOffState
 		gynNUtView.state = NSOffState
 		gynNCvxView.state = NSOffState
@@ -1558,8 +1558,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		gynANoCervView.state = NSOffState
 		gynANoUtView.state = NSOffState
 		gynAAdnxComboView.removeAllItems()
-		gynAAdnxComboView.addItemsWithObjectValues(cbRLBList)
-		gynAAdnxComboView.selectItemAtIndex(0)
+		gynAAdnxComboView.addItems(withObjectValues: cbRLBList)
+		gynAAdnxComboView.selectItem(at: 0)
 		gynOtherTextView.stringValue = ""
 		
 		dreNToneView.state = NSOffState
@@ -1588,18 +1588,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	}
 	
 	//Set All To Abnormal for debugging purposes
-	@IBAction func takeSetAllAbnormal(sender: AnyObject) {
+	@IBAction func takeSetAllAbnormal(_ sender: AnyObject) {
 		takeSetAbnormalAll(self)
 	}
 	
-	func takeSetAbnormalAll(sender: AnyObject) {
+	func takeSetAbnormalAll(_ sender: AnyObject) {
 		takeSetAbnormalTabOne(self)
 		takeSetAbnormalTabTwo(self)
 		takeSetAbnormalTabThree(self)
 		takeSetAbnormalTabFour(self)
 	}
 	
-	func takeSetAbnormalTabOne(sender: AnyObject) {
+	func takeSetAbnormalTabOne(_ sender: AnyObject) {
 //		genNAlertView.state = NSOnState
 //		genNOrientedView.state = NSOnState
 //		genNNADView.state = NSOnState
@@ -1678,32 +1678,32 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		cvABradyView.state = NSOnState
 		cvAs3View.state = NSOnState
 		cvAs4View.state = NSOnState
-		cvASEMQuantView.selectItemAtIndex(1)
-		cvASEMPopView.selectItemAtIndex(2)
+		cvASEMQuantView.selectItem(at: 1)
+		cvASEMPopView.selectItem(at: 2)
 		cvASEMComboView.removeAllItems()
-		cvASEMComboView.addItemsWithObjectValues(["", "RUSB", "LUSB", "BUSB", "LLSB", "All"])
-		cvASEMComboView.selectItemAtIndex(1)
+		cvASEMComboView.addItems(withObjectValues: ["", "RUSB", "LUSB", "BUSB", "LLSB", "All"])
+		cvASEMComboView.selectItem(at: 1)
 		cvOtherTextView.stringValue = "Other CV issue"
 	}
 	
-	func takeSetAbnormalTabTwo(sender: AnyObject) {
+	func takeSetAbnormalTabTwo(_ sender: AnyObject) {
 //		chestNNTView.state = NSOnState
 //		chestNLungsView.state = NSOnState
 //		chestNWCRView.state = NSOnState
 //		chestNFremView.state = NSOnState
 //		chestNEgophView.state = NSOnState
 		chestAWhzComboView.removeAllItems()
-		chestAWhzComboView.addItemsWithObjectValues(cbRULLULList)
-		chestAWhzComboView.selectItemAtIndex(1)
+		chestAWhzComboView.addItems(withObjectValues: cbRULLULList)
+		chestAWhzComboView.selectItem(at: 1)
 		chestACrklComboView.removeAllItems()
-		chestACrklComboView.addItemsWithObjectValues(cbRULLULList)
-		chestACrklComboView.selectItemAtIndex(1)
+		chestACrklComboView.addItems(withObjectValues: cbRULLULList)
+		chestACrklComboView.selectItem(at: 1)
 		chestARhComboView.removeAllItems()
-		chestARhComboView.addItemsWithObjectValues(cbRULLULList)
-		chestARhComboView.selectItemAtIndex(1)
+		chestARhComboView.addItems(withObjectValues: cbRULLULList)
+		chestARhComboView.selectItem(at: 1)
 		chestAEgophComboView.removeAllItems()
-		chestAEgophComboView.addItemsWithObjectValues(cbRULLULList)
-		chestAEgophComboView.selectItemAtIndex(1)
+		chestAEgophComboView.addItems(withObjectValues: cbRULLULList)
+		chestAEgophComboView.selectItem(at: 1)
 		chestOtherTextView.stringValue = "Other CHEST issue"
 		
 //		extNCCEView.state = NSOnState
@@ -1724,34 +1724,34 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		neuroAADVibLView.state = NSOnState
 		neuroAADMonofilRView.state = NSOnState
 		neuroAADMonofilLView.state = NSOnState
-		neuroADcrvibComboView.addItemsWithObjectValues(cbLowerExtremities)
-		neuroADcrvibComboView.selectItemAtIndex(1)
+		neuroADcrvibComboView.addItems(withObjectValues: cbLowerExtremities)
+		neuroADcrvibComboView.selectItem(at: 1)
 		neuroADcrvibLComboView.removeAllItems()
-		neuroADcrvibLComboView.addItemsWithObjectValues(cbLowerExtremities)
-		neuroADcrvibLComboView.selectItemAtIndex(1)
+		neuroADcrvibLComboView.addItems(withObjectValues: cbLowerExtremities)
+		neuroADcrvibLComboView.selectItem(at: 1)
 		neuroAMonofilComboView.removeAllItems()
-		neuroAMonofilComboView.addItemsWithObjectValues(cbLowerExtremities)
-		neuroAMonofilComboView.selectItemAtIndex(1)
+		neuroAMonofilComboView.addItems(withObjectValues: cbLowerExtremities)
+		neuroAMonofilComboView.selectItem(at: 1)
 		neuroAMonofilLComboView.removeAllItems()
-		neuroAMonofilLComboView.addItemsWithObjectValues(cbLowerExtremities)
-		neuroAMonofilLComboView.selectItemAtIndex(1)
+		neuroAMonofilLComboView.addItems(withObjectValues: cbLowerExtremities)
+		neuroAMonofilLComboView.selectItem(at: 1)
 		neuroADTRComboView.removeAllItems()
-		neuroADTRComboView.addItemsWithObjectValues(cbDTR)
-		neuroADTRComboView.selectItemAtIndex(1)
+		neuroADTRComboView.addItems(withObjectValues: cbDTR)
+		neuroADTRComboView.selectItem(at: 1)
 		neuroASLRRComboView.removeAllItems()
-		neuroASLRRComboView.addItemsWithObjectValues(cbSTL)
-		neuroASLRRComboView.selectItemAtIndex(1)
+		neuroASLRRComboView.addItems(withObjectValues: cbSTL)
+		neuroASLRRComboView.selectItem(at: 1)
 		neuroASLRLComboView.removeAllItems()
-		neuroASLRLComboView.addItemsWithObjectValues(cbSTL)
-		neuroASLRLComboView.selectItemAtIndex(1)
+		neuroASLRLComboView.addItems(withObjectValues: cbSTL)
+		neuroASLRLComboView.selectItem(at: 1)
 		neuroOtherTextView.stringValue = "Other NEURO issue"
 		
 //		mskNROMView.state = NSOnState
 //		mskNSTRView.state = NSOnState
 //		mskNNTView.state = NSOnState
 		mskABunComboView.removeAllItems()
-		mskABunComboView.addItemsWithObjectValues(cbRLBList)
-		mskABunComboView.selectItemAtIndex(1)
+		mskABunComboView.addItems(withObjectValues: cbRLBList)
+		mskABunComboView.selectItem(at: 1)
 		mskAHammerL1View.state = NSOnState
 		mskAHammerL2View.state = NSOnState
 		mskAHammerL3View.state = NSOnState
@@ -1775,16 +1775,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		giAHMQuantView.stringValue = "HM of 3"
 		giASpMQuantView.stringValue = "spM of 9"
 		giATTPComboView.removeAllItems()
-		giATTPComboView.addItemsWithObjectValues(cbTTPMass)
-		giATTPComboView.selectItemAtIndex(1)
-		giAMassView.selectItemAtIndex(1)
+		giATTPComboView.addItems(withObjectValues: cbTTPMass)
+		giATTPComboView.selectItem(at: 1)
+		giAMassView.selectItem(at: 1)
 		giABSComboView.removeAllItems()
-		giABSComboView.addItemsWithObjectValues(cbBS)
-		giABSComboView.selectItemAtIndex(1)
+		giABSComboView.addItems(withObjectValues: cbBS)
+		giABSComboView.selectItem(at: 1)
 		giOtherTextView.stringValue = "Other GI issue"
 	}
 	
-	func takeSetAbnormalTabThree(sender: AnyObject) {
+	func takeSetAbnormalTabThree(_ sender: AnyObject) {
 //		skinNWrmView.state = NSOnState
 //		skinNDryView.state = NSOnState
 //		skinNNorashView.state = NSOnState
@@ -1822,11 +1822,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		psyAAffectFlatView.state = NSOnState
 		psyAAffectAnxView.state = NSOnState
 		psyAPsyMtrComboView.removeAllItems()
-		psyAPsyMtrComboView.addItemsWithObjectValues(cbPsyMtr)
-		psyAPsyMtrComboView.selectItemAtIndex(1)
+		psyAPsyMtrComboView.addItems(withObjectValues: cbPsyMtr)
+		psyAPsyMtrComboView.selectItem(at: 1)
 		psyAJudgeComboView.removeAllItems()
-		psyAJudgeComboView.addItemsWithObjectValues(cbJdg)
-		psyAJudgeComboView.selectItemAtIndex(1)
+		psyAJudgeComboView.addItems(withObjectValues: cbJdg)
+		psyAJudgeComboView.selectItem(at: 1)
 		psyOtherTextView.stringValue = "Other PSY issue"
 		
 //		lymphNCervicalView.state = NSOnState
@@ -1834,27 +1834,27 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 //		lymphNInguinalView.state = NSOnState
 //		lymphNSupraClavView.state = NSOnState
 		lymphAAxComboView.removeAllItems()
-		lymphAAxComboView.addItemsWithObjectValues(cbRLBList)
-		lymphAAxComboView.selectItemAtIndex(1)
+		lymphAAxComboView.addItems(withObjectValues: cbRLBList)
+		lymphAAxComboView.selectItem(at: 1)
 		lymphAIngComboView.removeAllItems()
-		lymphAIngComboView.addItemsWithObjectValues(cbRLBList)
-		lymphAIngComboView.selectItemAtIndex(1)
+		lymphAIngComboView.addItems(withObjectValues: cbRLBList)
+		lymphAIngComboView.selectItem(at: 1)
 		lymphASuClComboView.removeAllItems()
-		lymphASuClComboView.addItemsWithObjectValues(cbRLBList)
-		lymphASuClComboView.selectItemAtIndex(1)
+		lymphASuClComboView.addItems(withObjectValues: cbRLBList)
+		lymphASuClComboView.selectItem(at: 1)
 		lymphASMComboView.removeAllItems()
-		lymphASMComboView.addItemsWithObjectValues(cbRLBList)
-		lymphASMComboView.selectItemAtIndex(1)
+		lymphASMComboView.addItems(withObjectValues: cbRLBList)
+		lymphASMComboView.selectItem(at: 1)
 		lymphAAcComboView.removeAllItems()
-		lymphAAcComboView.addItemsWithObjectValues(cbRLBList)
-		lymphAAcComboView.selectItemAtIndex(1)
+		lymphAAcComboView.addItems(withObjectValues: cbRLBList)
+		lymphAAcComboView.selectItem(at: 1)
 		lymphAPcComboView.removeAllItems()
-		lymphAPcComboView.addItemsWithObjectValues(cbRLBList)
-		lymphAPcComboView.selectItemAtIndex(1)
+		lymphAPcComboView.addItems(withObjectValues: cbRLBList)
+		lymphAPcComboView.selectItem(at: 1)
 		lymphOtherTextView.stringValue = "Other LYMPH issue"
 	}
 	
-	func takeSetAbnormalTabFour(sender: AnyObject) {
+	func takeSetAbnormalTabFour(_ sender: AnyObject) {
 //		breastNNomassView.state = NSOnState
 //		breastNNonipdcView.state = NSOnState
 //		breastNNoAxLADView.state = NSOnState
@@ -1876,8 +1876,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		gynANoCervView.state = NSOnState
 		gynANoUtView.state = NSOnState
 		gynAAdnxComboView.removeAllItems()
-		gynAAdnxComboView.addItemsWithObjectValues(cbRLBList)
-		gynAAdnxComboView.selectItemAtIndex(1)
+		gynAAdnxComboView.addItems(withObjectValues: cbRLBList)
+		gynAAdnxComboView.selectItem(at: 1)
 		gynOtherTextView.stringValue = "Other GYN bits"
 		
 //		dreNToneView.state = NSOnState
@@ -1910,7 +1910,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	func processGeneral() ->String {
 		//Process GEN controllers
 		var genVerbiageResults = ""
-		let genVarList = [genASomnView, genAArouseView, genAObeseView, genAThinView, genACachView, genADTimeView, genADPlaceView, genADPersonView, genAUnkemptView, genAOtherTextView, genNAlertView, genNOrientedView, genNNADView, genNWDView]
+		let genVarList:[AnyObject] = [genASomnView, genAArouseView, genAObeseView, genAThinView, genACachView, genADTimeView, genADPlaceView, genADPersonView, genAUnkemptView, genAOtherTextView, genNAlertView, genNOrientedView, genNNADView, genNWDView]
 		let genVerbiageList = ["somnolent", "arousable", "obese", "thin", "cachectic", "not oriented to time", "not oriented to place", "not oriented to person", "unkempt", "\(genAOtherTextView.stringValue)", "alert", "oriented x3", "no acute distress", "well developed, well nourished"]
 		var genVerbiageProcessedList = processAllControlTypes(genVarList, stringArray: genVerbiageList)
 		if !genVerbiageProcessedList.isEmpty {
@@ -1924,28 +1924,28 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	func processPsy() ->String {
 		//Process main Psy selections
 		var psyVerbiageResults = ""
-		let psyVarList = [psyNMoodView, psyNAffectView, psyNJudgeView, psyNInsightView,psyAPsyMtrComboView, psyAJudgeComboView, psyOtherTextView]
+		let psyVarList:[AnyObject] = [psyNMoodView, psyNAffectView, psyNJudgeView, psyNInsightView,psyAPsyMtrComboView, psyAJudgeComboView, psyOtherTextView]
 		let psyVerbiageList = ["normal mood", "appropriate affect", "normal judgment", "normal insight", "\(psyAPsyMtrComboView.stringValue)", "\(psyAJudgeComboView.stringValue)", "\(psyOtherTextView.stringValue)"]
 		var psyVerbiageProcessedList = processAllControlTypes(psyVarList, stringArray: psyVerbiageList)
-		//Process Mood subsection
-		var psyAbnormalMoodResults = ""
-		let psyAbnormalMoodVarList = [psyAMoodDepView, psyAMoodFlatView, psyAMoodAnxView, psyAMoodFairView]
-		let psyAbnormalMoodVerbiageList = ["depressed", "flat, apathetic", "anxious", "fair"]
-		let psyAbnormalMoodProcessedList = processAllControlTypes(psyAbnormalMoodVarList, stringArray: psyAbnormalMoodVerbiageList)
-		if !psyAbnormalMoodProcessedList.isEmpty {
-			//psyAbnormalMoodProcessedList = makeFirstCharacterInStringArrayUppercase(psyAbnormalMoodProcessedList)
-			psyAbnormalMoodResults = generateSubheadingString("Mood:", stringList: psyAbnormalMoodProcessedList, joiner: ", ")
-			psyVerbiageProcessedList.insert(psyAbnormalMoodResults, atIndex: 0)
-		}
 		//Process Affect subsection
 		var psyAbnormalAffectResults = ""
-		let psyAbnormalAffectVarList = [psyAAffectDepView, psyAAffectFlatView, psyAAffectAnxView]
+		let psyAbnormalAffectVarList:[AnyObject] = [psyAAffectDepView, psyAAffectFlatView, psyAAffectAnxView]
 		let psyAbnormalAffectVerbiageList = ["depressed", "flat", "anxious"]
 		let psyAbnormalAffectProcessedList = processAllControlTypes(psyAbnormalAffectVarList, stringArray: psyAbnormalAffectVerbiageList)
 		if !psyAbnormalAffectProcessedList.isEmpty {
 			//psyAbnormalAffectProcessedList = makeFirstCharacterInStringArrayUppercase(psyAbnormalAffectProcessedList)
 			psyAbnormalAffectResults = generateSubheadingString("Affect:", stringList: psyAbnormalAffectProcessedList, joiner: ", ")
-			psyVerbiageProcessedList.insert(psyAbnormalAffectResults, atIndex: 0)
+			psyVerbiageProcessedList.insert(psyAbnormalAffectResults, at: 0)
+		}
+		//Process Mood subsection
+		var psyAbnormalMoodResults = ""
+		let psyAbnormalMoodVarList:[AnyObject] = [psyAMoodDepView, psyAMoodFlatView, psyAMoodAnxView, psyAMoodFairView]
+		let psyAbnormalMoodVerbiageList = ["depressed", "flat, apathetic", "anxious", "fair"]
+		let psyAbnormalMoodProcessedList = processAllControlTypes(psyAbnormalMoodVarList, stringArray: psyAbnormalMoodVerbiageList)
+		if !psyAbnormalMoodProcessedList.isEmpty {
+			//psyAbnormalMoodProcessedList = makeFirstCharacterInStringArrayUppercase(psyAbnormalMoodProcessedList)
+			psyAbnormalMoodResults = generateSubheadingString("Mood:", stringList: psyAbnormalMoodProcessedList, joiner: ", ")
+			psyVerbiageProcessedList.insert(psyAbnormalMoodResults, at: 0)
 		}
 		
 		if !psyVerbiageProcessedList.isEmpty {
@@ -1961,7 +1961,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		var headeyeVerbiageResults = ""
 		var headeyeVerbiageProcessedList = [String]()
 		var headeyeNormalResults = ""
-		let headeyeVarList = [heOtherTextView, heNNCATView, heNPERRLAView, heNEOMIView, heNNoictView, heNConjclrView]
+		let headeyeVarList:[AnyObject] = [heOtherTextView, heNNCATView, heNPERRLAView, heNEOMIView, heNNoictView, heNConjclrView]
 		let headeyeVerbiageList = ["\(heOtherTextView.stringValue)", "normocephalic atraumatic, no lesions", "pupils equal round, reactive to light & accommodation", "extraocular muscles intact", "no icterus", "conjunctivae clear"]
 		var headeyeNormalProcessedList = processAllControlTypes(headeyeVarList, stringArray: headeyeVerbiageList)
 		if !headeyeNormalProcessedList.isEmpty {
@@ -1972,40 +1972,40 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		
 		//Process Right eye
 		var headeyeREyeResults = ""
-		let headeyeREyeVarList = [ heARSinilView, heARLzyeyeView]
+		let headeyeREyeVarList:[AnyObject] = [heARSinilView, heARLzyeyeView]
 		let headeyeREyeVerbiageList = ["arcus sinilus","esotropia"]
 		var headeyeREyeProcessedList = processAllControlTypes(headeyeREyeVarList, stringArray: headeyeREyeVerbiageList)
 		var headeyeRScleraResults = ""
-		let headeyeRScleraVarList = [heARRedView, heARMudView, heARIctView]
+		let headeyeRScleraVarList:[AnyObject] = [heARRedView, heARMudView, heARIctView]
 		let headeyeRScleraVerbiageList = ["red","muddy", "icteric"]
 		var headeyeRScleraProcessedList = processAllControlTypes(headeyeRScleraVarList, stringArray: headeyeRScleraVerbiageList)
 		if !headeyeRScleraProcessedList.isEmpty {
 			headeyeRScleraResults = generateSubheadingString("Sclera", stringList: headeyeRScleraProcessedList, joiner: ", ")
-			headeyeREyeProcessedList.insert(headeyeRScleraResults, atIndex: 0)
+			headeyeREyeProcessedList.insert(headeyeRScleraResults, at: 0)
 		}
 		if !headeyeREyeProcessedList.isEmpty {
 			headeyeREyeProcessedList = makeFirstCharacterInStringArrayUppercase(headeyeREyeProcessedList)
 			headeyeREyeResults = generateSubheadingString("Right eye:", stringList: headeyeREyeProcessedList, joiner: ", ")
-			headeyeVerbiageProcessedList.insert(headeyeREyeResults, atIndex: 0)
+			headeyeVerbiageProcessedList.insert(headeyeREyeResults, at: 0)
 		}
 		
 		//Process Left eye
 		var headeyeLEyeResults = ""
-		let headeyeLEyeVarList = [ heALSinilView, heALLzyeyeView]
+		let headeyeLEyeVarList:[AnyObject] = [heALSinilView, heALLzyeyeView]
 		let headeyeLEyeVerbiageList = ["arcus sinilus","esotropia"]
 		var headeyeLEyeProcessedList = processAllControlTypes(headeyeLEyeVarList, stringArray: headeyeLEyeVerbiageList)
 		var headeyeLScleraResults = ""
-		let headeyeLScleraVarList = [heALRedView, heALMudView, heALIctView]
+		let headeyeLScleraVarList:[AnyObject] = [heALRedView, heALMudView, heALIctView]
 		let headeyeLScleraVerbiageList = ["red","muddy", "icteric"]
 		let headeyeLScleraProcessedList = processAllControlTypes(headeyeLScleraVarList, stringArray: headeyeLScleraVerbiageList)
 		if !headeyeLScleraProcessedList.isEmpty {
 			headeyeLScleraResults = generateSubheadingString("Sclera", stringList: headeyeLScleraProcessedList, joiner: ", ")
-			headeyeLEyeProcessedList.insert(headeyeLScleraResults, atIndex: 0)
+			headeyeLEyeProcessedList.insert(headeyeLScleraResults, at: 0)
 		}
 		if !headeyeLEyeProcessedList.isEmpty {
 			headeyeLEyeProcessedList = makeFirstCharacterInStringArrayUppercase(headeyeLEyeProcessedList)
 			headeyeLEyeResults = generateSubheadingString("Left eye:", stringList: headeyeLEyeProcessedList, joiner: ", ")
-			headeyeVerbiageProcessedList.insert(headeyeLEyeResults, atIndex: 0)
+			headeyeVerbiageProcessedList.insert(headeyeLEyeResults, at: 0)
 		}
 		
 		if !headeyeVerbiageProcessedList.isEmpty {
@@ -2022,12 +2022,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		
 		//process EARS controllers
 		var entEarsVerbiageResults = ""
-		let entEarsVarList = [entNEACsView, entTMsView, entAEACView]
+		let entEarsVarList:[AnyObject] = [entNEACsView, entTMsView, entAEACView]
 		let entEarsVerbiageList = ["external auditory canals clear", "tympanic membranes normal", "otitis externa"]
 		var entEarsProcessedList = processAllControlTypes(entEarsVarList, stringArray: entEarsVerbiageList)
 		//Process R&L tympanic membrane results
 		var entRTMVerbiageResults = ""
-		let entRTMVarList = [entARTMRedView, entATRMDullView, entAScarView, entARTMWaxView]
+		let entRTMVarList:[AnyObject] = [entARTMRedView, entATRMDullView, entAScarView, entARTMWaxView]
 		let entTMVerbiageList = ["red", "dull", "scarred", "complete wax occlusion"]
 		var entRTMProcessedList = processAllControlTypes(entRTMVarList, stringArray: entTMVerbiageList)
 		if entARTMWaxView.state == NSMixedState {
@@ -2039,7 +2039,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 			entEarsProcessedList.append(entRTMVerbiageResults)
 		}
 		var entLTMVerbiageResults = ""
-		let entLTMVarList = [entALTMRedView, entALTMDullView, entALTMScarView, entALTMWaxView]
+		let entLTMVarList:[AnyObject] = [entALTMRedView, entALTMDullView, entALTMScarView, entALTMWaxView]
 		var entLTMProcessedList = processAllControlTypes(entLTMVarList, stringArray: entTMVerbiageList)
 		if entALTMWaxView.state == NSMixedState {
 			entLTMProcessedList.append("partial wax occlusion")
@@ -2057,12 +2057,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		
 		//Process NOSE controllers
 		var entNoseVerbiageResults = ""
-		let entNoseVarList = [entNNarView]
+		let entNoseVarList:[AnyObject] = [entNNarView]
 		let entNoseVerbiageList = ["normal nasal mucosa, septum and turbinates"]
 		var entNoseProcessedList = processAllControlTypes(entNoseVarList, stringArray: entNoseVerbiageList)
 		//Process nares section
 		var entRNarVerbiageResults = ""
-		let entRNarVarList = [entANarBogView, entANarSwlView, entANarRedView, entANarPaleView, entANarDryView]
+		let entRNarVarList:[AnyObject] = [entANarBogView, entANarSwlView, entANarRedView, entANarPaleView, entANarDryView]
 		let entNarVerbiageList = ["boggy", "swollen", "red", "pale", "dry"]
 		var entRNarProcessedList = processAllControlTypes(entRNarVarList, stringArray: entNarVerbiageList)
 		if !entRNarProcessedList.isEmpty {
@@ -2071,7 +2071,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 			entNoseProcessedList.append(entRNarVerbiageResults)
 		}
 		var entLNarVerbiageResults = ""
-		let entLNarVarList = [entALNarBogView, entALNarSwlView, entALNarRedView, entALNarPaleView, entALNarDryView]
+		let entLNarVarList:[AnyObject] = [entALNarBogView, entALNarSwlView, entALNarRedView, entALNarPaleView, entALNarDryView]
 		var entLNarProcessedList = processAllControlTypes(entLNarVarList, stringArray: entNarVerbiageList)
 		if !entLNarProcessedList.isEmpty {
 			entLNarProcessedList = makeFirstCharacterInStringArrayUppercase(entLNarProcessedList)
@@ -2089,12 +2089,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		
 		//Process THROAT controllers
 		var entThroatVerbiageResults = ""
-		let entThroatVarList = [entNOPclrView, entNDentView, entAPoordentView, entAEdentView, entADenturesView]
+		let entThroatVarList:[AnyObject] = [entNOPclrView, entNDentView, entAPoordentView, entAEdentView, entADenturesView]
 		let entThroatVerbiageList = ["oropharynx clear, moist mucus membranes", "dentition normal", "poor dentition", "edentulus", "dentures"]
 		var entThroatProcessedList = processAllControlTypes(entThroatVarList, stringArray: entThroatVerbiageList)
 		//Process OP section
 		var entROPVerbiageResults = ""
-		let entROPVarList = [entAOpStrkView, entAOpPndView, entAOpRedView, entAOpDryView, entAOpGlossView]
+		let entROPVarList:[AnyObject] = [entAOpStrkView, entAOpPndView, entAOpRedView, entAOpDryView, entAOpGlossView]
 		let entOPVerbiageList = ["streaky", "post nasal drip", "red", "dry", "glossitis"]
 		var entROPProcessedList = processAllControlTypes(entROPVarList, stringArray: entOPVerbiageList)
 		if !entROPProcessedList.isEmpty {
@@ -2125,7 +2125,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	func processNeck() ->String {
 		//Process Neck controllers
 		var neckVerbiageResults = ""
-		let neckVarList = [neckALADShoddyView, neckASmlView, neckAAcView, neckAPcView, neckAJVDView, neckAGoitView, neckARBruitView, neckALBruitView, neckOtherTextView, neckNSuppleView, neckNLADView, neckNBruitsView, neckNJVDView, neckNTrchView, neckNThyView]
+		let neckVarList:[AnyObject] = [neckALADShoddyView, neckASmlView, neckAAcView, neckAPcView, neckAJVDView, neckAGoitView, neckARBruitView, neckALBruitView, neckOtherTextView, neckNSuppleView, neckNLADView, neckNBruitsView, neckNJVDView, neckNTrchView, neckNThyView]
 		let neckVerbiageList = ["shoddy lymphadenopathy", "submandibular lymphadenopathy", "anterior cervical lymphadenopathy", "posterior cervical lymphadenopathy", "jugular venous distention", "goiter", "right carotid bruit", "left carotid bruit", "\(neckOtherTextView.stringValue)", "supple, no masses","no lymphadenopathy","no bruits","no Jugular venous distention","trachea normal & midline","no thyromegaly"]
 		var neckVerbiageProcessedList = processAllControlTypes(neckVarList, stringArray: neckVerbiageList)
 		if !neckVerbiageProcessedList.isEmpty {
@@ -2140,7 +2140,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	func processCV() ->String {
 		//Process CV controllers
 		var cvVerbiageResults = ""
-		let cvVarList = [cvAPMBView, cvARegView, cvAIrrView, cvATachyView, cvABradyView, cvAs3View, cvAs4View, cvASEMQuantView, cvOtherTextView, cvNRRRView, cvNMurView, cvNGalView, cvNRubView, cvNPMIView, cvNs1View, cvNs2View]
+		let cvVarList:[AnyObject] = [cvAPMBView, cvARegView, cvAIrrView, cvATachyView, cvABradyView, cvAs3View, cvAs4View, cvASEMQuantView, cvOtherTextView, cvNRRRView, cvNMurView, cvNGalView, cvNRubView, cvNPMIView, cvNs1View, cvNs2View]
 		let cvVerbiageList = ["premature beat", "regularly irregular" ,"irregularly irregular", "tachycardia","bradycardia", "S3 present","S4 present", "\(cvASEMQuantView.stringValue)/6 \(cvASEMPopView.titleOfSelectedItem!) murmur \(cvASEMComboView.stringValue)", "\(cvOtherTextView.stringValue)", "heart regular rate & rhythm", "no murmur", "no gallops", "no rubs", "normal point of maximal impulse","normal s1","normal s2"]
 		var cvVerbiageProcessedList = processAllControlTypes(cvVarList, stringArray: cvVerbiageList)
 		if !cvVerbiageProcessedList.isEmpty {
@@ -2153,7 +2153,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	
 	func processChest() ->String {
 		var chestVerbiageResults = ""
-		let chestVarList = [chestAWhzComboView, chestACrklComboView, chestARhComboView, chestAEgophComboView, chestOtherTextView, chestNNTView, chestNLungsView, chestNWView, chestNCView, chestNRView, chestNFremView, chestNEgophView, chestNWOBView]
+		let chestVarList:[AnyObject] = [chestAWhzComboView, chestACrklComboView, chestARhComboView, chestAEgophComboView, chestOtherTextView, chestNNTView, chestNLungsView, chestNWView, chestNCView, chestNRView, chestNFremView, chestNEgophView, chestNWOBView]
 		let chestVerbiageList = ["wheezes \(chestAWhzComboView.stringValue)", "crackles \(chestACrklComboView.stringValue)", "rhonchi \(chestARhComboView.stringValue)", "egophany \(chestAEgophComboView.stringValue)", "\(chestOtherTextView.stringValue)", "nontender", "lungs clear", "no wheezes", "no crackles", "no rhonchi", "normal fremitus", "no egophany", "breathing non labored"]
 		var chestVerbiageProcessedList = processAllControlTypes(chestVarList, stringArray: chestVerbiageList)
 		if !chestVerbiageProcessedList.isEmpty {
@@ -2167,7 +2167,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	func processGI() ->String {
 		//Process normal GI controllers
 		var giVerbiageResults = ""
-		let giVarList = [giADistView, giABloatView, giAHMQuantView, giASpMQuantView, giATTPComboView, giAMassView, giABSComboView, giOtherTextView, giNSoftView, giNNTView, giNNoReboundView, giNNDView, giNHSMView, giNNomassView, giNBSView]
+		let giVarList:[AnyObject] = [giADistView, giABloatView, giAHMQuantView, giASpMQuantView, giATTPComboView, giAMassView, giABSComboView, giOtherTextView, giNSoftView, giNNTView, giNNoReboundView, giNNDView, giNHSMView, giNNomassView, giNBSView]
 		let giVerbiageList = ["distended", "bloated", "hepatoMegaly: \(giAHMQuantView.stringValue)", "splenoMegaly: \(giASpMQuantView.stringValue)", "tender: \(giATTPComboView.stringValue)", "mass: \(giAMassView.stringValue)", "BS: \(giABSComboView.stringValue)", "\(giOtherTextView.stringValue)", "soft", "no tenderness", "no rebound or guarding", "non-distended", "no hepatosplenomegaly", "no masses", "normal bowel sounds"]
 		var giVerbiageProcessedList = processAllControlTypes(giVarList, stringArray: giVerbiageList)
 		if !giVerbiageProcessedList.isEmpty {
@@ -2183,7 +2183,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		//Process normal EXT controllers
 		var extVerbiageResults = ""
 		var extResultsList = [String]()
-		let extNormalVarList = [extNCyanView, extNClubView, extNEdemaView, extNPulsesView, extNCRView]
+		let extNormalVarList:[AnyObject] = [extNCyanView, extNClubView, extNEdemaView, extNPulsesView, extNCRView]
 		let extNormalVerbiageList = ["no cyanosis", "no clubbing", "no edema","normal pulses","normal capillary refill"]
 		var extNormVerbiageList = processAllControlTypes(extNormalVarList, stringArray: extNormalVerbiageList)
 		if !extNormVerbiageList.isEmpty {
@@ -2194,23 +2194,23 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		//Process abnormal EXT controllers
 		//Process Edema section
 		var extEdemaVerbiageResults = ""
-		let extEdema1QualifyingVarList = [extAEdema1BrnyView, extAEdema1LymphView, extAEdema1VenusView, extAEdema1CelView]
+		let extEdema1QualifyingVarList:[AnyObject] = [extAEdema1BrnyView, extAEdema1LymphView, extAEdema1VenusView, extAEdema1CelView]
 		let extEdemaQualifyingVerbiageList = ["brawny", "lymphedema", "venus insufficiency", "cellulitis"]
 		let extEdemaProcessed1QualifyingList = processAllControlTypes(extEdema1QualifyingVarList, stringArray: extEdemaQualifyingVerbiageList)
 		let extEdema1QualifyingVerbiageResults = makeEdemaQualifyingString(extEdemaProcessed1QualifyingList)
-		let extEdema2QualifyingVarList = [extAEdema2BrnyView, extAEdema2LymphView, extAEdema2VenusView, extAEdema2CelView]
+		let extEdema2QualifyingVarList:[AnyObject] = [extAEdema2BrnyView, extAEdema2LymphView, extAEdema2VenusView, extAEdema2CelView]
 		let extEdemaProcessed2QualifyingList = processAllControlTypes(extEdema2QualifyingVarList, stringArray: extEdemaQualifyingVerbiageList)
 		let extEdema2QualifyingVerbiageResults = makeEdemaQualifyingString(extEdemaProcessed2QualifyingList)
-		let extEdema3QualifyingVarList = [extAEdema3BrnyView, extAEdema3LymphView, extAEdema3VenusView, extAEdema3CelView]
+		let extEdema3QualifyingVarList:[AnyObject] = [extAEdema3BrnyView, extAEdema3LymphView, extAEdema3VenusView, extAEdema3CelView]
 		let extEdemaProcessed3QualifyingList = processAllControlTypes(extEdema3QualifyingVarList, stringArray: extEdemaQualifyingVerbiageList)
 		let extEdema3QualifyingVerbiageResults = makeEdemaQualifyingString(extEdemaProcessed3QualifyingList)
-		let extEdema4QualifyingVarList = [extAEdema4BrnyView, extAEdema4LymphView, extAEdema4VenusView, extAEdema4CelView]
+		let extEdema4QualifyingVarList:[AnyObject] = [extAEdema4BrnyView, extAEdema4LymphView, extAEdema4VenusView, extAEdema4CelView]
 		let extEdemaProcessed4QualifyingList = processAllControlTypes(extEdema4QualifyingVarList, stringArray: extEdemaQualifyingVerbiageList)
 		let extEdema4QualifyingVerbiageResults = makeEdemaQualifyingString(extEdemaProcessed4QualifyingList)
-		let extEdema5QualifyingVarList = [extAEdema5BrnyView, extAEdema5LymphView, extAEdema5VenusView, extAEdema5CelView]
+		let extEdema5QualifyingVarList:[AnyObject] = [extAEdema5BrnyView, extAEdema5LymphView, extAEdema5VenusView, extAEdema5CelView]
 		let extEdemaProcessed5QualifyingList = processAllControlTypes(extEdema5QualifyingVarList, stringArray: extEdemaQualifyingVerbiageList)
 		let extEdema5QualifyingVerbiageResults = makeEdemaQualifyingString(extEdemaProcessed5QualifyingList)
-		let extEdemaVarList = [extAEdema1QuantView, extAEdema2QuantView, extAEdema3QuantView, extAEdema4QuantView, extAEdema5QuantView]
+		let extEdemaVarList:[AnyObject] = [extAEdema1QuantView, extAEdema2QuantView, extAEdema3QuantView, extAEdema4QuantView, extAEdema5QuantView]
 		let extEdemaVerbiageList = ["\(extAEdema1QuantView.titleOfSelectedItem!) \(extAEdema1TypeView.titleOfSelectedItem!) of \(extAEdema1SideView.titleOfSelectedItem!) \(extAEdema1LocationView.stringValue)\(extEdema1QualifyingVerbiageResults)",
 									"\(extAEdema2QuantView.titleOfSelectedItem!) \(extAEdema2TypeView.titleOfSelectedItem!) of \(extAEdema2SideView.titleOfSelectedItem!) \(extAEdema2LocationView.stringValue)\(extEdema2QualifyingVerbiageResults)",
 									"\(extAEdema3QuantView.titleOfSelectedItem!) \(extAEdema3TypeView.titleOfSelectedItem!) of \(extAEdema3SideView.titleOfSelectedItem!) \(extAEdema3LocationView.stringValue)\(extEdema3QualifyingVerbiageResults)",
@@ -2225,7 +2225,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		
 		//Process Pulses section
 		var extPulsesVerbiageResults = ""
-		let extPulsesVarList = [extAPulses1LQuantView, extAPulses1RQuantView, extAPulses2LQuantView, extAPulses2RQuantView, extAPulses3LQuantView, extAPulses3RQuantView, extAPulses4LQuantView, extAPulses4RQuantView, extAPulses5LQuantView, extAPulses5RQuantView]
+		let extPulsesVarList:[AnyObject] = [extAPulses1LQuantView, extAPulses1RQuantView, extAPulses2LQuantView, extAPulses2RQuantView, extAPulses3LQuantView, extAPulses3RQuantView, extAPulses4LQuantView, extAPulses4RQuantView, extAPulses5LQuantView, extAPulses5RQuantView]
 		let extPulsesVerbiageList = ["\(extAPulses1LQuantView.titleOfSelectedItem!) left \(extAPulses1LLocationView.stringValue)",
 										"\(extAPulses1RQuantView.titleOfSelectedItem!) right \(extAPulses1LLocationView.stringValue)",
 										"\(extAPulses2LQuantView.titleOfSelectedItem!) left \(extAPulses1LLocationView.stringValue)",
@@ -2245,7 +2245,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		
 		//Process Capillary Refill
 		var extCRVerbiageResults = ""
-		let extCRVarList = [extACRLComboView, extACRRComboView]
+		let extCRVarList:[AnyObject] = [extACRLComboView, extACRRComboView]
 		let extCRVerbiageList = ["\(extACRLComboView.stringValue) second(s) left foot", "\(extACRRComboView.stringValue) second(s) right foot"]
 		var extCRProcessedList = processAllControlTypes(extCRVarList, stringArray: extCRVerbiageList)
 		if !extCRProcessedList.isEmpty {
@@ -2255,7 +2255,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		
 		//Process Spider veins section
 		var extSpiderVerbiageResults = ""
-		let extSpiderVarList = [extASpiderLComboView, extASpiderRComboView, extASpider2LComboView, extASpider2RComboView, extASpider3LComboView, extASpider3RComboView]
+		let extSpiderVarList:[AnyObject] = [extASpiderLComboView, extASpiderRComboView, extASpider2LComboView, extASpider2RComboView, extASpider3LComboView, extASpider3RComboView]
 		let extSpiderVerbiageList = ["left \(extASpiderLComboView.stringValue)",
 										"right \(extASpiderRComboView.stringValue)",
 										"left \(extASpider2LComboView.stringValue)",
@@ -2271,7 +2271,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		
 		//Proccess Vericose veins section
 		var extVericoseVerbiageResults = ""
-		let extVericoseVarList = [extAVericoseLComboView, extAVericoseRComboView]
+		let extVericoseVarList:[AnyObject] = [extAVericoseLComboView, extAVericoseRComboView]
 		let extVericoseVerbiageList = ["up to left \(extAVericoseLComboView.stringValue)", "up to right \(extAVericoseRComboView.stringValue)"]
 		var extVericoseProcessedList = processAllControlTypes(extVericoseVarList, stringArray: extVericoseVerbiageList)
 		if !extVericoseProcessedList.isEmpty {
@@ -2291,11 +2291,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		var extCyanosisFingersRResults = ""
 		var extCyanosisToesLResults = ""
 		var extCyanosisToesRResults = ""
-		let extCyanosisFingersLVarList = [extACyanFingersL1View, extACyanFingersL2View, extACyanFingersL3View, extACyanFingersL4View, extACyanFingersL5View]
-		let extCyanosisFingersRVarList = [extACyanFingersR1View, extACyanFingersR2View, extACyanFingersR3View, extACyanFingersR4View, extACyanFingersR5View]
+		let extCyanosisFingersLVarList:[AnyObject] = [extACyanFingersL1View, extACyanFingersL2View, extACyanFingersL3View, extACyanFingersL4View, extACyanFingersL5View]
+		let extCyanosisFingersRVarList:[AnyObject] = [extACyanFingersR1View, extACyanFingersR2View, extACyanFingersR3View, extACyanFingersR4View, extACyanFingersR5View]
 		let extCyanosisFingersVerbiageList = ["1st", "2nd", "3rd", "4th", "5th"]
-		let extCyanosisToesLVarList = [extACyanToesL1View, extACyanToesL2View, extACyanToesL3View, extACyanToesL4View, extACyanToesL5View]
-		let extCyanosisToesRVarList = [extACyanToesR1View, extACyanToesR2View, extACyanToesR3View, extACyanToesR4View, extACyanToesR5View]
+		let extCyanosisToesLVarList:[AnyObject] = [extACyanToesL1View, extACyanToesL2View, extACyanToesL3View, extACyanToesL4View, extACyanToesL5View]
+		let extCyanosisToesRVarList:[AnyObject] = [extACyanToesR1View, extACyanToesR2View, extACyanToesR3View, extACyanToesR4View, extACyanToesR5View]
 		let extCyanosisToesVerbiageList = ["big", "2nd", "3rd", "4th", "5th"]
 		var extCyanosisFingersLProcessedList = processAllControlTypes(extCyanosisFingersLVarList, stringArray: extCyanosisFingersVerbiageList)
 		var extCyanosisFingersRProcessedList = processAllControlTypes(extCyanosisFingersRVarList, stringArray: extCyanosisFingersVerbiageList)
@@ -2357,7 +2357,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		//Tab 4
 	func processNeuro() ->String {
 		//Process normal Neuro controllers
-		let neuroNormalVarList = [neuroNCNsView, neuroNDTRsView, neuroNSensView, neuroNGaitView, neuroNPostrView, neuroNNonfocalView, neuroNVibeView, neuroNMonofilView]
+		let neuroNormalVarList:[AnyObject] = [neuroNCNsView, neuroNDTRsView, neuroNSensView, neuroNGaitView, neuroNPostrView, neuroNNonfocalView, neuroNVibeView, neuroNMonofilView]
 		let neuroNormalVerbiageList = ["cranial nerves 1-12 grossly intact", "normal deep tendon reflexes", "normal sensation", "normal gait", "normal posture", "nonfocal findings", "normal vibration sense", "normal monofilament sensation"]
 		let neuroNormVerbiageList = processAllControlTypes(neuroNormalVarList, stringArray: neuroNormalVerbiageList)
 		//Process abnormal Neuro controllers
@@ -2387,7 +2387,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 			adMonoL = "absent"
 		}
 		
-		let neuroAbnormalVarList = [neuroADcrvibComboView, neuroADcrvibLComboView, neuroAMonofilComboView, neuroAMonofilLComboView, neuroADTRComboView, neuroASLRRComboView, neuroASLRLComboView, neuroOtherTextView]
+		let neuroAbnormalVarList:[AnyObject] = [neuroADcrvibComboView, neuroADcrvibLComboView, neuroAMonofilComboView, neuroAMonofilLComboView, neuroADTRComboView, neuroASLRRComboView, neuroASLRLComboView, neuroOtherTextView]
 		let neuroAbnormalVerbiageList = ["\(adVibR) vibration sense right \(neuroADcrvibComboView.stringValue)", "\(adVibL) vibration sense left \(neuroADcrvibLComboView.stringValue)", "\(adMonoR) monofilament sensation right \(neuroAMonofilComboView.stringValue)", "\(adMonoL) monofilament sensation left \(neuroAMonofilLComboView.stringValue)", "deep tendon reflexes \(neuroADTRComboView.stringValue)", "straight leg raising right leg \(neuroASLRRComboView.stringValue) degrees", "straight leg raising left leg \(neuroASLRLComboView.stringValue) degrees", "\(neuroOtherTextView.stringValue)"]
 		let neuroAbnormVerbiageList = processAllControlTypes(neuroAbnormalVarList, stringArray: neuroAbnormalVerbiageList)
 		let neuroVerbiageList = processNormAbnormLists("NEURO", normalIn: neuroNormVerbiageList, abnormalIn: neuroAbnormVerbiageList) as String
@@ -2399,22 +2399,22 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		var mskVerbiageResults = ""
 		var mskHammerResults = ""
 		//Process basic MSK controllers
-		let mskVarList = [mskABunComboView, mskOtherTextView, mskNROMView, mskNSTRView, mskNNTView, mskNNTView]
+		let mskVarList:[AnyObject] = [mskABunComboView, mskOtherTextView, mskNROMView, mskNSTRView, mskNNTView, mskNNTView]
 		let mskVerbiageList = ["bunion: \(mskABunComboView.stringValue) foot", "\(mskOtherTextView.stringValue)", "normal range of motion", "normal strength", "nontender", "normal tone"]
 		var mskVerbiageProcessedList = processAllControlTypes(mskVarList, stringArray: mskVerbiageList)
 		if mskASubsectionView.stringValue != "" {
-		mskVerbiageProcessedList.insert(mskASubsectionView.stringValue, atIndex: 0)
+		mskVerbiageProcessedList.insert(mskASubsectionView.stringValue, at: 0)
 		}
 		
 		//Process Hammer Toes
-		let mskHammerToesLeft = [mskAHammerL1View, mskAHammerL2View, mskAHammerL3View, mskAHammerL4View, mskAHammerL5View]
+		let mskHammerToesLeft:[AnyObject] = [mskAHammerL1View, mskAHammerL2View, mskAHammerL3View, mskAHammerL4View, mskAHammerL5View]
 		let mskHammerLeftVerbiage = ["left great toe", "left second toe", "left third toe", "left fourth toe", "left fifth toe"]
-		let mskHammerToesRight = [mskAHammerR1View, mskAHammerR2View, mskAHammerR3View, mskAHammerR4View, mskAHammerR5View]
+		let mskHammerToesRight:[AnyObject] = [mskAHammerR1View, mskAHammerR2View, mskAHammerR3View, mskAHammerR4View, mskAHammerR5View]
 		let mskHammerRightVerbiage = ["right great toe", "right second toe", "right third toe", "right fourth toe", "right fifth toe"]
 		let mskHammerLeft = processAllControlTypes(mskHammerToesLeft, stringArray: mskHammerLeftVerbiage)
-		let mskHammerLeftResults = mskHammerLeft.joinWithSeparator(", ")
+		let mskHammerLeftResults = mskHammerLeft.joined(separator: ", ")
 		let mskHammerRight = processAllControlTypes(mskHammerToesRight, stringArray: mskHammerRightVerbiage)
-		let mskHammerRightResults = mskHammerRight.joinWithSeparator(", ")
+		let mskHammerRightResults = mskHammerRight.joined(separator: ", ")
 		if !mskHammerLeft.isEmpty || !mskHammerRight.isEmpty {
 			var theSpacer = ""
 			if !mskHammerLeft.isEmpty && !mskHammerRight.isEmpty {
@@ -2435,7 +2435,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	func processSkin() ->String {
 		//Process Skin controllers
 		var skinVerbiageResults = ""
-		let skinVarList = [skinATurgView, skinAAcneView, skinARashView, skinALumpView, skinAUlcerView, skinACallusView, skinACelView, skinABoilView, skinANailView, skinASkinView, skinOtherTextView, skinNWrmView, skinNDryView, skinNNorashView, skinNNolesionView, skinNTurgView]
+		let skinVarList:[AnyObject] = [skinATurgView, skinAAcneView, skinARashView, skinALumpView, skinAUlcerView, skinACallusView, skinACelView, skinABoilView, skinANailView, skinASkinView, skinOtherTextView, skinNWrmView, skinNDryView, skinNNorashView, skinNNolesionView, skinNTurgView]
 		let skinVerbiageList = ["Decreased skin turgor", "\(skinAAcneTextView.stringValue)", "\(skinARashTextView.stringValue)", "\(skinALumpTextView.stringValue)", "\(skinAUlcerTextView.stringValue)", "\(skinACallusTextView.stringValue)", "\(skinACelTextView.stringValue)", "\(skinABoilTextView.stringValue)", "\(skinANailTextView.stringValue)", "\(skinASkinTextView.stringValue)", "\(skinOtherTextView.stringValue)", "warm", "dry", "no rash", "no lesions", "normal turgor"]
 		var skinVerbiageProcessedList = processAllControlTypes(skinVarList, stringArray: skinVerbiageList)
 		if !skinVerbiageProcessedList.isEmpty {
@@ -2449,7 +2449,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	func processLymph() ->String {
 		//Process Lymph controllers
 		var lymphVerbiageResults = ""
-		let lymphVarList = [lymphAAxComboView, lymphAIngComboView, lymphASuClComboView, lymphASMComboView, lymphAAcComboView, lymphAPcComboView, lymphOtherTextView, lymphNCervicalView, lymphNAxillaryView, lymphNInguinalView, lymphNSupraClavView]
+		let lymphVarList:[AnyObject] = [lymphAAxComboView, lymphAIngComboView, lymphASuClComboView, lymphASMComboView, lymphAAcComboView, lymphAPcComboView, lymphOtherTextView, lymphNCervicalView, lymphNAxillaryView, lymphNInguinalView, lymphNSupraClavView]
 		let lymphVerbiageList = ["\(lymphAAxComboView.stringValue) axillary lymphadenopathy", "\(lymphAIngComboView.stringValue) inguinal lymphadenopathy", "\(lymphASuClComboView.stringValue) supraclavicular lymphadenopathy ", "\(lymphASMComboView.stringValue) submandibular lymphadenopathy ", "\(lymphAAcComboView.stringValue) anterior cervical lymphadenopathy", "\(lymphAPcComboView.stringValue) posterior cervical lymphadenopathy", "\(lymphOtherTextView.stringValue)", "normal cervical lymph nodes", "no axillary lymphadenopathy", "normal inguinal lymph nodes", "no supraclavicular lymphadenopathy"]
 		var lymphVerbiageProcessedList = processAllControlTypes(lymphVarList, stringArray: lymphVerbiageList)
 		if !lymphVerbiageProcessedList.isEmpty {
@@ -2469,7 +2469,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		
 		//Process normal Breast controllers
 		var breastNormalResultsList = ""
-		let breastNormalVarList = [breastNNomassView, breastNNonipdcView, breastNNoAxLAD, breastNNTView]
+		let breastNormalVarList:[AnyObject] = [breastNNomassView, breastNNonipdcView, breastNNoAxLAD, breastNNTView]
 		let breastNormalVerbiageList = ["no dominant masses", "no nipple discharge", "no axillary lymphadenopathy present", "nontender"]
 		var breastNormVerbiageList = processAllControlTypes(breastNormalVarList, stringArray: breastNormalVerbiageList)
 		if !breastNormVerbiageList.isEmpty {
@@ -2482,28 +2482,28 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		var breastLeftVerbiageResults = ""
 		var breastLeftResultsList = [String]()
 		
-		let breastLeftVarList1 = [breastALDiffuseView, breastALAxLADView, breastAL1MView, breastAL1CView, breastAL1DView, breastAL1TView, breastAL2MView, breastAL2CView, breastAL2DView, breastAL2TView, breastAL3MView, breastAL3CView]
+		let breastLeftVarList1:[AnyObject] = [breastALDiffuseView, breastALAxLADView, breastAL1MView, breastAL1CView, breastAL1DView, breastAL1TView, breastAL2MView, breastAL2CView, breastAL2DView, breastAL2TView, breastAL3MView, breastAL3CView]
 		let breastLeftVerbiageList1 = ["diffuse fibrocystic densities", "axillary lymphadenopathy present", "\(breastAL1MView.titleOfSelectedItem!) cm mass at 1:00", "\(breastAL1CView.titleOfSelectedItem!) cm cyst at 1:00", "\(breastAL1DView.titleOfSelectedItem!) cm fibrodense area at 1:00", "tenderness at 1:00", "\(breastAL2MView.titleOfSelectedItem!) cm mass at 2:00", "\(breastAL2CView.titleOfSelectedItem!) cm cyst at 2:00", "\(breastAL2DView.titleOfSelectedItem!) cm fibrodense area at 2:00", "tenderness at 2:00", "\(breastAL3MView.titleOfSelectedItem!) cm mass at 3:00", "\(breastAL3CView.titleOfSelectedItem!) cm cyst at 3:00"]
 		let breastLeftProcessedList1 = processAllControlTypes(breastLeftVarList1, stringArray: breastLeftVerbiageList1)
 		breastLeftResultsList += breastLeftProcessedList1
 		
 		
-		let breastLeftVarList2 = [breastAL3DView, breastAL3TView, breastAL4MView, breastAL4CView, breastAL4DView, breastAL4TView, breastAL5MView, breastAL5CView, breastAL5DView, breastAL5TView, breastAL6MView, breastAL6CView]
+		let breastLeftVarList2:[AnyObject] = [breastAL3DView, breastAL3TView, breastAL4MView, breastAL4CView, breastAL4DView, breastAL4TView, breastAL5MView, breastAL5CView, breastAL5DView, breastAL5TView, breastAL6MView, breastAL6CView]
 		let breastLeftVerbiageList2 = ["\(breastAL3DView.titleOfSelectedItem!) cm fibrodense area at 3:00", "tenderness at 3:00", "\(breastAL4MView.titleOfSelectedItem!) cm mass at 4:00", "\(breastAL4CView.titleOfSelectedItem!) cm cyst at 4:00", "\(breastAL4DView.titleOfSelectedItem!) cm fibrodense area at 4:00", "tenderness at 4:00", "\(breastAL5MView.titleOfSelectedItem!) cm mass at 5:00", "\(breastAL5CView.titleOfSelectedItem!) cm cyst at 5:00", "\(breastAL5DView.titleOfSelectedItem!) cm fibrodense area at 5:00", "tenderness at 5:00", "\(breastAL6MView.titleOfSelectedItem!) cm mass at 6:00", "\(breastAL6CView.titleOfSelectedItem!) cm cyst at 6:00"]
 		let breastLeftProcessedList2 = processAllControlTypes(breastLeftVarList2, stringArray: breastLeftVerbiageList2)
 		breastLeftResultsList += breastLeftProcessedList2
 		
-		let breastLeftVarList3 = [breastAL6DView, breastAL6TView, breastAL7MView, breastAL7CView, breastAL7DView, breastAL7TView, breastAL8MView, breastAL8CView, breastAL8DView, breastAL8TView, breastAL9MView]
+		let breastLeftVarList3:[AnyObject] = [breastAL6DView, breastAL6TView, breastAL7MView, breastAL7CView, breastAL7DView, breastAL7TView, breastAL8MView, breastAL8CView, breastAL8DView, breastAL8TView, breastAL9MView]
 		let breastLeftVerbiageList3 = ["\(breastAL6DView.titleOfSelectedItem!) cm fibrodense area at 6:00", "tenderness at 6:00", "\(breastAL7MView.titleOfSelectedItem!) cm mass at 7:00", "\(breastAL7CView.titleOfSelectedItem!) cm cyst at 7:00", "\(breastAL7DView.titleOfSelectedItem!) cm fibrodense area at 7:00", "tenderness at 7:00", "\(breastAL8MView.titleOfSelectedItem!) cm mass at 8:00", "\(breastAL8CView.titleOfSelectedItem!) cm cyst at 8:00", "\(breastAL8DView.titleOfSelectedItem!) cm fibrodense area at 8:00", "tenderness at 8:00", "\(breastAL9MView.titleOfSelectedItem!) cm mass at 9:00"]
 		let breastLeftProcessedList3 = processAllControlTypes(breastLeftVarList3, stringArray: breastLeftVerbiageList3)
 		breastLeftResultsList += breastLeftProcessedList3
 		
-		let breastLeftVarList4 = [breastAL9CView, breastAL9DView, breastAL9TView, breastAL10MView, breastAL10CView, breastAL10DView, breastAL10TView, breastAL11MView, breastAL11CView, breastAL11DView]
+		let breastLeftVarList4:[AnyObject] = [breastAL9CView, breastAL9DView, breastAL9TView, breastAL10MView, breastAL10CView, breastAL10DView, breastAL10TView, breastAL11MView, breastAL11CView, breastAL11DView]
 		let breastLeftVerbiageList4 = ["\(breastAL9CView.titleOfSelectedItem!) cm cyst at 9:00", "\(breastAL9DView.titleOfSelectedItem!) cm fibrodense area at 9:00", "tenderness at 9:00", "\(breastAL10MView.titleOfSelectedItem!) cm mass at 10:00", "\(breastAL10CView.titleOfSelectedItem!) cm cyst at 10:00", "\(breastAL10DView.titleOfSelectedItem!) cm fibrodense area at 10:00", "tenderness at 10:00", "\(breastAL11MView.titleOfSelectedItem!) cm mass at 11:00", "\(breastAL11CView.titleOfSelectedItem!) cm cyst at 11:00", "\(breastAL11DView.titleOfSelectedItem!) cm fibrodense area at 11:00"]
 		let breastLeftProcessedList4 = processAllControlTypes(breastLeftVarList4, stringArray: breastLeftVerbiageList4)
 		breastLeftResultsList += breastLeftProcessedList4
 		
-		let breastLeftVarList5 = [breastAL11TView, breastAL12MView, breastAL12CView, breastAL12DView, breastAL12TView, breastALMNView, breastALCNView, breastALDNView, breastALTNView, breastATendernessLView, breastAGalactLView]
+		let breastLeftVarList5:[AnyObject] = [breastAL11TView, breastAL12MView, breastAL12CView, breastAL12DView, breastAL12TView, breastALMNView, breastALCNView, breastALDNView, breastALTNView, breastATendernessLView, breastAGalactLView]
 		let breastLeftVerbiageList5 = ["tenderness at 11:00", "\(breastAL12MView.titleOfSelectedItem!) cm mass at 12:00", "\(breastAL12CView.titleOfSelectedItem!) cm cyst at 12:00", "\(breastAL12DView.titleOfSelectedItem!) cm fibrodense area at 12:00", "tenderness at 12:00", "masses around nipple", "cysts around nipple", "fibrodensities around nipple", "tenderness around nipple", "\(breastATendernessLView.stringValue) tenderness", "galactorrhea: \(breastAGalactLView.stringValue)"]
 		let breastLeftProcessedList5 = processAllControlTypes(breastLeftVarList5, stringArray: breastLeftVerbiageList5)
 		breastLeftResultsList += breastLeftProcessedList5
@@ -2518,28 +2518,28 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		var breastRightVerbiageResults = ""
 		var breastRightResultsList = [String]()
 		
-		let breastRightVarList1 = [breastARDiffuseView, breastARAxLADView, breastAR1MView, breastAR1CView, breastAR1DView, breastAR1TView, breastAR2MView, breastAR2CView, breastAR2DView, breastAR2TView, breastAR3MView, breastAR3CView]
+		let breastRightVarList1:[AnyObject] = [breastARDiffuseView, breastARAxLADView, breastAR1MView, breastAR1CView, breastAR1DView, breastAR1TView, breastAR2MView, breastAR2CView, breastAR2DView, breastAR2TView, breastAR3MView, breastAR3CView]
 		let breastRightVerbiageList1 = ["diffuse fibrocystic densities", "axillary lymphadenopathy present", "\(breastAR1MView.titleOfSelectedItem!) cm mass at 1:00", "\(breastAR1CView.titleOfSelectedItem!) cm cyst at 1:00", "\(breastAR1DView.titleOfSelectedItem!) cm fibrodense area at 1:00", "tenderness at 1:00", "\(breastAR2MView.titleOfSelectedItem!) cm mass at 2:00", "\(breastAR2CView.titleOfSelectedItem!) cm cyst at 2:00", "\(breastAR2DView.titleOfSelectedItem!) cm fibrodense area at 2:00", "tenderness at 2:00", "\(breastAR3MView.titleOfSelectedItem!) cm mass at 3:00", "\(breastAR3CView.titleOfSelectedItem!) cm cyst at 3:00"]
 		let breastRightProcessedList1 = processAllControlTypes(breastRightVarList1, stringArray: breastRightVerbiageList1)
 		breastRightResultsList += breastRightProcessedList1
 		
 		
-		let breastRightVarList2 = [breastAR3DView, breastAR3TView, breastAR4MView, breastAR4CView, breastAR4DView, breastAR4TView, breastAR5MView, breastAR5CView, breastAR5DView, breastAR5TView, breastAR6MView, breastAR6CView]
+		let breastRightVarList2:[AnyObject] = [breastAR3DView, breastAR3TView, breastAR4MView, breastAR4CView, breastAR4DView, breastAR4TView, breastAR5MView, breastAR5CView, breastAR5DView, breastAR5TView, breastAR6MView, breastAR6CView]
 		let breastRightVerbiageList2 = ["\(breastAR3DView.titleOfSelectedItem!) cm fibrodense area at 3:00", "tenderness at 3:00", "\(breastAR4MView.titleOfSelectedItem!) cm mass at 4:00", "\(breastAR4CView.titleOfSelectedItem!) cm cyst at 4:00", "\(breastAR4DView.titleOfSelectedItem!) cm fibrodense area at 4:00", "tenderness at 4:00", "\(breastAR5MView.titleOfSelectedItem!) cm mass at 5:00", "\(breastAR5CView.titleOfSelectedItem!) cm cyst at 5:00", "\(breastAR5DView.titleOfSelectedItem!) cm fibrodense area at 5:00", "tenderness at 5:00", "\(breastAR6MView.titleOfSelectedItem!) cm mass at 6:00", "\(breastAR6CView.titleOfSelectedItem!) cm cyst at 6:00"]
 		let breastRightProcessedList2 = processAllControlTypes(breastRightVarList2, stringArray: breastRightVerbiageList2)
 		breastRightResultsList += breastRightProcessedList2
 		
-		let breastRightVarList3 = [breastAR6DView, breastAR6TView, breastAR7MView, breastAR7CView, breastAR7DView, breastAR7TView, breastAR8MView, breastAR8CView, breastAR8DView, breastAR8TView, breastAR9MView]
+		let breastRightVarList3:[AnyObject] = [breastAR6DView, breastAR6TView, breastAR7MView, breastAR7CView, breastAR7DView, breastAR7TView, breastAR8MView, breastAR8CView, breastAR8DView, breastAR8TView, breastAR9MView]
 		let breastRightVerbiageList3 = ["\(breastAR6DView.titleOfSelectedItem!) cm fibrodense area at 6:00", "tenderness at 6:00", "\(breastAR7MView.titleOfSelectedItem!) cm mass at 7:00", "\(breastAR7CView.titleOfSelectedItem!) cm cyst at 7:00", "\(breastAR7DView.titleOfSelectedItem!) cm fibrodense area at 7:00", "tenderness at 7:00", "\(breastAR8MView.titleOfSelectedItem!) cm mass at 8:00", "\(breastAR8CView.titleOfSelectedItem!) cm cyst at 8:00", "\(breastAR8DView.titleOfSelectedItem!) cm fibrodense area at 8:00", "tenderness at 8:00", "\(breastAR9MView.titleOfSelectedItem!) cm mass at 9:00"]
 		let breastRightProcessedList3 = processAllControlTypes(breastRightVarList3, stringArray: breastRightVerbiageList3)
 		breastRightResultsList += breastRightProcessedList3
 		
-		let breastRightVarList4 = [breastAR9CView, breastAR9DView, breastAR9TView, breastAR10MView, breastAR10CView, breastAR10DView, breastAR10TView, breastAR11MView, breastAR11CView, breastAR11DView]
+		let breastRightVarList4:[AnyObject] = [breastAR9CView, breastAR9DView, breastAR9TView, breastAR10MView, breastAR10CView, breastAR10DView, breastAR10TView, breastAR11MView, breastAR11CView, breastAR11DView]
 		let breastRightVerbiageList4 = ["\(breastAR9CView.titleOfSelectedItem!) cm cyst at 9:00", "\(breastAR9DView.titleOfSelectedItem!) cm fibrodense area at 9:00", "tenderness at 9:00", "\(breastAR10MView.titleOfSelectedItem!) cm mass at 10:00", "\(breastAR10CView.titleOfSelectedItem!) cm cyst at 10:00", "\(breastAR10DView.titleOfSelectedItem!) cm fibrodense area at 10:00", "tenderness at 10:00", "\(breastAR11MView.titleOfSelectedItem!) cm mass at 11:00", "\(breastAR11CView.titleOfSelectedItem!) cm cyst at 11:00", "\(breastAR11DView.titleOfSelectedItem!) cm fibrodense area at 11:00"]
 		let breastRightProcessedList4 = processAllControlTypes(breastRightVarList4, stringArray: breastRightVerbiageList4)
 		breastRightResultsList += breastRightProcessedList4
 		
-		let breastRightVarList5 = [breastAR11TView, breastAR12MView, breastAR12CView, breastAR12DView, breastAR12TView, breastARMNView, breastARCNView, breastARDNView, breastARTNView, breastATendernessRView, breastAGalactRView]
+		let breastRightVarList5:[AnyObject] = [breastAR11TView, breastAR12MView, breastAR12CView, breastAR12DView, breastAR12TView, breastARMNView, breastARCNView, breastARDNView, breastARTNView, breastATendernessRView, breastAGalactRView]
 		let breastRightVerbiageList5 = ["tenderness at 11:00", "\(breastAR12MView.titleOfSelectedItem!) cm mass at 12:00", "\(breastAR12CView.titleOfSelectedItem!) cm cyst at 12:00", "\(breastAR12DView.titleOfSelectedItem!) cm fibrodense area at 12:00", "tenderness at 12:00", "masses around nipple", "cysts around nipple", "fibrodensities around nipple", "tenderness around nipple", "\(breastATendernessRView.stringValue) tenderness", "galactorrhea: \(breastAGalactRView.stringValue)"]
 		let breastRightProcessedList5 = processAllControlTypes(breastRightVarList5, stringArray: breastRightVerbiageList5)
 		breastRightResultsList += breastRightProcessedList5
@@ -2569,7 +2569,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	func processGyn() ->String {
 		//Process GYN controllers
 		var gynVerbiageResults = ""
-		let gynVarList = [gynAAtrophView, gynADCView, gynACMTView, gynACystView, gynARectView, gynANoCervView, gynANoUtView, gynAAdnxComboView, gynOtherTextView, gynNExtgenView, gynNUtView, gynNCvxView, gynNCmtView, gynNAdnxView]
+		let gynVarList:[AnyObject] = [gynAAtrophView, gynADCView, gynACMTView, gynACystView, gynARectView, gynANoCervView, gynANoUtView, gynAAdnxComboView, gynOtherTextView, gynNExtgenView, gynNUtView, gynNCvxView, gynNCmtView, gynNAdnxView]
 		let gynVerbiageList = ["atrophic vaginitis", "vaginal discharge \(gynADCTextView.stringValue)", "cervical motion tenderness", "cystocoele", "rectocoele", "cervix absent", "uterus absent", "\(gynAAdnxComboView.stringValue) adnexal fullness", "\(gynOtherTextView.stringValue)", "external genetalia: normal, no lesions, normal urethra", "uterus normal size/position/motion, anteverted, no mass/enlargement nontender", "cervix: normal", "no cervical motion tenderness", "no adnexal mass/tenderness, no inguinal lymphadenopathy"]
 		var gynVerbiageProcessedList = processAllControlTypes(gynVarList, stringArray: gynVerbiageList)
 		if !gynVerbiageProcessedList.isEmpty {
@@ -2583,7 +2583,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	func processDRE() ->String {
 		//Process DRE controllers
 		var dreVerbiageResults = ""
-		let dreVarList = [dreAExtrhoidView, dreAIntrhoidView, dreASwlView, dreAHemeView, dreAToneView, dreAMassTextView, dreOtherTextView, dreNToneView, dreNNoMassView, dreNNoRhoidsView, dreNHemeView]
+		let dreVarList:[AnyObject] = [dreAExtrhoidView, dreAIntrhoidView, dreASwlView, dreAHemeView, dreAToneView, dreAMassTextView, dreOtherTextView, dreNToneView, dreNNoMassView, dreNNoRhoidsView, dreNHemeView]
 		let dreVerbiageList = ["external hemorrhoids", "internal hemorrhoids", "swollen", "heme positive", "decreased rectal tone", "\(dreAMassTextView.stringValue)", "\(dreOtherTextView.stringValue)", "normal anus","no rectal masses","ext/int rhoids not swollen or thrombosed","heme negative"]
 		var dreVerbiageProcessedList = processAllControlTypes(dreVarList, stringArray: dreVerbiageList)
 		if !dreVerbiageProcessedList.isEmpty {
@@ -2597,7 +2597,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	func processGU() ->String {
 		//Process GU controllers
 		var guVerbiageResults = ""
-		let guVarList = [guAAsymView, guADomedView, guALumpView, guARIHView, guALIHView, guOtherView, guNUncircView, guNCircView, guNTestesView, guNNoherniaView, guNProsView]
+		let guVarList:[AnyObject] = [guAAsymView, guADomedView, guALumpView, guARIHView, guALIHView, guOtherView, guNUncircView, guNCircView, guNTestesView, guNNoherniaView, guNProsView]
 		let guVerbiageList = ["asymmetric", "domed", "lumpy", "right inguinal hernia", "left inguinal hernia", "\(guOtherView.stringValue)", "normal uncirc phallus, no penile discharge, no lesions", "normal circ phallus, no penile discharge, no lesions", "testes normal size, no masses, no hernias, no inguinal lymphadenopathy", "no hernias", "DRE: prostate nontender, no masses, normal size, no rectal masses, ext/int rhoids, stool brown, heme negative."]
 		var guVerbiageProcessedList = processAllControlTypes(guVarList, stringArray: guVerbiageList)
 		if !guVerbiageProcessedList.isEmpty {
@@ -2609,7 +2609,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	}
 	
 	//Open the MSK review windo
-	@IBAction func takeOpenMSKWindow(sender: AnyObject) {
+	@IBAction func takeOpenMSKWindow(_ sender: AnyObject) {
 		MSKDelegate.MSKVars.mskState = 1
 		headSpineWindow.makeKeyAndOrderFront(self)
 	}
@@ -2639,11 +2639,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		return returnVerbiage
     }
 	
-	func applicationShouldTerminateAfterLastWindowClosed(sender: NSApplication) -> Bool {
+
+	
+	func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
 		return true
 	}
     
-    func applicationWillTerminate(aNotification: NSNotification) {
+    func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
     

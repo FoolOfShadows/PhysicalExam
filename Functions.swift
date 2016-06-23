@@ -10,11 +10,11 @@ import Cocoa
 
 //Process two arrays, one of NSButton and one of strings, to create an output string
 //based on which checkboxes a user clicked
-func processControllersCheckBox(buttonArray: [NSButton!], stringArray: [String])-> [String] {
+func processControllersCheckBox(_ buttonArray: [NSButton?], stringArray: [String])-> [String] {
 	var returnValueList = [String]()
-	for (i, _) in buttonArray.enumerate() {
+	for (i, _) in buttonArray.enumerated() {
 	//for var i = 0; i < buttonArray.count; i++ {
-		if (buttonArray[i].state == NSOnState) {
+		if (buttonArray[i]?.state == NSOnState) {
 			returnValueList.append(stringArray[i])
 		}
 	}
@@ -24,7 +24,7 @@ func processControllersCheckBox(buttonArray: [NSButton!], stringArray: [String])
 }
 
 //Generate a string with a heading from an array
-func generateSubheadingString(header: String, stringList: [String], joiner: String) -> String {
+func generateSubheadingString(_ header: String, stringList: [String], joiner: String) -> String {
 	var resultingString = ""
 	var theHeader = ""
 	
@@ -33,27 +33,27 @@ func generateSubheadingString(header: String, stringList: [String], joiner: Stri
 	}
 	
 	if !stringList.isEmpty {
-		resultingString = "\(theHeader)" + stringList.joinWithSeparator(joiner)
+		resultingString = "\(theHeader)" + stringList.joined(separator: joiner)
 	}
 	return resultingString
 }
 
 //Process the strings resulting from the processControllersXXXX functions into a
 //format for final output
-func processNormAbnormLists(heading: String, normalIn:[String], abnormalIn:[String]) ->NSString {
+func processNormAbnormLists(_ heading: String, normalIn:[String], abnormalIn:[String]) ->NSString {
 	var verbiageList = ""
 	var normList = ""
 	var abnormList = ""
 	if (!normalIn.isEmpty) && (!abnormalIn.isEmpty) {
 		let abnormalInAdjusted = makeFirstCharacterInStringArrayUppercase(abnormalIn)
-		normList = normalIn.joinWithSeparator(", ")
-		abnormList = abnormalInAdjusted.joinWithSeparator(", ") + ", "
+		normList = normalIn.joined(separator: ", ")
+		abnormList = abnormalInAdjusted.joined(separator: ", ") + ", "
 	} else if (!normalIn.isEmpty) && (abnormalIn.isEmpty) {
 		let normalInAdjusted = makeFirstCharacterInStringArrayUppercase(normalIn)
-		normList = normalInAdjusted.joinWithSeparator(", ")
+		normList = normalInAdjusted.joined(separator: ", ")
 	} else if (normalIn.isEmpty) && (!abnormalIn.isEmpty) {
 		let abnormalInAdjusted = makeFirstCharacterInStringArrayUppercase(abnormalIn)
-		abnormList = abnormalInAdjusted.joinWithSeparator(", ") + ", "
+		abnormList = abnormalInAdjusted.joined(separator: ", ") + ", "
 	}
 	
 	if normList != "" || abnormList != "" {
@@ -64,9 +64,9 @@ func processNormAbnormLists(heading: String, normalIn:[String], abnormalIn:[Stri
 }
 
 
-func processAllControlTypes(controllerArray: [AnyObject], stringArray: [String])-> [String] {
+func processAllControlTypes(_ controllerArray: [AnyObject], stringArray: [String])-> [String] {
 	var returnValueList = [String]()
-	for (i, _) in controllerArray.enumerate() {
+	for (i, _) in controllerArray.enumerated() {
 	//for var i = 0; i<controllerArray.count; i++ {
 		switch controllerArray[i] {
 		case is NSPopUpButton:
@@ -94,13 +94,13 @@ func processAllControlTypes(controllerArray: [AnyObject], stringArray: [String])
 	return returnValueList
 }
 
-func capitalizeWord(wordToCapitalize: String) -> String {
+func capitalizeWord(_ wordToCapitalize: String) -> String {
 	var theWord = wordToCapitalize
-	theWord.replaceRange(theWord.startIndex...theWord.startIndex, with: String(theWord[theWord.startIndex]).capitalizedString)
+	theWord.replaceSubrange(theWord.startIndex...theWord.startIndex, with: String(theWord[theWord.startIndex]).uppercased())
 	return theWord
 }
 
-func makeFirstCharacterInStringArrayUppercase(theArray: [String])->[String] {
+func makeFirstCharacterInStringArrayUppercase(_ theArray: [String])->[String] {
 	var changedArray = theArray
 	var firstItem = theArray[0]
 	//Added this check to avoid an error in cases where the first item in a passed array is an empty string
@@ -112,23 +112,23 @@ func makeFirstCharacterInStringArrayUppercase(theArray: [String])->[String] {
 	return changedArray
 }
 
-func makeEdemaQualifyingString(edemaQualifyingArray: [String]) -> String {
+func makeEdemaQualifyingString(_ edemaQualifyingArray: [String]) -> String {
 	var returnString = ""
 	if !edemaQualifyingArray.isEmpty {
-		returnString = ", " + edemaQualifyingArray.joinWithSeparator(", ")
+		returnString = ", " + edemaQualifyingArray.joined(separator: ", ")
 	}
 	return returnString
 }
 
-func clearComboboxes(combo:NSComboBox, list: [String]) {
+func clearComboboxes(_ combo:NSComboBox, list: [String]) {
 	combo.removeAllItems()
-	combo.addItemsWithObjectValues(list)
-	combo.selectItemAtIndex(0)
+	combo.addItems(withObjectValues: list)
+	combo.selectItem(at: 0)
 }
 
 
 //Process MSKControls Class Objects
-func processMSKControls(theControls: [AnyObject]) -> [String] {
+func processMSKControls(_ theControls: [AnyObject]) -> [String] {
 	var results = [String]()
 	
 	for control in theControls {
@@ -171,7 +171,7 @@ func processMSKControls(theControls: [AnyObject]) -> [String] {
 			}
 			
 			if !itemResultsList.isEmpty {
-				itemResultsString = "\(theSubHeading): " + itemResultsList.joinWithSeparator(", ")
+				itemResultsString = "\(theSubHeading): " + itemResultsList.joined(separator: ", ")
 				results.append(itemResultsString)
 			}
 		} else if let thisControl = control as? MSKAddToneControl {
@@ -192,7 +192,7 @@ func processMSKControls(theControls: [AnyObject]) -> [String] {
 			}
 			
 			if !itemResultsList.isEmpty {
-				itemResultsString = "\(theSubHeading): " + itemResultsList.joinWithSeparator(", ")
+				itemResultsString = "\(theSubHeading): " + itemResultsList.joined(separator: ", ")
 				results.append(itemResultsString)
 			}
 		} else if let thisControl = control as? MSKHeadControls {
@@ -219,7 +219,7 @@ func processMSKControls(theControls: [AnyObject]) -> [String] {
 			}
 			
 			if !itemResultsList.isEmpty {
-				itemResultsString = "\(theSubHeading): " + itemResultsList.joinWithSeparator(", ")
+				itemResultsString = "\(theSubHeading): " + itemResultsList.joined(separator: ", ")
 				results.append(itemResultsString)
 			}
 			
@@ -236,7 +236,7 @@ func processMSKControls(theControls: [AnyObject]) -> [String] {
 			}
 						
 			if !itemResultsList.isEmpty {
-				itemResultsString = "\(theSubHeading): " + itemResultsList.joinWithSeparator(", ")
+				itemResultsString = "\(theSubHeading): " + itemResultsList.joined(separator: ", ")
 				results.append(itemResultsString)
 			}
 		}

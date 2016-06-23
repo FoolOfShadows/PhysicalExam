@@ -14,8 +14,8 @@ class MyBox: NSBox {
 	@IBInspectable
 	var myMargins: NSSize = NSSize(width: 2.0, height: 2.0)
 
-    override func drawRect(dirtyRect: NSRect) {
-        super.drawRect(dirtyRect)
+    override func draw(_ dirtyRect: NSRect) {
+        super.draw(dirtyRect)
 
         // Drawing code here.
 		contentViewMargins = myMargins

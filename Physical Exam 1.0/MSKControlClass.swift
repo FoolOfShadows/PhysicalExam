@@ -48,28 +48,28 @@ class MSKControls {
 	}
 	
 	func clearAllControllers() {
-		if strPopup.isNotEqualTo(nil) {
+		if strPopup.isNotEqual(to: nil) {
 		strPopup.removeAllItems()
-		strPopup.addItemsWithTitles(theStrengthList)
-		strPopup.selectItemAtIndex(0)
+		strPopup.addItems(withTitles: theStrengthList)
+		strPopup.selectItem(at: 0)
 		}
-		if romText.isNotEqualTo(nil) {
+		if romText.isNotEqual(to: nil) {
 		romText.stringValue = ""
 		}
-		if romDirCombo.isNotEqualTo(nil) {
+		if romDirCombo.isNotEqual(to: nil) {
 		romDirCombo.removeAllItems()
-		romDirCombo.addItemsWithObjectValues(romDirList)
-		romDirCombo.selectItemAtIndex(0)
+		romDirCombo.addItems(withObjectValues: romDirList)
+		romDirCombo.selectItem(at: 0)
 		}
 		ttpCheck.state = NSOffState
 		swlCheck.state = NSOffState
 		swlLocCombo.removeAllItems()
-		swlLocCombo.addItemsWithObjectValues(swlLocList)
-		swlLocCombo.selectItemAtIndex(0)
-		if tonePopup.isNotEqualTo(nil) {
+		swlLocCombo.addItems(withObjectValues: swlLocList)
+		swlLocCombo.selectItem(at: 0)
+		if tonePopup.isNotEqual(to: nil) {
 		tonePopup.removeAllItems()
-		tonePopup.addItemsWithTitles(toneList)
-		tonePopup.selectItemAtIndex(0)
+		tonePopup.addItems(withTitles: toneList)
+		tonePopup.selectItem(at: 0)
 		}
 		
 	}
@@ -93,8 +93,8 @@ class MSKSuperControls {
 		ttpCheck.state = NSOffState
 		swlCheck.state = NSOffState
 		swlLocPopup.removeAllItems()
-		swlLocPopup.addItemsWithTitles(swlLocList)
-		swlLocPopup.selectItemAtIndex(0)
+		swlLocPopup.addItems(withTitles: swlLocList)
+		swlLocPopup.selectItem(at: 0)
 	}
 	
 	
@@ -112,8 +112,8 @@ class MSKAddToneControl: MSKSuperControls {
 	
 	func clearToneControllers() {
 		tonePopup.removeAllItems()
-		tonePopup.addItemsWithTitles(toneList)
-		tonePopup.selectItemAtIndex(0)
+		tonePopup.addItems(withTitles: toneList)
+		tonePopup.selectItem(at: 0)
 		super.clearControllers()
 		
 	}
@@ -135,12 +135,12 @@ class MSKAllControls: MSKAddToneControl {
 	
 	func clearAllControllers() {
 		strPopup.removeAllItems()
-		strPopup.addItemsWithTitles(theStrengthList)
-		strPopup.selectItemAtIndex(0)
+		strPopup.addItems(withTitles: theStrengthList)
+		strPopup.selectItem(at: 0)
 		romText.stringValue = ""
 		romDirPopup.removeAllItems()
-		romDirPopup.addItemsWithTitles(romDirList)
-		romDirPopup.selectItemAtIndex(0)
+		romDirPopup.addItems(withTitles: romDirList)
+		romDirPopup.selectItem(at: 0)
 		super.clearToneControllers()
 	}
 	
@@ -162,12 +162,12 @@ class MSKHeadControls: MSKSuperControls {
 	
 	func clearHeadControllers() {
 		strPopup.removeAllItems()
-		strPopup.addItemsWithTitles(theStrengthList)
-		strPopup.selectItemAtIndex(0)
+		strPopup.addItems(withTitles: theStrengthList)
+		strPopup.selectItem(at: 0)
 		romText.stringValue = ""
 		romDirPopup.removeAllItems()
-		romDirPopup.addItemsWithTitles(romDirList)
-		romDirPopup.selectItemAtIndex(0)
+		romDirPopup.addItems(withTitles: romDirList)
+		romDirPopup.selectItem(at: 0)
 		super.clearControllers()
 	}
 }
