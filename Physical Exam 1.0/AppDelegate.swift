@@ -598,6 +598,51 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		}
 	}
 	
+	@IBAction func takeAbnormalNormal(_ sender: NSButton) {
+		takeClearAll(self)
+		takeGenNormal(self)
+		takePsyNorm(self)
+		takeHeadEyeNorm(self)
+		//ENT
+		entNEACsView.state = NSOnState
+		entNNarView.state = NSOnState
+		entAPoordentView.state = NSOnState
+		entATRMDullView.state = NSOnState
+		entALTMDullView.state = NSOnState
+		entANarBogView.state = NSOnState
+		entALNarBogView.state = NSOnState
+		entAOpStrkView.state = NSOnState
+		entAOpPndView.state = NSOnState
+		takeNeckNorm(self)
+		takeCVNorm(self)
+		takeChestNorm(self)
+		takeGINorm(self)
+		giABloatView.state = NSOnState
+		//Extremeties
+		takeExtNorm(self)
+		extNEdemaView.state = NSOffState
+		extAEdema1QuantView.selectItem(withTitle: "trace")
+		extAEdema1SideView.selectItem(withTitle: "both")
+		extAEdema1LocationView.selectItem(withObjectValue: "ankle")
+		//Neuro
+		neuroNGaitView.state = NSOnState
+		neuroNPostrView.state = NSOnState
+		neuroNNonfocalView.state = NSOnState
+		neuroNMonofilView.state = NSOnState
+		neuroAADVibRView.state = NSMixedState
+		neuroADcrvibComboView.selectItem(withObjectValue: "ankle")
+		neuroAADVibLView.state = NSMixedState
+		neuroADcrvibLComboView.selectItem(withObjectValue: "ankle")
+		neuroADTRComboView.selectItem(withObjectValue: "absent")
+		takeMSKNorm(self)
+		takeSkinNorm(self)
+		if includeLymphCheck.state == NSOnState {
+			takeLymphNorm(self)
+		}
+		
+	}
+	
+	
     @IBAction func takeGenNormal(_ sender: AnyObject) {
         genNAlertView.state = NSOnState
         genNOrientedView.state = NSOnState
