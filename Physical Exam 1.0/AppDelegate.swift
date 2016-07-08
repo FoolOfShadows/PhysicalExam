@@ -46,7 +46,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	@IBOutlet weak var heARIctView: NSButton!
 	@IBOutlet weak var heARSinilView: NSButton!
 	@IBOutlet weak var heARLzyeyeView: NSButton!
-    @IBOutlet weak var heOtherTextView: NSTextField!
+    @IBOutlet weak var heAHeadTextView: NSTextField!
+	@IBOutlet weak var heAEyeTextView: NSTextField!
     
     //ENT Section Controls
     @IBOutlet weak var entNEACsView: NSButton!
@@ -286,6 +287,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var giNBSView: NSButton!
     @IBOutlet weak var giADistView: NSButton!
     @IBOutlet weak var giABloatView: NSButton!
+	@IBOutlet weak var giAObeseView: NSButton!
     @IBOutlet weak var giAHMQuantView: NSTextField!
     @IBOutlet weak var giASpMQuantView: NSTextField!
     @IBOutlet weak var giATTPComboView: NSComboBox!
@@ -875,7 +877,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		heARSinilView.state = NSOffState
 		heARIctView.state = NSOffState
 		heARLzyeyeView.state = NSOffState
-        heOtherTextView.stringValue = ""
+        heAHeadTextView.stringValue = ""
+		heAEyeTextView.stringValue = ""
         
         entNEACsView.state = NSOffState
         entTMsView.state = NSOffState
@@ -985,6 +988,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		giNBSView.state = NSOffState
 		giADistView.state = NSOffState
 		giABloatView.state = NSOffState
+		giAObeseView.state = NSOffState
 		giAHMQuantView.stringValue = ""
 		giASpMQuantView.stringValue = ""
 		giATTPComboView.removeAllItems()
@@ -1632,323 +1636,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		guOtherView.stringValue = ""
 	}
 	
-	//Set All To Abnormal for debugging purposes
-	@IBAction func takeSetAllAbnormal(_ sender: AnyObject) {
-		takeSetAbnormalAll(self)
-	}
 	
-	func takeSetAbnormalAll(_ sender: AnyObject) {
-		takeSetAbnormalTabOne(self)
-		takeSetAbnormalTabTwo(self)
-		takeSetAbnormalTabThree(self)
-		takeSetAbnormalTabFour(self)
-	}
-	
-	func takeSetAbnormalTabOne(_ sender: AnyObject) {
-//		genNAlertView.state = NSOnState
-//		genNOrientedView.state = NSOnState
-//		genNNADView.state = NSOnState
-//		genNWDView.state = NSOnState
-		genASomnView.state = NSOnState
-		genAArouseView.state = NSOnState
-		genAObeseView.state = NSOnState
-		genAThinView.state = NSOnState
-		genACachView.state = NSOnState
-		genAUnkemptView.state = NSOnState
-		genAOtherTextView.stringValue = "Other GENERAL issue"
-		
-//		heNNCATView.state = NSOnState
-//		heNPERRLAView.state = NSOnState
-//		heNEOMIView.state = NSOnState
-//		heNNoictView.state = NSOnState
-//		heNConjclrView.state = NSOnState
-		heALRedView.state = NSOnState
-		heALMudView.state = NSOnState
-		heALSinilView.state = NSOnState
-		heALIctView.state = NSOnState
-		heALLzyeyeView.state = NSOnState
-		heOtherTextView.stringValue = "Other HE issue"
-		
-//		entNEACsView.state = NSOnState
-//		entTMsView.state = NSOnState
-//		entNOPclrView.state = NSOnState
-//		entNDentView.state = NSOnState
-//		entNNarView.state = NSOnState
-		entAEACView.state = NSOnState
-		entAPoordentView.state = NSOnState
-		entARTMRedView.state = NSOnState
-		entARTMWaxView.state = NSOnState
-		entATRMDullView.state = NSOnState
-		entAScarView.state = NSOnState
-		entALTMRedView.state = NSOnState
-		entALTMWaxView.state = NSOnState
-		entALTMDullView.state = NSOnState
-		entALTMScarView.state = NSOnState
-		entANarBogView.state = NSOnState
-		entANarSwlView.state = NSOnState
-		entANarRedView.state = NSOnState
-		entANarPaleView.state = NSOnState
-		entANarDryView.state = NSOnState
-		entAOpStrkView.state = NSOnState
-		entAOpPndView.state = NSOnState
-		entAOpRedView.state = NSOnState
-		entAOpDryView.state = NSOnState
-		entOtherTextView.stringValue = "Other ENT issue"
-		
-//		neckNSuppleView.state = NSOnState
-//		neckNLADView.state = NSOnState
-//		neckNBruitsView.state = NSOnState
-//		neckNJVDView.state = NSOnState
-//		neckNTrchView.state = NSOnState
-//		neckNThyView.state = NSOnState
-		neckALADShoddyView.state = NSOnState
-		neckASmlView.state = NSOnState
-		neckAAcView.state = NSOnState
-		neckAPcView.state = NSOnState
-		neckAJVDView.state = NSOnState
-		neckAGoitView.state = NSOnState
-		neckARBruitView.state = NSOnState
-		neckALBruitView.state = NSOnState
-		neckOtherTextView.stringValue = "Other NECK issue"
-		
-//		cvNRRRView.state = NSOnState
-//		cvNMRGView.state = NSOnState
-//		cvNPMIView.state = NSOnState
-//		cvNs1View.state = NSOnState
-//		cvNs2View.state = NSOnState
-		cvAPMBView.state = NSOnState
-		cvARegView.state = NSOnState
-		cvAIrrView.state = NSOnState
-		cvATachyView.state = NSOnState
-		cvABradyView.state = NSOnState
-		cvAs3View.state = NSOnState
-		cvAs4View.state = NSOnState
-		cvASEMQuantView.selectItem(at: 1)
-		cvASEMPopView.selectItem(at: 2)
-		cvASEMComboView.removeAllItems()
-		cvASEMComboView.addItems(withObjectValues: ["", "RUSB", "LUSB", "BUSB", "LLSB", "All"])
-		cvASEMComboView.selectItem(at: 1)
-		cvOtherTextView.stringValue = "Other CV issue"
-	}
-	
-	func takeSetAbnormalTabTwo(_ sender: AnyObject) {
-//		chestNNTView.state = NSOnState
-//		chestNLungsView.state = NSOnState
-//		chestNWCRView.state = NSOnState
-//		chestNFremView.state = NSOnState
-//		chestNEgophView.state = NSOnState
-		chestAWhzComboView.removeAllItems()
-		chestAWhzComboView.addItems(withObjectValues: cbRULLULList)
-		chestAWhzComboView.selectItem(at: 1)
-		chestACrklComboView.removeAllItems()
-		chestACrklComboView.addItems(withObjectValues: cbRULLULList)
-		chestACrklComboView.selectItem(at: 1)
-		chestARhComboView.removeAllItems()
-		chestARhComboView.addItems(withObjectValues: cbRULLULList)
-		chestARhComboView.selectItem(at: 1)
-		chestAEgophComboView.removeAllItems()
-		chestAEgophComboView.addItems(withObjectValues: cbRULLULList)
-		chestAEgophComboView.selectItem(at: 1)
-		chestOtherTextView.stringValue = "Other CHEST issue"
-		
-//		extNCCEView.state = NSOnState
-//		extNPulsesView.state = NSOnState
-//		extNCRView.state = NSOnState
-		
-		extOtherTextView.stringValue = "Other EXT issue"
-		
-//		neuroNCNsView.state = NSOnState
-//		neuroNDTRsView.state = NSOnState
-//		neuroNSensView.state = NSOnState
-//		neuroNGaitView.state = NSOnState
-//		neuroNPostrView.state = NSOnState
-//		neuroNNonfocalView.state = NSOnState
-//		neuroNVibeView.state = NSOnState
-//		neuroNMonofilView.state = NSOnState
-		neuroAADVibRView.state = NSOnState
-		neuroAADVibLView.state = NSOnState
-		neuroAADMonofilRView.state = NSOnState
-		neuroAADMonofilLView.state = NSOnState
-		neuroADcrvibComboView.addItems(withObjectValues: cbLowerExtremities)
-		neuroADcrvibComboView.selectItem(at: 1)
-		neuroADcrvibLComboView.removeAllItems()
-		neuroADcrvibLComboView.addItems(withObjectValues: cbLowerExtremities)
-		neuroADcrvibLComboView.selectItem(at: 1)
-		neuroAMonofilComboView.removeAllItems()
-		neuroAMonofilComboView.addItems(withObjectValues: cbLowerExtremities)
-		neuroAMonofilComboView.selectItem(at: 1)
-		neuroAMonofilLComboView.removeAllItems()
-		neuroAMonofilLComboView.addItems(withObjectValues: cbLowerExtremities)
-		neuroAMonofilLComboView.selectItem(at: 1)
-		neuroADTRComboView.removeAllItems()
-		neuroADTRComboView.addItems(withObjectValues: cbDTR)
-		neuroADTRComboView.selectItem(at: 1)
-		neuroASLRRComboView.removeAllItems()
-		neuroASLRRComboView.addItems(withObjectValues: cbSTL)
-		neuroASLRRComboView.selectItem(at: 1)
-		neuroASLRLComboView.removeAllItems()
-		neuroASLRLComboView.addItems(withObjectValues: cbSTL)
-		neuroASLRLComboView.selectItem(at: 1)
-		neuroOtherTextView.stringValue = "Other NEURO issue"
-		
-//		mskNROMView.state = NSOnState
-//		mskNSTRView.state = NSOnState
-//		mskNNTView.state = NSOnState
-		mskABunComboView.removeAllItems()
-		mskABunComboView.addItems(withObjectValues: cbRLBList)
-		mskABunComboView.selectItem(at: 1)
-		mskAHammerL1View.state = NSOnState
-		mskAHammerL2View.state = NSOnState
-		mskAHammerL3View.state = NSOnState
-		mskAHammerL4View.state = NSOnState
-		mskAHammerL5View.state = NSOnState
-		mskAHammerR1View.state = NSOnState
-		mskAHammerR2View.state = NSOnState
-		mskAHammerR3View.state = NSOnState
-		mskAHammerR4View.state = NSOnState
-		mskAHammerR5View.state = NSOnState
-		mskOtherTextView.stringValue = "Other MSK issue"
-		
-//		giNSoftView.state = NSOnState
-//		giNNTView.state = NSOnState
-//		giNNDView.state = NSOnState
-//		giNHSMView.state = NSOnState
-//		giNNomassView.state = NSOnState
-//		giNBSView.state = NSOnState
-		giADistView.state = NSOnState
-		giABloatView.state = NSOnState
-		giAHMQuantView.stringValue = "HM of 3"
-		giASpMQuantView.stringValue = "spM of 9"
-		giATTPComboView.removeAllItems()
-		giATTPComboView.addItems(withObjectValues: cbTTPMass)
-		giATTPComboView.selectItem(at: 1)
-		giAMassView.selectItem(at: 1)
-		giABSComboView.removeAllItems()
-		giABSComboView.addItems(withObjectValues: cbBS)
-		giABSComboView.selectItem(at: 1)
-		giOtherTextView.stringValue = "Other GI issue"
-	}
-	
-	func takeSetAbnormalTabThree(_ sender: AnyObject) {
-//		skinNWrmView.state = NSOnState
-//		skinNDryView.state = NSOnState
-//		skinNNorashView.state = NSOnState
-//		skinNNolesionView.state = NSOnState
-//		skinNTurgView.state = NSOnState
-		skinATurgView.state = NSOnState
-		skinAAcneView.state = NSOnState
-		skinAAcneTextView.stringValue = "Acne bits"
-		skinARashView.state = NSOnState
-		skinARashTextView.stringValue = "Rash bits"
-		skinALumpView.state = NSOnState
-		skinALumpTextView.stringValue = "Lump bits"
-		skinAUlcerView.state = NSOnState
-		skinAUlcerTextView.stringValue = "Ulcer bits"
-		skinACallusView.state = NSOnState
-		skinACallusTextView.stringValue = "Callus bits"
-		skinACelView.state = NSOnState
-		skinACelTextView.stringValue = "Cellulitis bits"
-		skinABoilView.state = NSOnState
-		skinABoilTextView.stringValue = "Boil bits"
-		skinANailView.state = NSOnState
-		skinANailTextView.stringValue = "Nail fungi"
-		skinASkinView.state = NSOnState
-		skinASkinTextView.stringValue = "Skin less fungi"
-		skinOtherTextView.stringValue = "Other SKIN issue"
-		
-//		psyNMoodView.state = NSOnState
-//		psyNAffectView.state = NSOnState
-//		psyNJudgeView.state = NSOnState
-//		psyNInsightView.state = NSOnState
-		psyAMoodDepView.state = NSOnState
-		psyAMoodFlatView.state = NSOnState
-		psyAMoodAnxView.state = NSOnState
-		psyAAffectDepView.state = NSOnState
-		psyAAffectFlatView.state = NSOnState
-		psyAAffectAnxView.state = NSOnState
-		psyAPsyMtrComboView.removeAllItems()
-		psyAPsyMtrComboView.addItems(withObjectValues: cbPsyMtr)
-		psyAPsyMtrComboView.selectItem(at: 1)
-		psyAJudgeComboView.removeAllItems()
-		psyAJudgeComboView.addItems(withObjectValues: cbJdg)
-		psyAJudgeComboView.selectItem(at: 1)
-		psyOtherTextView.stringValue = "Other PSY issue"
-		
-//		lymphNCervicalView.state = NSOnState
-//		lymphNAxillaryView.state = NSOnState
-//		lymphNInguinalView.state = NSOnState
-//		lymphNSupraClavView.state = NSOnState
-		lymphAAxComboView.removeAllItems()
-		lymphAAxComboView.addItems(withObjectValues: cbRLBList)
-		lymphAAxComboView.selectItem(at: 1)
-		lymphAIngComboView.removeAllItems()
-		lymphAIngComboView.addItems(withObjectValues: cbRLBList)
-		lymphAIngComboView.selectItem(at: 1)
-		lymphASuClComboView.removeAllItems()
-		lymphASuClComboView.addItems(withObjectValues: cbRLBList)
-		lymphASuClComboView.selectItem(at: 1)
-		lymphASMComboView.removeAllItems()
-		lymphASMComboView.addItems(withObjectValues: cbRLBList)
-		lymphASMComboView.selectItem(at: 1)
-		lymphAAcComboView.removeAllItems()
-		lymphAAcComboView.addItems(withObjectValues: cbRLBList)
-		lymphAAcComboView.selectItem(at: 1)
-		lymphAPcComboView.removeAllItems()
-		lymphAPcComboView.addItems(withObjectValues: cbRLBList)
-		lymphAPcComboView.selectItem(at: 1)
-		lymphOtherTextView.stringValue = "Other LYMPH issue"
-	}
-	
-	func takeSetAbnormalTabFour(_ sender: AnyObject) {
-//		breastNNomassView.state = NSOnState
-//		breastNNonipdcView.state = NSOnState
-//		breastNNoAxLADView.state = NSOnState
-//		breastNNTView.state = NSOnState
-		
-		breastOtherTextView.stringValue = "Other BREAST bits"
-		
-//		gynNExtgenView.state = NSOnState
-//		gynNUtView.state = NSOnState
-//		gynNCvxView.state = NSOnState
-//		gynNCmtView.state = NSOnState
-//		gynNAdnxView.state = NSOnState
-		gynAAtrophView.state = NSOnState
-		gynADCView.state = NSOnState
-		gynADCTextView.stringValue = "DC bits"
-		gynACMTView.state = NSOnState
-		gynACystView.state = NSOnState
-		gynARectView.state = NSOnState
-		gynANoCervView.state = NSOnState
-		gynANoUtView.state = NSOnState
-		gynAAdnxComboView.removeAllItems()
-		gynAAdnxComboView.addItems(withObjectValues: cbRLBList)
-		gynAAdnxComboView.selectItem(at: 1)
-		gynOtherTextView.stringValue = "Other GYN bits"
-		
-//		dreNToneView.state = NSOnState
-//		dreNNoMassView.state = NSOnState
-//		dreNNoRhoidsView.state = NSOnState
-//		dreNHemeView.state = NSOnState
-		dreAExtrhoidView.state = NSOnState
-		dreAIntrhoidView.state = NSOnState
-		dreASwlView.state = NSOnState
-		dreAHemeView.state = NSOnState
-		dreAToneView.state = NSOnState
-		dreAMassTextView.stringValue = "Mass bits"
-		dreOtherTextView.stringValue = "Other DRE bits"
-		
-//		guNUncircView.state = NSOnState
-//		guNCircView.state = NSOnState
-//		guNTestesView.state = NSOnState
-//		guNNoherniaView.state = NSOnState
-//		guNProsView.state = NSOnState
-		guAAsymView.state = NSOnState
-		guADomedView.state = NSOnState
-		guALumpView.state = NSOnState
-		guARIHView.state = NSOnState
-		guALIHView.state = NSOnState
-		guOtherView.stringValue = "Other GU bits"
-	}
 	
 	//Set up the individual sections for processing
 		//Tab 1
@@ -2001,18 +1689,36 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		return psyVerbiageResults
 	} //Done
 	
-	func processHeadEye() ->String {
-		//Process Head/Eye controllers
-		var headeyeVerbiageResults = ""
-		var headeyeVerbiageProcessedList = [String]()
-		var headeyeNormalResults = ""
-		let headeyeVarList:[AnyObject] = [heOtherTextView, heNNCATView, heNPERRLAView, heNEOMIView, heNNoictView, heNConjclrView]
-		let headeyeVerbiageList = ["\(heOtherTextView.stringValue)", "normocephalic atraumatic, no lesions", "pupils equal round, reactive to light & accommodation", "extraocular muscles intact", "no icterus", "conjunctivae clear"]
-		var headeyeNormalProcessedList = processAllControlTypes(headeyeVarList, stringArray: headeyeVerbiageList)
-		if !headeyeNormalProcessedList.isEmpty {
-			headeyeNormalProcessedList = makeFirstCharacterInStringArrayUppercase(headeyeNormalProcessedList)
-			headeyeNormalResults = generateSubheadingString("", stringList: headeyeNormalProcessedList, joiner: ", ")
-			headeyeVerbiageProcessedList.append(headeyeNormalResults)
+	func processHead() -> String {
+		//Process Head controllers
+		var headVerbiageResults = ""
+		var headVerbiageProcessedList = [String]()
+		var headNormalResults = ""
+		let headVarList:[AnyObject] = [heAHeadTextView, heNNCATView]
+		let headVerbiageList = ["\(heAHeadTextView.stringValue)", "normocephalic atraumatic, no lesions"]
+		var headNormalProcessedList = processAllControlTypes(headVarList, stringArray: headVerbiageList)
+		if !headNormalProcessedList.isEmpty {
+			headNormalProcessedList = makeFirstCharacterInStringArrayUppercase(headNormalProcessedList)
+			headNormalResults = generateSubheadingString("HEAD:", stringList: headNormalProcessedList, joiner: ", ") + "\n"
+		}
+		
+		return headNormalResults
+	}
+	
+	func processEye() ->String {
+		
+		
+		//Process Eye controllers
+		var eyeVerbiageResults = ""
+		var eyeVerbiageProcessedList = [String]()
+		var eyeNormalResults = ""
+		let eyeVarList:[AnyObject] = [heAEyeTextView, heNPERRLAView, heNEOMIView, heNNoictView, heNConjclrView]
+		let eyeVerbiageList = ["\(heAEyeTextView.stringValue)", "pupils equal round, reactive to light & accommodation", "extraocular muscles intact", "no icterus", "conjunctivae clear"]
+		var eyeNormalProcessedList = processAllControlTypes(eyeVarList, stringArray: eyeVerbiageList)
+		if !eyeNormalProcessedList.isEmpty {
+			eyeNormalProcessedList = makeFirstCharacterInStringArrayUppercase(eyeNormalProcessedList)
+			eyeNormalResults = generateSubheadingString("", stringList: eyeNormalProcessedList, joiner: ", ")
+			eyeVerbiageProcessedList.append(eyeNormalResults)
 		}
 		
 		//Process Right eye
@@ -2031,7 +1737,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		if !headeyeREyeProcessedList.isEmpty {
 			headeyeREyeProcessedList = makeFirstCharacterInStringArrayUppercase(headeyeREyeProcessedList)
 			headeyeREyeResults = generateSubheadingString("Right eye:", stringList: headeyeREyeProcessedList, joiner: ", ")
-			headeyeVerbiageProcessedList.insert(headeyeREyeResults, at: 0)
+			eyeVerbiageProcessedList.insert(headeyeREyeResults, at: 0)
 		}
 		
 		//Process Left eye
@@ -2050,15 +1756,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		if !headeyeLEyeProcessedList.isEmpty {
 			headeyeLEyeProcessedList = makeFirstCharacterInStringArrayUppercase(headeyeLEyeProcessedList)
 			headeyeLEyeResults = generateSubheadingString("Left eye:", stringList: headeyeLEyeProcessedList, joiner: ", ")
-			headeyeVerbiageProcessedList.insert(headeyeLEyeResults, at: 0)
+			eyeVerbiageProcessedList.insert(headeyeLEyeResults, at: 0)
 		}
 		
-		if !headeyeVerbiageProcessedList.isEmpty {
-			headeyeVerbiageProcessedList = makeFirstCharacterInStringArrayUppercase(headeyeVerbiageProcessedList)
-			headeyeVerbiageResults = (generateSubheadingString("HEAD/EYE:", stringList: headeyeVerbiageProcessedList, joiner: "\n")) + "\n"
+		if !eyeVerbiageProcessedList.isEmpty {
+			eyeVerbiageProcessedList = makeFirstCharacterInStringArrayUppercase(eyeVerbiageProcessedList)
+			eyeVerbiageResults = (generateSubheadingString("EYE:", stringList: eyeVerbiageProcessedList, joiner: "\n")) + "\n"
 		}
 		
-		return headeyeVerbiageResults
+		return eyeVerbiageResults
 	} //Done?
 	
 	func processENT() ->String {
@@ -2212,8 +1918,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	func processGI() ->String {
 		//Process normal GI controllers
 		var giVerbiageResults = ""
-		let giVarList:[AnyObject] = [giADistView, giABloatView, giAHMQuantView, giASpMQuantView, giATTPComboView, giAMassView, giABSComboView, giOtherTextView, giNSoftView, giNNTView, giNNoReboundView, giNNDView, giNHSMView, giNNomassView, giNBSView]
-		let giVerbiageList = ["distended", "bloated", "hepatoMegaly: \(giAHMQuantView.stringValue)", "splenoMegaly: \(giASpMQuantView.stringValue)", "tender: \(giATTPComboView.stringValue)", "mass: \(giAMassView.stringValue)", "BS: \(giABSComboView.stringValue)", "\(giOtherTextView.stringValue)", "soft", "no tenderness", "no rebound or guarding", "non-distended", "no hepatosplenomegaly", "no masses", "normal bowel sounds"]
+		let giVarList:[AnyObject] = [giADistView, giABloatView, giAObeseView, giAHMQuantView, giASpMQuantView, giATTPComboView, giAMassView, giABSComboView, giOtherTextView, giNSoftView, giNNTView, giNNoReboundView, giNNDView, giNHSMView, giNNomassView, giNBSView]
+		let giVerbiageList = ["distended", "bloated", "obese", "hepatoMegaly: \(giAHMQuantView.stringValue)", "splenoMegaly: \(giASpMQuantView.stringValue)", "tender: \(giATTPComboView.stringValue)", "mass: \(giAMassView.stringValue)", "BS: \(giABSComboView.stringValue)", "\(giOtherTextView.stringValue)", "soft", "no tenderness", "no rebound or guarding", "non-distended", "no hepatosplenomegaly", "no masses", "normal bowel sounds"]
 		var giVerbiageProcessedList = processAllControlTypes(giVarList, stringArray: giVerbiageList)
 		if !giVerbiageProcessedList.isEmpty {
 			giVerbiageProcessedList = makeFirstCharacterInStringArrayUppercase(giVerbiageProcessedList)
@@ -2662,7 +2368,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func proccessResults() -> String {
 
 		let genVerbiage = processGeneral()
-		let heVerbiage = processHeadEye()
+		let headVerbiage = processHead()
+		let eyeVerbiage = processEye()
 		let entVerbiage = processENT()
 		let neckVerbiage = processNeck()
 		let cvVerbiage = processCV()
@@ -2679,7 +2386,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		let dreVerbiage = processDRE()
 		let guVerbiage = processGU()
 		
-		let returnVerbiage = genVerbiage + psyVerbiage + heVerbiage +  entVerbiage + neckVerbiage + cvVerbiage + chestVerbiage + giVerbiage + extVerbiage + neuroVerbiage + mskVerbiage + skinVerbiage + lymphVerbiage + breastVerbiage + gynVerbiage + dreVerbiage + guVerbiage
+		let returnVerbiage = genVerbiage + psyVerbiage + headVerbiage + eyeVerbiage +  entVerbiage + neckVerbiage + cvVerbiage + chestVerbiage + giVerbiage + extVerbiage + neuroVerbiage + mskVerbiage + skinVerbiage + lymphVerbiage + breastVerbiage + gynVerbiage + dreVerbiage + guVerbiage
 		
 		return returnVerbiage
     }
